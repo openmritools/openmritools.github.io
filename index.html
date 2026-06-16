@@ -62,7 +62,29 @@ title: MRI Tools
       <th aria-label="Health"></th>
       <th>Tool</th>
       <th>Description</th>
-      <th>Language</th>
+      <th class="lang-th">
+        <button class="lang-header-btn" id="lang-header-btn">
+          <span id="lang-header-label">Language</span> ▾
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown">
+          <button class="lang-option selected" data-lang="">All</button>
+          {%- assign all_langs = '' | split: '' -%}
+          {%- for cat in site.data.categories -%}
+            {%- assign cat_tools = site.data.tools[cat.id] -%}
+            {%- for tool in cat_tools -%}
+              {%- if tool.language -%}
+                {%- unless all_langs contains tool.language -%}
+                  {%- assign all_langs = all_langs | push: tool.language -%}
+                {%- endunless -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+          {%- assign sorted_langs = all_langs | sort -%}
+          {%- for lang in sorted_langs -%}
+          <button class="lang-option" data-lang="{{ lang }}">{{ lang }}</button>
+          {%- endfor -%}
+        </div>
+      </th>
     </tr>
   </thead>
   <tbody id="tool-list">
@@ -107,7 +129,7 @@ title: MRI Tools
               <a href="{{ tool.url }}" target="_blank" rel="noopener noreferrer">{{ tool.name }}</a>{% if tool.date_added %}<span class="new-label" data-added="{{ tool.date_added }}"></span>{% endif %}
             </td>
             <td class="tool-desc">{{ tool.description }}</td>
-            <td class="tool-lang">{% if tool.language %}<button class="lang-btn" data-lang="{{ tool.language }}">{{ tool.language }}</button>{% endif %}</td>
+            <td class="tool-lang">{{ tool.language }}</td>
           </tr>
         {% endfor %}
       {% endif %}
@@ -136,15 +158,19 @@ title: MRI Tools
     {% endfor %}
   };
 
-  const mainPills    = document.querySelectorAll('#pills .pill');
-  const subPillsEl   = document.getElementById('sub-pills');
-  const search       = document.getElementById('search');
-  const toolRows     = document.querySelectorAll('#tool-list tr:not(.section-header)');
-  const headers      = document.querySelectorAll('#tool-list tr.section-header');
-  const countEl      = document.getElementById('tool-count');
-  const langTagEl    = document.getElementById('lang-tag');
-  const langTagName  = document.getElementById('lang-tag-name');
-  const langClearEl  = document.getElementById('lang-clear');
+  const mainPills      = document.querySelectorAll('#pills .pill');
+  const subPillsEl     = document.getElementById('sub-pills');
+  const search         = document.getElementById('search');
+  const toolRows       = document.querySelectorAll('#tool-list tr:not(.section-header)');
+  const headers        = document.querySelectorAll('#tool-list tr.section-header');
+  const countEl        = document.getElementById('tool-count');
+  const langTagEl      = document.getElementById('lang-tag');
+  const langTagName    = document.getElementById('lang-tag-name');
+  const langClearEl    = document.getElementById('lang-clear');
+  const langHeaderBtn  = document.getElementById('lang-header-btn');
+  const langHeaderLabel= document.getElementById('lang-header-label');
+  const langDropdown   = document.getElementById('lang-dropdown');
+  const langOptions    = langDropdown.querySelectorAll('.lang-option');
 
   let activeFilter    = 'all';
   let activeSubFilter = null;
@@ -152,6 +178,9 @@ title: MRI Tools
 
   function setLang(lang) {
     activeLang = lang || null;
+    langHeaderLabel.textContent = activeLang ? 'Language: ' + activeLang : 'Language';
+    langHeaderBtn.classList.toggle('lang-header-active', !!activeLang);
+    langOptions.forEach(o => o.classList.toggle('selected', o.dataset.lang === (activeLang || '')));
     if (activeLang) {
       langTagName.textContent = activeLang;
       langTagEl.classList.remove('hidden');
@@ -160,6 +189,21 @@ title: MRI Tools
     }
     applyFilters();
   }
+
+  langHeaderBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    langDropdown.classList.toggle('open');
+  });
+
+  langOptions.forEach(opt => {
+    opt.addEventListener('click', e => {
+      e.stopPropagation();
+      setLang(opt.dataset.lang);
+      langDropdown.classList.remove('open');
+    });
+  });
+
+  document.addEventListener('click', () => langDropdown.classList.remove('open'));
 
   function applyFilters() {
     const q         = search.value.toLowerCase().trim();
@@ -242,17 +286,6 @@ title: MRI Tools
       activeSubFilter = null;
       showSubPills(activeFilter);
       applyFilters();
-    });
-  });
-
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const lang = btn.dataset.lang;
-      if (activeLang === lang) {
-        setLang(null);
-      } else {
-        setLang(lang);
-      }
     });
   });
 
