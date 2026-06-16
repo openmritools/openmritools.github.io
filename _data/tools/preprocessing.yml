@@ -6,87 +6,103 @@
 #   github:      owner/repo  (required for health checks)
 #   language:    primary implementation language
 
+  date_added: 2026-06-16
 - name: fMRIPrep
   description: End-to-end fMRI preprocessing pipeline with minimal user input and detailed visual QC reports.
   url: https://github.com/nipreps/fmriprep
   github: nipreps/fmriprep
   language: Python
 
+  date_added: 2026-06-16
 - name: dMRIPrep
   description: Preprocessing pipeline for diffusion MRI following the fMRIPrep design framework.
   url: https://github.com/nipreps/dmriprep
   github: nipreps/dmriprep
   language: Python
 
+  date_added: 2026-06-16
 - name: sMRIPrep
   description: Structural MRI preprocessing pipeline; used standalone or as the anatomical component of fMRIPrep.
   url: https://github.com/nipreps/smriprep
   github: nipreps/smriprep
   language: Python
 
+  date_added: 2026-06-16
 - name: Nibabies
   description: fMRIPrep adapted for infant brain MRI, with templates and workflows suited to developing brains.
   url: https://github.com/nipreps/nibabies
   github: nipreps/nibabies
   language: Python
 
+  date_added: 2026-06-16
 - name: HALFpipe
   description: Containerized fMRI pipeline wrapping fMRIPrep with smoothing, filtering, confound regression, and interactive QA.
   url: https://github.com/HALFpipe/HALFpipe
   github: HALFpipe/HALFpipe
   language: Python
 
+  date_added: 2026-06-16
 - name: FreeSurfer
   description: Cortical surface reconstruction, parcellation, and cortical thickness analysis from structural MRI.
   url: https://freesurfer.net
   language: C++
 
+  date_added: 2026-06-16
 - name: CAT12
   description: SPM toolbox for voxel-based and surface-based morphometry of structural MRI data.
   url: https://neuro-jena.github.io/cat
   language: MATLAB
 
+  date_added: 2026-06-16
 - name: FSL
   description: Comprehensive library for analysis of fMRI, structural, and diffusion MRI data.
   url: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki
   language: C++
 
+  date_added: 2026-06-16
 - name: AFNI
   description: Suite of programs for fMRI preprocessing, regression modelling, and statistical analysis.
   url: https://afni.nimh.nih.gov
   language: C
 
+  date_added: 2026-06-16
 - name: Tedana
   description: Multi-echo fMRI denoising — separates BOLD signal from noise using T2* decay across echo times.
   url: https://github.com/ME-ICA/tedana
   github: ME-ICA/tedana
   language: Python
 
+  date_added: 2026-06-16
 - name: FastSurfer
   description: Deep learning-based cortical surface reconstruction and parcellation; produces FreeSurfer-compatible output in minutes.
   url: https://github.com/Deep-MI/FastSurfer
   github: Deep-MI/FastSurfer
   language: Python
 
+  date_added: 2026-06-16
 - name: SynthStrip
   description: Skull-stripping tool using deep learning; works across contrasts and resolutions without retraining.
   url: https://surfer.nmr.mgh.harvard.edu/docs/synthstrip
   language: Python
 
+  date_added: 2026-06-16
 - name: SynthSeg
   description: Contrast-agnostic brain segmentation via deep learning; handles any MRI contrast without fine-tuning.
   url: https://github.com/BBillot/SynthSeg
   github: BBillot/SynthSeg
   language: Python
 
+  date_added: 2026-06-16
 - name: C-PAC
   description: Configurable Pipeline for the Analysis of Connectomes — a flexible fMRIPrep alternative with GUI configuration.
   url: https://github.com/FCP-INDI/C-PAC
   github: FCP-INDI/C-PAC
   language: Python
 
+  date_added: 2026-06-16
 - name: ASLPrep
   description: Arterial spin labeling preprocessing pipeline from the NiPreps family, producing CBF maps and QC reports.
   url: https://github.com/PennLINC/aslprep
   github: PennLINC/aslprep
   language: Python
+  date_added: 2026-06-16

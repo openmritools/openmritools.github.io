@@ -6,14 +6,17 @@
 #   github:      owner/repo  (required for health checks)
 #   language:    primary implementation language
 
+  date_added: 2026-06-16
 - name: PyBIDS
   description: Python library for querying, loading, and writing BIDS-formatted datasets.
   url: https://github.com/bids-standard/pybids
   github: bids-standard/pybids
   language: Python
 
+  date_added: 2026-06-16
 - name: Nibabel
   description: Python library for reading and writing common neuroimaging file formats including NIfTI, GIFTI, and CIFTI.
   url: https://github.com/nipy/nibabel
   github: nipy/nibabel
   language: Python
+  date_added: 2026-06-16

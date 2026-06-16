@@ -11,38 +11,22 @@ title: MRI Tools
 
 <div class="controls">
   <div class="pills" id="pills">
-    <button class="pill selected" data-filter="all">All</button>
-    <button class="pill" data-filter="new">Recently added</button>
-    <button class="pill" data-filter="prepare">Prepare</button>
-    <button class="pill" data-filter="analyze">Analyze</button>
-    <button class="pill" data-filter="visualize">Visualize</button>
-    <button class="pill" data-filter="infrastructure">Infrastructure</button>
-    <button class="pill pill-resources" data-filter="resources">Resources & Data</button>
-  </div>
-  <div class="sub-pills" id="sub-pills"></div>
-  <div class="search-row">
-    <input class="search" id="search" type="search" placeholder="Search tools…" autocomplete="off">
-    <div class="lang-wrap">
-      <select id="lang-filter" class="lang-select">
-        <option value="">All languages</option>
-        {%- assign all_langs = '' | split: '' -%}
-        {%- for cat in site.data.categories -%}
-          {%- assign tools = site.data.tools[cat.id] -%}
-          {%- for tool in tools -%}
-            {%- if tool.language -%}
-              {%- unless all_langs contains tool.language -%}
-                {%- assign all_langs = all_langs | push: tool.language -%}
-              {%- endunless -%}
-            {%- endif -%}
-          {%- endfor -%}
-        {%- endfor -%}
-        {%- assign sorted_langs = all_langs | sort -%}
-        {%- for lang in sorted_langs -%}
-        <option value="{{ lang }}">{{ lang }}</option>
-        {%- endfor -%}
-      </select>
+    <div class="pill-group">
+      <button class="pill selected" data-filter="all">All</button>
+      <button class="pill" data-filter="new">Recently added</button>
+    </div>
+    <div class="pill-group">
+      <button class="pill" data-filter="prepare">Prepare</button>
+      <button class="pill" data-filter="analyze">Analyze</button>
+      <button class="pill" data-filter="visualize">Visualize</button>
+      <button class="pill" data-filter="infrastructure">Infrastructure</button>
+    </div>
+    <div class="pill-group">
+      <button class="pill" data-filter="resources">Resources & Data</button>
     </div>
   </div>
+  <div class="sub-pills" id="sub-pills"></div>
+  <input class="search" id="search" type="search" placeholder="Search tools…" autocomplete="off">
 </div>
 
 <div class="meta">
@@ -54,6 +38,7 @@ title: MRI Tools
     {%- endfor -%}
     {{ total }} tools
   </span>
+  <span id="lang-tag" class="hidden">(filtered: <span id="lang-tag-name"></span> <button id="lang-clear" class="lang-clear">✕</button>)</span>
   <span class="meta-sep">·</span>
   <span class="legend-item"><span class="dot dot-active"></span> Active</span>
   <span class="legend-item"><span class="dot dot-quiet"></span> Quiet</span>
@@ -115,7 +100,7 @@ title: MRI Tools
               <a href="{{ tool.url }}" target="_blank" rel="noopener noreferrer">{{ tool.name }}</a>{% if tool.date_added %}<span class="new-label" data-added="{{ tool.date_added }}"></span>{% endif %}
             </td>
             <td class="tool-desc">{{ tool.description }}</td>
-            <td class="tool-lang">{{ tool.language }}</td>
+            <td class="tool-lang">{% if tool.language %}<button class="lang-btn" data-lang="{{ tool.language }}">{{ tool.language }}</button>{% endif %}</td>
           </tr>
         {% endfor %}
       {% endif %}
@@ -136,7 +121,6 @@ title: MRI Tools
   const NEW_DAYS = 60;
   const now = new Date();
 
-  // Render 'new' labels for tools added within 60 days
   document.querySelectorAll('.new-label[data-added]').forEach(el => {
     const added = new Date(el.dataset.added);
     if (!isNaN(added) && (now - added) / 86400000 <= NEW_DAYS) {
@@ -154,16 +138,30 @@ title: MRI Tools
     {% endfor %}
   };
 
-  const mainPills  = document.querySelectorAll('#pills .pill');
-  const subPillsEl = document.getElementById('sub-pills');
-  const search     = document.getElementById('search');
-  const langSelect = document.getElementById('lang-filter');
-  const toolRows   = document.querySelectorAll('#tool-list tr:not(.section-header)');
-  const headers    = document.querySelectorAll('#tool-list tr.section-header');
-  const countEl    = document.getElementById('tool-count');
+  const mainPills    = document.querySelectorAll('#pills .pill');
+  const subPillsEl   = document.getElementById('sub-pills');
+  const search       = document.getElementById('search');
+  const toolRows     = document.querySelectorAll('#tool-list tr:not(.section-header)');
+  const headers      = document.querySelectorAll('#tool-list tr.section-header');
+  const countEl      = document.getElementById('tool-count');
+  const langTagEl    = document.getElementById('lang-tag');
+  const langTagName  = document.getElementById('lang-tag-name');
+  const langClearEl  = document.getElementById('lang-clear');
 
   let activeFilter    = 'all';
   let activeSubFilter = null;
+  let activeLang      = null;
+
+  function setLang(lang) {
+    activeLang = lang || null;
+    if (activeLang) {
+      langTagName.textContent = activeLang;
+      langTagEl.classList.remove('hidden');
+    } else {
+      langTagEl.classList.add('hidden');
+    }
+    applyFilters();
+  }
 
   function applyFilters() {
     const q         = search.value.toLowerCase().trim();
@@ -171,14 +169,12 @@ title: MRI Tools
     const groupCats = isNewView ? null : groups[activeFilter];
     const allowed   = activeSubFilter ? [activeSubFilter] : groupCats;
 
-    const lang = langSelect.value;
-
     let visible = 0;
     toolRows.forEach(row => {
       const catMatch  = !allowed || allowed.includes(row.dataset.category);
       const newMatch  = !isNewView || isNew(row);
       const textMatch = !q || row.dataset.name.includes(q) || row.dataset.desc.includes(q);
-      const langMatch = !lang || row.dataset.lang === lang;
+      const langMatch = !activeLang || row.dataset.lang === activeLang;
       const show = catMatch && newMatch && textMatch && langMatch;
       row.classList.toggle('hidden', !show);
       if (show) visible++;
@@ -231,6 +227,17 @@ title: MRI Tools
     });
   });
 
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      if (activeLang === lang) {
+        setLang(null);
+      } else {
+        setLang(lang);
+      }
+    });
+  });
+
+  langClearEl.addEventListener('click', () => setLang(null));
   search.addEventListener('input', applyFilters);
-  langSelect.addEventListener('change', applyFilters);
 </script>

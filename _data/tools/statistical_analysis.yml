@@ -6,53 +6,63 @@
 #   github:      owner/repo  (required for health checks)
 #   language:    primary implementation language
 
+  date_added: 2026-06-16
 - name: SPM
   description: Statistical parametric mapping framework for fMRI, PET, and voxel-based morphometry analysis.
   url: https://www.fil.ion.ucl.ac.uk/spm
   language: MATLAB
 
+  date_added: 2026-06-16
 - name: Nilearn
   description: Machine learning and statistical tools for neuroimaging data, including GLMs and multivariate decoding.
   url: https://github.com/nilearn/nilearn
   github: nilearn/nilearn
   language: Python
 
+  date_added: 2026-06-16
 - name: Fitlins
   description: Estimates first-level fMRI models specified in BIDS statistical model format.
   url: https://github.com/poldracklab/fitlins
   github: poldracklab/fitlins
   language: Python
 
+  date_added: 2026-06-16
 - name: NiMARE
   description: Coordinate- and image-based neuroimaging meta-analysis in Python; successor to Neurosynth.
   url: https://github.com/neurostuff/NiMARE
   github: neurostuff/NiMARE
   language: Python
 
+  date_added: 2026-06-16
 - name: FSL Randomise
   description: Permutation-based nonparametric inference for neuroimaging group-level statistics.
   url: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Randomise
   language: C++
 
+  date_added: 2026-06-16
 - name: ENIGMA VBM
   description: Fully automated DARTEL VBM pipeline with QC and sensitivity analyses, standardized for multi-site mega-analysis.
   url: https://sites.google.com/view/enigmavbm
   language: MATLAB
 
+  date_added: 2026-06-16
 - name: ENIGMA Toolbox
   description: Python/MATLAB ecosystem for accessing 100+ ENIGMA datasets and contextualizing findings with connectomic and transcriptomic data.
   url: https://github.com/MICA-MNI/ENIGMA
   github: MICA-MNI/ENIGMA
   language: Python/MATLAB
 
+  date_added: 2026-06-16
 - name: IBMMA
   description: Image-based meta- and mega-analysis framework for mass-univariate analysis across voxel, vertex, and connectome features from multi-site data.
   url: https://github.com/sundelinustc/IBMMA
   github: sundelinustc/IBMMA
   language: Python
 
+  date_added: 2026-06-16
 - name: Neuromaps
   description: Maps brain annotations onto standard surfaces and compares them against transcriptomic and receptor reference atlases.
   url: https://github.com/netneurolab/neuromaps
   github: netneurolab/neuromaps
   language: Python
+  date_added: 2026-06-16

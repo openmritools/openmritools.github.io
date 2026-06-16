@@ -66,6 +66,12 @@ body {
 .pills {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.pill-group {
+  display: flex;
+  gap: 4px;
 }
 
 .pill {
@@ -81,9 +87,6 @@ body {
   transition: border-color 0.1s;
 }
 
-.pill-resources {
-  margin-left: 12px;
-}
 
 .pill:hover:not(.selected) {
   border-color: #aaaaaa;
@@ -138,12 +141,6 @@ body {
   text-underline-offset: 2px;
 }
 
-.search-row {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
 .search {
   width: 240px;
   padding: 5px 8px;
@@ -157,41 +154,6 @@ body {
 
 .search:focus {
   border-color: #aaaaaa;
-}
-
-.lang-wrap {
-  position: relative;
-  display: inline-block;
-}
-
-.lang-wrap::after {
-  content: '▾';
-  position: absolute;
-  right: 7px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-size: 10px;
-  color: var(--muted);
-}
-
-.lang-select {
-  font-size: 12px;
-  font-family: inherit;
-  color: var(--muted);
-  background: none;
-  border: 1px solid var(--hairline);
-  border-radius: 2px;
-  padding: 4px 22px 4px 8px;
-  outline: none;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-.lang-select:focus {
-  border-color: #aaaaaa;
-  color: var(--text);
 }
 
 /* ── Meta bar ── */
@@ -313,6 +275,37 @@ body {
 .tool-stage,
 .tool-lang {
   white-space: nowrap;
+}
+
+.lang-btn {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.lang-btn:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+#lang-tag {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.lang-clear {
+  font-family: inherit;
+  font-size: 11px;
+  color: var(--muted);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1;
 }
 
 /* ── Suggest form ── */

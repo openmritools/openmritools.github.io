@@ -6,13 +6,16 @@
 #   github:      owner/repo  (required for health checks)
 #   language:    primary implementation language
 
+  date_added: 2026-06-16
 - name: XCP-D
   description: Post-processing pipeline for functional connectivity from fMRIPrep outputs — denoising, parcellation, and network metrics.
   url: https://github.com/PennLINC/xcp_d
   github: PennLINC/xcp_d
   language: Python
 
+  date_added: 2026-06-16
 - name: CONN
   description: MATLAB toolbox for functional connectivity with seed-based, ROI-to-ROI, and ICA analysis methods.
   url: https://www.nitrc.org/projects/conn
   language: MATLAB
+  date_added: 2026-06-16

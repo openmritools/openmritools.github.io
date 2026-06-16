@@ -5,104 +5,130 @@
 #   url:         homepage
 #   github:      owner/repo  (omit for data repositories without a meaningful GitHub presence)
 
+  date_added: 2026-06-16
 - name: OpenNeuro
   description: Free platform for sharing and downloading BIDS-formatted neuroimaging datasets; over 1,000 public datasets.
   url: https://openneuro.org
   github: OpenNeuroOrg/openneuro
 
+  date_added: 2026-06-16
 - name: NeuroVault
   description: Repository for sharing unthresholded statistical brain maps from published studies.
   url: https://neurovault.org
 
+  date_added: 2026-06-16
 - name: NeuroBagel
   description: Federated search across neuroimaging datasets using semantic annotations and a common data model.
   url: https://github.com/neurobagel
   github: neurobagel/bagel-cli
 
+  date_added: 2026-06-16
 - name: Human Connectome Project
   description: High-resolution structural, functional, and diffusion MRI from 1,200 healthy adults.
   url: https://www.humanconnectome.org
 
+  date_added: 2026-06-16
 - name: ADNI
   description: Longitudinal MRI and PET data from participants across the Alzheimer's disease spectrum.
   url: https://adni.loni.usc.edu
 
+  date_added: 2026-06-16
 - name: OASIS
   description: Cross-sectional and longitudinal structural brain MRI datasets for aging and dementia research.
   url: https://www.oasis-brains.org
 
+  date_added: 2026-06-16
 - name: IXI
   description: Around 600 structural MRI scans from healthy subjects collected at three London hospitals.
   url: https://brain-development.org/ixi-dataset
 
+  date_added: 2026-06-16
 - name: ABCD
   description: Longitudinal brain imaging study tracking 10,000+ adolescents across the US.
   url: https://abcdstudy.org
 
+  date_added: 2026-06-16
 - name: UK Biobank
   description: Population-level brain imaging from 100,000+ UK participants; access requires application.
   url: https://www.ukbiobank.ac.uk
 
+  date_added: 2026-06-16
 - name: NeuroStars
   description: Q&A forum for neuroinformatics, neuroimaging methods, and tool support.
   url: https://neurostars.org
 
+  date_added: 2026-06-16
 - name: OSF
   description: Preregister studies, share data, code, and materials, and get DOIs; the central platform for open science.
   url: https://osf.io
 
+  date_added: 2026-06-16
 - name: AsPredicted
   description: Quick, lightweight preregistration for studies — fill in nine questions and lock your hypotheses before data collection.
   url: https://aspredicted.org
 
+  date_added: 2026-06-16
 - name: protocols.io
   description: Share and discover step-by-step research protocols with versioning and DOI assignment.
   url: https://www.protocols.io
 
+  date_added: 2026-06-16
 - name: bioRxiv
   description: Preprint server for biology and neuroscience; post before peer review to share findings early.
   url: https://www.biorxiv.org
 
+  date_added: 2026-06-16
 - name: NeuroLibre
   description: Reproducible neuroscience preprints with live, executable code and data embedded in the publication.
   url: https://neurolibre.org
 
+  date_added: 2026-06-16
 - name: Zenodo
   description: Archive code, data, or posters and receive a citable DOI; integrates directly with GitHub releases.
   url: https://zenodo.org
 
+  date_added: 2026-06-16
 - name: PROSPERO
   description: International registry for preregistering systematic reviews and meta-analyses before they begin.
   url: https://www.crd.york.ac.uk/prospero
 
+  date_added: 2026-06-16
 - name: ENIGMA
   description: Global consortium for large-scale neuroimaging genetics meta-analyses spanning 45+ working groups and countries.
   url: https://enigma.ini.usc.edu
 
+  date_added: 2026-06-16
 - name: ENIGMA Protocols
   description: Standardized imaging protocols for cortical, subcortical, DTI, and VBM analysis used across ENIGMA working groups.
   url: https://enigma.ini.usc.edu/protocols/imaging-protocols
 
+  date_added: 2026-06-16
 - name: OHBM Open Science SIG
   description: OHBM special interest group advancing open sharing of ideas, data, and tools in neuroimaging.
   url: https://ohbm-open-science.github.io
 
+  date_added: 2026-06-16
 - name: OHBM Brainhack
   description: Annual hackathon for collaborative neuroimaging projects, co-located with the OHBM annual meeting.
   url: https://ohbm.github.io/hackathon
 
+  date_added: 2026-06-16
 - name: Neurohackademy
   description: Summer institute in neuroimaging and data science at the University of Washington.
   url: https://neurohackademy.org
 
+  date_added: 2026-06-16
 - name: ReproNim
   description: NIH center for reproducible neuroimaging computation — training, tools, and standards.
   url: https://www.repronim.org
 
+  date_added: 2026-06-16
 - name: INCF
   description: International Neuroinformatics Coordinating Facility — standards, training, and infrastructure for neuroscience.
   url: https://www.incf.org
 
+  date_added: 2026-06-16
 - name: CONP
   description: Canadian Open Neuroscience Platform — data sharing and open science infrastructure for Canadian neuroimaging research.
   url: https://conp.ca
+  date_added: 2026-06-16

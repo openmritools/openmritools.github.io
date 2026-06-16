@@ -6,31 +6,37 @@
 #   github:      owner/repo  (required for health checks)
 #   language:    primary implementation language
 
+  date_added: 2026-06-16
 - name: Nipoppy
   description: Manages the full workflow from raw data through BIDS conversion, pipeline execution, and extraction.
   url: https://github.com/nipoppy/nipoppy
   github: nipoppy/nipoppy
   language: Python
 
+  date_added: 2026-06-16
 - name: Nipype
   description: Pipeline framework wrapping FSL, SPM, FreeSurfer, and others into reproducible Python workflows.
   url: https://github.com/nipy/nipype
   github: nipy/nipype
   language: Python
 
+  date_added: 2026-06-16
 - name: Brainlife.io
   description: Free cloud platform for running containerized neuroimaging pipelines with provenance tracking.
   url: https://brainlife.io
   language: Web
 
+  date_added: 2026-06-16
 - name: Neurodesk
   description: Containerized neuroimaging desktop environment with 100+ analysis tools, accessible via browser.
   url: https://github.com/NeuroDesk/neurodesktop
   github: NeuroDesk/neurodesktop
   language: Docker
 
+  date_added: 2026-06-16
 - name: DataLad
   description: Distributed data management system for version-controlled datasets and reproducible analyses.
   url: https://github.com/datalad/datalad
   github: datalad/datalad
   language: Python
+  date_added: 2026-06-16
