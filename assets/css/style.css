@@ -82,6 +82,10 @@ body {
   transition: border-color 0.1s;
 }
 
+.pill-resources {
+  margin-left: 12px;
+}
+
 .pill:hover:not(.selected) {
   border-color: #aaaaaa;
 }
