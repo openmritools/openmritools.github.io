@@ -3,4 +3,33 @@
 #   name:        display name
 #   description: one sentence — what it does, not why it matters
 #   url:         homepage or repo
-#   github:      owner/repo  (required for health checks)
+#   github:      owner/repo  (required for health checks; omit for data repositories)
+
+- name: OpenNeuro
+  description: Open platform for sharing BIDS-formatted neuroimaging datasets; over 1,000 public datasets.
+  url: https://openneuro.org
+  github: OpenNeuroOrg/openneuro
+
+- name: UK Biobank
+  description: Population-scale biomedical database with brain MRI from ~100,000 participants; access requires application.
+  url: https://www.ukbiobank.ac.uk
+
+- name: HCP
+  description: Human Connectome Project — high-resolution structural, functional, and diffusion MRI from 1,200 healthy adults.
+  url: https://www.humanconnectome.org
+
+- name: ADNI
+  description: Alzheimer's Disease Neuroimaging Initiative — longitudinal MRI and PET data for Alzheimer's research.
+  url: https://adni.loni.usc.edu
+
+- name: OASIS
+  description: Open Access Series of Imaging Studies — cross-sectional and longitudinal structural MRI across the lifespan.
+  url: https://www.oasis-brains.org
+
+- name: IXI
+  description: Information eXtraction from Images dataset — ~600 structural MRI scans from healthy subjects.
+  url: https://brain-development.org/ixi-dataset
+
+- name: ABCD
+  description: Adolescent Brain Cognitive Development study — longitudinal MRI from ~11,000 children across the US.
+  url: https://abcdstudy.org

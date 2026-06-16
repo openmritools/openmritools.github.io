@@ -11,3 +11,18 @@
   url: https://github.com/nipreps/fmriprep
   github: nipreps/fmriprep
   language: Python
+
+- name: FreeSurfer
+  description: Reconstructs cortical and subcortical surfaces from structural MRI; generates parcellations and thickness maps.
+  url: https://surfer.nmr.mgh.harvard.edu
+  language: C++
+
+- name: CAT12
+  description: SPM toolbox for voxel-based and surface-based morphometry of structural MRI data.
+  url: https://neuro-jena.github.io/cat
+  language: MATLAB
+
+- name: FSL FEAT/MELODIC
+  description: FSL modules for task fMRI GLM analysis (FEAT) and independent component analysis (MELODIC).
+  url: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSL
+  language: C++

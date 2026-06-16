@@ -11,3 +11,9 @@
   url: https://github.com/nipreps/mriqc
   github: nipreps/mriqc
   language: Python
+
+- name: mrQA
+  description: Checks BIDS datasets for protocol compliance and flags deviations in acquisition parameters.
+  url: https://github.com/Open-MRI-Collective/mrQA
+  github: Open-MRI-Collective/mrQA
+  language: Python

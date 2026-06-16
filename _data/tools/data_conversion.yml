@@ -7,7 +7,25 @@
 #   language:    primary implementation language
 
 - name: dcm2niix
-  description: Converts DICOM files to NIfTI format; the standard first step for scanner output.
+  description: Converts DICOM files to NIfTI format; the standard first step after scanner output.
   url: https://github.com/rordenlab/dcm2niix
   github: rordenlab/dcm2niix
   language: C++
+
+- name: HeuDiConv
+  description: DICOM-to-BIDS converter that uses user-defined heuristics to handle complex naming schemes.
+  url: https://github.com/nipy/heudiconv
+  github: nipy/heudiconv
+  language: Python
+
+- name: BIDScoin
+  description: Converts MRI data to BIDS via a GUI-configurable mapping; supports multiple input formats.
+  url: https://github.com/Donders-Institute/bidscoin
+  github: Donders-Institute/bidscoin
+  language: Python
+
+- name: ReproIn
+  description: HeuDiConv heuristic and naming convention for fully automated, reproducible DICOM-to-BIDS conversion.
+  url: https://github.com/ReproNim/reproin
+  github: ReproNim/reproin
+  language: Python

@@ -6,8 +6,29 @@
 #   github:      owner/repo  (required for health checks)
 #   language:    primary implementation language
 
-- name: nilearn
-  description: Machine learning and statistical tools for neuroimaging data in Python.
+- name: FSL Randomise
+  description: Permutation-based nonparametric inference for neuroimaging group-level statistics.
+  url: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Randomise
+  language: C++
+
+- name: SPM
+  description: Statistical Parametric Mapping — a widely used framework for fMRI and PET analysis.
+  url: https://www.fil.ion.ucl.ac.uk/spm
+  language: MATLAB
+
+- name: Nilearn
+  description: Machine learning and statistical tools for neuroimaging data, including GLMs and decoding.
+  url: https://github.com/nilearn/nilearn
+  github: nilearn/nilearn
+  language: Python
+
+- name: AFNI
+  description: Analysis of Functional NeuroImages — comprehensive suite for fMRI preprocessing and statistics.
+  url: https://afni.nimh.nih.gov
+  language: C
+
+- name: Nistats
+  description: First-level and second-level fMRI GLM models in Python; functionality merged into Nilearn.
   url: https://github.com/nilearn/nilearn
   github: nilearn/nilearn
   language: Python

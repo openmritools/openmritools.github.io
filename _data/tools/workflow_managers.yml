@@ -4,3 +4,27 @@
 #   description: one sentence — what it does, not why it matters
 #   url:         homepage or repo
 #   github:      owner/repo  (required for health checks)
+#   language:    primary implementation language
+
+- name: Nipoppy
+  description: Framework for standardized organization and processing of neuroimaging datasets across sites and pipelines.
+  url: https://github.com/nipoppy/nipoppy
+  github: nipoppy/nipoppy
+  language: Python
+
+- name: Nipype
+  description: Python interface to heterogeneous neuroimaging tools; enables building reproducible multi-tool pipelines.
+  url: https://github.com/nipy/nipype
+  github: nipy/nipype
+  language: Python
+
+- name: Brainlife.io
+  description: Cloud platform for running containerized neuroimaging pipelines on open datasets without local compute.
+  url: https://brainlife.io
+  language: JavaScript
+
+- name: Neurodesk
+  description: Containerized neuroimaging environment providing a browser-accessible desktop with 100+ tools pre-installed.
+  url: https://github.com/NeuroDesk/neurodesktop
+  github: NeuroDesk/neurodesktop
+  language: Shell

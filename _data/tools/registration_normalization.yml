@@ -7,7 +7,12 @@
 #   language:    primary implementation language
 
 - name: ANTs
-  description: Deformable image registration and segmentation toolkit for brain images.
+  description: Toolkit for deformable image registration, segmentation, and normalization of brain images.
   url: https://github.com/ANTsX/ANTs
   github: ANTsX/ANTs
+  language: C++
+
+- name: FSL FLIRT/FNIRT
+  description: FSL tools for linear (FLIRT) and nonlinear (FNIRT) brain image registration.
+  url: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSL
   language: C++

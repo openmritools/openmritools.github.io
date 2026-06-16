@@ -4,3 +4,15 @@
 #   description: one sentence — what it does, not why it matters
 #   url:         homepage or repo
 #   github:      owner/repo  (required for health checks)
+#   language:    primary implementation language
+
+- name: XCP-D
+  description: Post-processing pipeline for fMRI functional connectivity — denoising, parcellation, and network metrics.
+  url: https://github.com/PennLINC/xcp_d
+  github: PennLINC/xcp_d
+  language: Python
+
+- name: CONN Toolbox
+  description: MATLAB toolbox for functional connectivity MRI analysis, including ROI-to-ROI and seed-based methods.
+  url: https://web.conn-toolbox.org
+  language: MATLAB
