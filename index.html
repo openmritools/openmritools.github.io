@@ -1,0 +1,98 @@
+---
+layout: default
+title: MRI Tools
+---
+
+<header>
+  <h1 class="site-title">MRI Tools</h1>
+  <p class="site-subtitle">The overview I wish existed when I started.</p>
+  <p class="site-subline"><em>"If nobody can find your tool, does it exist?" — <a href="{{ '/contributing/' | relative_url }}">Add yours.</a></em></p>
+</header>
+
+<div class="controls">
+  <div class="pills" id="pills">
+    <button class="pill selected" data-filter="all">All</button>
+    {% for cat in site.data.categories %}
+    <button class="pill" data-filter="{{ cat.id }}">{{ cat.name }}</button>
+    {% endfor %}
+  </div>
+  <input class="search" id="search" type="search" placeholder="Search tools…" autocomplete="off">
+</div>
+
+<table class="tool-table" aria-label="MRI tools directory">
+  <thead>
+    <tr>
+      <th aria-label="Health"></th>
+      <th>Tool</th>
+      <th>Description</th>
+      <th>Stage</th>
+      <th>Language</th>
+    </tr>
+  </thead>
+  <tbody id="tool-list">
+    {% for cat in site.data.categories %}
+      {% assign tools = site.data.tools[cat.id] %}
+      {% if tools %}
+        {% for tool in tools %}
+          {% assign hkey = tool.github | replace: '/', '-' %}
+          {% assign health = site.data.health[hkey] %}
+          {% assign status = health.status | default: 'unknown' %}
+          {% if status == 'active' or status == 'maintained' %}
+            {% assign dot = 'dot-active' %}
+            {% assign row_class = '' %}
+          {% elsif status == 'quiet' %}
+            {% assign dot = 'dot-quiet' %}
+            {% assign row_class = '' %}
+          {% else %}
+            {% assign dot = 'dot-inactive' %}
+            {% assign row_class = 'inactive' %}
+          {% endif %}
+          <tr class="{{ row_class }}"
+              data-category="{{ cat.id }}"
+              data-name="{{ tool.name | downcase }}"
+              data-desc="{{ tool.description | downcase }}">
+            <td><span class="dot {{ dot }}" title="{{ status }}"></span></td>
+            <td class="tool-name"><a href="{{ tool.url }}" target="_blank" rel="noopener noreferrer">{{ tool.name }}</a></td>
+            <td class="tool-desc">{{ tool.description }}</td>
+            <td class="tool-stage">{{ cat.name }}</td>
+            <td class="tool-lang">{{ tool.language }}</td>
+          </tr>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+
+<footer class="footer">
+  <span class="legend-item"><span class="dot dot-active"></span> Active</span>
+  <span class="legend-item"><span class="dot dot-quiet"></span> Quiet</span>
+  <span class="legend-item"><span class="dot dot-inactive"></span> Inactive</span>
+  <span>Updated weekly via GitHub API.</span>
+</footer>
+
+<script>
+  const pills  = document.querySelectorAll('.pill');
+  const search = document.getElementById('search');
+  const rows   = document.querySelectorAll('#tool-list tr');
+  let activeFilter = 'all';
+
+  function applyFilters() {
+    const q = search.value.toLowerCase().trim();
+    rows.forEach(row => {
+      const catMatch  = activeFilter === 'all' || row.dataset.category === activeFilter;
+      const textMatch = !q || row.dataset.name.includes(q) || row.dataset.desc.includes(q);
+      row.classList.toggle('hidden', !(catMatch && textMatch));
+    });
+  }
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('selected'));
+      pill.classList.add('selected');
+      activeFilter = pill.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  search.addEventListener('input', applyFilters);
+</script>

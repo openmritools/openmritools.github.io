@@ -4,3 +4,10 @@
 #   description: one sentence — what it does, not why it matters
 #   url:         homepage or repo
 #   github:      owner/repo  (required for health checks)
+#   language:    primary implementation language
+
+- name: ANTs
+  description: Deformable image registration and segmentation toolkit for brain images.
+  url: https://github.com/ANTsX/ANTs
+  github: ANTsX/ANTs
+  language: C++

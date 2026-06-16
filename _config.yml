@@ -1,0 +1,9 @@
+title: MRI Tools
+description: The overview I wish existed when I started.
+baseurl: "/mritools"
+url: "https://henrfo.github.io"
+
+exclude:
+  - scripts/
+  - Gemfile
+  - Gemfile.lock

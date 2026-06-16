@@ -1,0 +1,26 @@
+- id: data_conversion
+  name: Data Conversion
+
+- id: qc
+  name: Quality Control
+
+- id: preprocessing
+  name: Preprocessing
+
+- id: registration_normalization
+  name: Registration & Normalization
+
+- id: statistical_analysis
+  name: Statistical Analysis
+
+- id: connectivity
+  name: Connectivity
+
+- id: visualization
+  name: Visualization
+
+- id: workflow_managers
+  name: Workflow Managers
+
+- id: data_sources
+  name: Data Sources

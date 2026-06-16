@@ -4,3 +4,10 @@
 #   description: one sentence — what it does, not why it matters
 #   url:         homepage or repo
 #   github:      owner/repo  (required for health checks)
+#   language:    primary implementation language
+
+- name: nilearn
+  description: Machine learning and statistical tools for neuroimaging data in Python.
+  url: https://github.com/nilearn/nilearn
+  github: nilearn/nilearn
+  language: Python

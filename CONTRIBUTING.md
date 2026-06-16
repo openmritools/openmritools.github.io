@@ -1,3 +1,9 @@
+---
+layout: default
+title: Contributing
+permalink: /contributing/
+---
+
 # Contributing
 
 ## Adding a tool
@@ -23,6 +29,7 @@ Each entry follows this format:
   description: One sentence. What it does, not why it matters.
   url: https://...
   github: owner/repo   # omit if not on GitHub
+  language: Python     # primary implementation language
 ```
 
 ## Rules

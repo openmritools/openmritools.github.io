@@ -4,3 +4,10 @@
 #   description: one sentence — what it does, not why it matters
 #   url:         homepage or repo
 #   github:      owner/repo  (required for health checks)
+#   language:    primary implementation language
+
+- name: MRIQC
+  description: Extracts image quality metrics from structural and functional MRI and produces visual reports.
+  url: https://github.com/nipreps/mriqc
+  github: nipreps/mriqc
+  language: Python

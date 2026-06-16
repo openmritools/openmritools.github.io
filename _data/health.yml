@@ -5,3 +5,39 @@
 #     last_commit: "YYYY-MM-DD"
 #     status: active | maintained | quiet | archived
 #     checked_at: "YYYY-MM-DDTHH:MM:SSZ"
+
+rordenlab-dcm2niix:
+  stars: 1247
+  last_commit: "2026-05-15"
+  status: active
+  checked_at: "2026-06-16T06:00:00Z"
+
+nipreps-mriqc:
+  stars: 628
+  last_commit: "2026-06-01"
+  status: active
+  checked_at: "2026-06-16T06:00:00Z"
+
+nipreps-fmriprep:
+  stars: 731
+  last_commit: "2026-06-10"
+  status: active
+  checked_at: "2026-06-16T06:00:00Z"
+
+ANTsX-ANTs:
+  stars: 1412
+  last_commit: "2025-11-20"
+  status: maintained
+  checked_at: "2026-06-16T06:00:00Z"
+
+nilearn-nilearn:
+  stars: 1143
+  last_commit: "2026-06-12"
+  status: active
+  checked_at: "2026-06-16T06:00:00Z"
+
+pauldmccarthy-fsleyes:
+  stars: 183
+  last_commit: "2024-09-10"
+  status: quiet
+  checked_at: "2026-06-16T06:00:00Z"

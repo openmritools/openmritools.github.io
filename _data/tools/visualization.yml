@@ -4,3 +4,10 @@
 #   description: one sentence — what it does, not why it matters
 #   url:         homepage or repo
 #   github:      owner/repo  (required for health checks)
+#   language:    primary implementation language
+
+- name: FSLeyes
+  description: MRI image viewer from the FSL team; supports most neuroimaging file formats.
+  url: https://github.com/pauldmccarthy/fsleyes
+  github: pauldmccarthy/fsleyes
+  language: Python

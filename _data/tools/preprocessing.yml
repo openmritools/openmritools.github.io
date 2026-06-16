@@ -4,3 +4,10 @@
 #   description: one sentence — what it does, not why it matters
 #   url:         homepage or repo
 #   github:      owner/repo  (required for health checks)
+#   language:    primary implementation language
+
+- name: fMRIPrep
+  description: End-to-end fMRI preprocessing pipeline with minimal configuration and detailed QC reports.
+  url: https://github.com/nipreps/fmriprep
+  github: nipreps/fmriprep
+  language: Python
