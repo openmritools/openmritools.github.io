@@ -73,7 +73,7 @@ body {
 /* ── Controls ── */
 
 .controls {
-  margin-top: 48px;
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -167,7 +167,7 @@ body {
   border-radius: 2px;
   outline: none;
   color: var(--text);
-  margin-top: 12px;
+  margin-top: 22px;
   margin-bottom: 12px;
 }
 
