@@ -125,19 +125,10 @@ title: MRI Tools
     resources:      ['data_sources']
   };
 
-  const NEW_DAYS = 60;
-  const now = new Date();
-
-  document.querySelectorAll('.new-label[data-added]').forEach(el => {
-    const added = new Date(el.dataset.added);
-    if (!isNaN(added) && (now - added) / 86400000 <= NEW_DAYS) {
-      el.textContent = 'new';
-    }
-  });
-
-  function isNew(row) {
-    const added = new Date(row.dataset.added);
-    return !isNaN(added) && (now - added) / 86400000 <= NEW_DAYS;
+  function formatAdded(dateStr) {
+    const d = new Date(dateStr);
+    if (isNaN(d)) return '';
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   }
 
   const categoryNames = {
@@ -176,20 +167,40 @@ title: MRI Tools
     const groupCats = isNewView ? null : groups[activeFilter];
     const allowed   = activeSubFilter ? [activeSubFilter] : groupCats;
 
+    // Clear all date labels first
+    document.querySelectorAll('.new-label').forEach(el => { el.textContent = ''; });
+
+    let top10 = null;
+    if (isNewView) {
+      // Sort all rows with a date by date desc, take top 10
+      top10 = new Set(
+        [...toolRows]
+          .filter(r => r.dataset.added)
+          .sort((a, b) => new Date(b.dataset.added) - new Date(a.dataset.added))
+          .slice(0, 10)
+      );
+    }
+
     let visible = 0;
     toolRows.forEach(row => {
-      const catMatch  = !allowed || allowed.includes(row.dataset.category);
-      const newMatch  = !isNewView || isNew(row);
+      const catMatch  = isNewView ? top10.has(row) : (!allowed || allowed.includes(row.dataset.category));
       const textMatch = !q || row.dataset.name.includes(q) || row.dataset.desc.includes(q);
       const langMatch = !activeLang || row.dataset.lang === activeLang;
-      const show = catMatch && newMatch && textMatch && langMatch;
+      const show = catMatch && textMatch && langMatch;
       row.classList.toggle('hidden', !show);
-      if (show) visible++;
+      if (show) {
+        visible++;
+        if (isNewView) {
+          const label = row.querySelector('.new-label');
+          if (label) label.textContent = formatAdded(row.dataset.added);
+        }
+      }
     });
 
     headers.forEach(header => {
       const cat = header.dataset.category;
-      const catAllowed = !allowed || allowed.includes(cat);
+      const catAllowed = isNewView ? [...top10].some(r => r.dataset.category === cat)
+                                   : (!allowed || allowed.includes(cat));
       const hasVisible = catAllowed && [...toolRows].some(
         r => r.dataset.category === cat && !r.classList.contains('hidden')
       );
