@@ -1,0 +1,11 @@
+# Training & Events
+
+- name: Neurohackademy
+  description: Summer institute in neuroimaging and data science at the University of Washington.
+  url: https://neurohackademy.org
+  date_added: 2026-06-16
+
+- name: OHBM Brainhack
+  description: Annual hackathon for collaborative neuroimaging projects, co-located with the OHBM annual meeting.
+  url: https://ohbm.github.io/hackathon
+  date_added: 2026-06-16

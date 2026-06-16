@@ -1,0 +1,11 @@
+# Standards & Protocols
+
+- name: ENIGMA Protocols
+  description: Standardized imaging protocols for cortical, subcortical, DTI, and VBM analysis used across ENIGMA working groups.
+  url: https://enigma.ini.usc.edu/protocols/imaging-protocols
+  date_added: 2026-06-16
+
+- name: protocols.io
+  description: Share and discover step-by-step research protocols with versioning and DOI assignment.
+  url: https://www.protocols.io
+  date_added: 2026-06-16

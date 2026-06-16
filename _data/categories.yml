@@ -28,8 +28,17 @@
 - id: datasets
   name: Datasets
 
+- id: data_discovery
+  name: Data Discovery
+
+- id: consortia
+  name: Consortia
+
+- id: standards_protocols
+  name: Standards & Protocols
+
 - id: preregistration
   name: Preregistration & Publishing
 
-- id: community
-  name: Community & Organizations
+- id: training_events
+  name: Training & Events

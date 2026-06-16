@@ -10,11 +10,6 @@
   url: https://aspredicted.org
   date_added: 2026-06-16
 
-- name: protocols.io
-  description: Share and discover step-by-step research protocols with versioning and DOI assignment.
-  url: https://www.protocols.io
-  date_added: 2026-06-16
-
 - name: bioRxiv
   description: Preprint server for biology and neuroscience; post before peer review to share findings early.
   url: https://www.biorxiv.org

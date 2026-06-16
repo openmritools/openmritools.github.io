@@ -1,0 +1,17 @@
+# Data Discovery
+
+- name: NeuroBagel
+  description: Federated search across neuroimaging datasets using semantic annotations and a common data model.
+  url: https://github.com/neurobagel
+  github: neurobagel/bagel-cli
+  date_added: 2026-06-16
+
+- name: MR-Hub
+  description: Community directory of open-source MRI reconstruction and simulation software, maintained by the ISMRM.
+  url: https://ismrm.github.io/mrhub
+  date_added: 2026-06-16
+
+- name: NeuroStars
+  description: Q&A forum for neuroinformatics, neuroimaging methods, and tool support.
+  url: https://neurostars.org
+  date_added: 2026-06-16
