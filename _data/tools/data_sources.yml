@@ -82,3 +82,27 @@
 - name: ENIGMA Protocols
   description: Standardized imaging protocols for cortical, subcortical, DTI, and VBM analysis used across ENIGMA working groups.
   url: https://enigma.ini.usc.edu/protocols/imaging-protocols
+
+- name: OHBM Open Science SIG
+  description: OHBM special interest group advancing open sharing of ideas, data, and tools in neuroimaging.
+  url: https://ohbm-open-science.github.io
+
+- name: OHBM Brainhack
+  description: Annual hackathon for collaborative neuroimaging projects, co-located with the OHBM annual meeting.
+  url: https://ohbm.github.io/hackathon
+
+- name: Neurohackademy
+  description: Summer institute in neuroimaging and data science at the University of Washington.
+  url: https://neurohackademy.org
+
+- name: ReproNim
+  description: NIH center for reproducible neuroimaging computation — training, tools, and standards.
+  url: https://www.repronim.org
+
+- name: INCF
+  description: International Neuroinformatics Coordinating Facility — standards, training, and infrastructure for neuroscience.
+  url: https://www.incf.org
+
+- name: CONP
+  description: Canadian Open Neuroscience Platform — data sharing and open science infrastructure for Canadian neuroimaging research.
+  url: https://conp.ca
