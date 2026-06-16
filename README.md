@@ -1,40 +1,13 @@
-# mritools
+# MRI Tools
 
-A community-driven directory of open-source MRI software, organized by workflow stage.
+A community-driven directory of open-source MRI software — automatically tracking what exists and what's still maintained.
 
-**Workflow stages:** Data Conversion → Quality Control → Preprocessing → Registration & Normalization → Statistical Analysis → Connectivity → Visualization → Workflow Managers → Data Sources
+**Live site:** [openmritools.github.io](https://openmritools.github.io)
 
-Tool health (last commit, stars, archived status) is updated automatically every week via GitHub Actions. Active tools rise; abandoned tools fade.
+## How it works
 
-## Structure
+Tools are stored as YAML files in `_data/tools/`. A weekly GitHub Actions cron job checks each tool's GitHub repo and updates health status automatically. The site is built with Jekyll and hosted on GitHub Pages.
 
-```
-_data/
-  tools/
-    data_conversion.yml
-    qc.yml
-    preprocessing.yml
-    registration_normalization.yml
-    statistical_analysis.yml
-    connectivity.yml
-    visualization.yml
-    workflow_managers.yml
-    data_sources.yml
-  health.yml          # auto-generated, do not edit
-scripts/
-  update_health.py    # run by the health check workflow
-.github/
-  workflows/
-    health_check.yml
-```
+## Contributing
 
-## Adding a tool
-
-See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Running health checks locally
-
-```bash
-pip install pyyaml requests
-GITHUB_TOKEN=your_token python scripts/update_health.py
-```
+See [CONTRIBUTING.md](CONTRIBUTING.md) or use the suggest form at [openmritools.github.io/contribute](https://openmritools.github.io/contribute).
