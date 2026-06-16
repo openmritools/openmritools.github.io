@@ -100,7 +100,8 @@ title: MRI Tools
               data-name="{{ tool.name | downcase }}"
               data-desc="{{ tool.description | downcase }}"
               data-added="{{ tool.date_added }}"
-              data-lang="{{ tool.language }}">
+              data-lang="{{ tool.language }}"
+              data-modality="{{ tool.modality }}">
             <td><span class="dot {{ dot }}" title="{{ status }}"></span></td>
             <td class="tool-name">
               <a href="{{ tool.url }}" target="_blank" rel="noopener noreferrer">{{ tool.name }}</a>{% if tool.date_added %}<span class="new-label" data-added="{{ tool.date_added }}"></span>{% endif %}

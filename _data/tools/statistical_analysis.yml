@@ -18,6 +18,7 @@
   github: nilearn/nilearn
   language: Python
   date_added: 2026-06-16
+  modality: fMRI
 
 - name: Fitlins
   description: Estimates first-level fMRI models specified in BIDS statistical model format.
@@ -25,6 +26,7 @@
   github: poldracklab/fitlins
   language: Python
   date_added: 2026-06-16
+  modality: fMRI
 
 - name: NiMARE
   description: Coordinate- and image-based neuroimaging meta-analysis in Python; successor to Neurosynth.
@@ -32,6 +34,7 @@
   github: neurostuff/NiMARE
   language: Python
   date_added: 2026-06-16
+  modality: fMRI
 
 - name: FSL Randomise
   description: Permutation-based nonparametric inference for neuroimaging group-level statistics.
@@ -58,6 +61,7 @@
   github: sundelinustc/IBMMA
   language: Python
   date_added: 2026-06-16
+  modality: structural
 
 - name: Neuromaps
   description: Maps brain annotations onto standard surfaces and compares them against transcriptomic and receptor reference atlases.
@@ -65,3 +69,20 @@
   github: netneurolab/neuromaps
   language: Python
   date_added: 2026-06-16
+  modality: multi
+
+- name: BrainSMASH
+  description: Generates spatially autocorrelation-preserving surrogate brain maps for null hypothesis testing of brain-behavior correlations.
+  url: https://github.com/murraylab/brainsmash
+  github: murraylab/brainsmash
+  language: Python
+  date_added: 2026-06-16
+  modality: multi
+
+- name: PALM
+  description: Permutation analysis of linear models for neuroimaging; supports complex designs, exchangeability blocks, sign-flipping, and TFCE.
+  url: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/PALM
+  github: andersonwinkler/PALM
+  language: MATLAB
+  date_added: 2026-06-16
+  modality: multi

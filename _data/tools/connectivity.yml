@@ -12,9 +12,34 @@
   github: PennLINC/xcp_d
   language: Python
   date_added: 2026-06-16
+  modality: fMRI
 
 - name: CONN
   description: MATLAB toolbox for functional connectivity with seed-based, ROI-to-ROI, and ICA analysis methods.
   url: https://www.nitrc.org/projects/conn
   language: MATLAB
   date_added: 2026-06-16
+  modality: fMRI
+
+- name: BrainSpace
+  description: Toolbox for gradient decomposition and manifold learning of functional and structural connectivity matrices.
+  url: https://github.com/MICA-MNI/BrainSpace
+  github: MICA-MNI/BrainSpace
+  language: Python/MATLAB
+  date_added: 2026-06-16
+  modality: fMRI
+
+- name: nibetaseries
+  description: Beta series estimation for task fMRI connectivity using least-squares separate or least-squares all approaches.
+  url: https://github.com/HBClab/NiBetaSeries
+  github: HBClab/NiBetaSeries
+  language: Python
+  date_added: 2026-06-16
+  modality: fMRI
+
+- name: ENIGMA Tractometry Toolbox
+  description: Standardized white matter tract-based morphometry protocol for multi-site diffusion MRI mega-analysis across ENIGMA working groups.
+  url: https://enigma.ini.usc.edu/protocols/imaging-protocols
+  language: Python
+  date_added: 2026-06-16
+  modality: diffusion

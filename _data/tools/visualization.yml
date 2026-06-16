@@ -12,6 +12,7 @@
   github: pauldmccarthy/fsleyes
   language: Python
   date_added: 2026-06-16
+  modality: multi
 
 - name: wb_view
   description: Connectome Workbench viewer for surface and volume neuroimaging data, designed for HCP-style CIFTI files.
@@ -19,6 +20,7 @@
   github: Washington-University/workbench
   language: C++
   date_added: 2026-06-16
+  modality: multi
 
 - name: Nilearn plotting
   description: Python functions for plotting brain maps, glass brains, and statistical overlays on MRI templates.
@@ -26,6 +28,7 @@
   github: nilearn/nilearn
   language: Python
   date_added: 2026-06-16
+  modality: fMRI
 
 - name: NiReports
   description: Visual reporting library that generates the QC HTML pages used by fMRIPrep and MRIQC.
@@ -33,6 +36,7 @@
   github: nipreps/nireports
   language: Python
   date_added: 2026-06-16
+  modality: multi
 
 - name: ITK-SNAP
   description: Interactive tool for segmentation of 3D medical images with manual editing and automatic active contour methods.
@@ -40,3 +44,12 @@
   github: pyushkevich/itksnap
   language: C++
   date_added: 2026-06-16
+  modality: multi
+
+- name: ggseg
+  description: R package for plotting brain atlas segmentations as ggplot2 geoms, supporting cortical and subcortical parcellations.
+  url: https://github.com/ggseg/ggseg
+  github: ggseg/ggseg
+  language: R
+  date_added: 2026-06-16
+  modality: structural

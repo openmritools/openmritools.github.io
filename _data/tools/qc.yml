@@ -12,6 +12,7 @@
   github: nipreps/mriqc
   language: Python
   date_added: 2026-06-16
+  modality: multi
 
 - name: mrQA
   description: Checks MRI datasets for protocol compliance and flags deviations in acquisition parameters.
@@ -19,3 +20,4 @@
   github: Open-Minds-Lab/mrQA
   language: Python
   date_added: 2026-06-16
+  modality: multi

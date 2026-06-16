@@ -12,6 +12,7 @@
   github: nipreps/fmriprep
   language: Python
   date_added: 2026-06-16
+  modality: fMRI
 
 - name: dMRIPrep
   description: Preprocessing pipeline for diffusion MRI following the fMRIPrep design framework.
@@ -19,6 +20,7 @@
   github: nipreps/dmriprep
   language: Python
   date_added: 2026-06-16
+  modality: diffusion
 
 - name: sMRIPrep
   description: Structural MRI preprocessing pipeline; used standalone or as the anatomical component of fMRIPrep.
@@ -26,6 +28,7 @@
   github: nipreps/smriprep
   language: Python
   date_added: 2026-06-16
+  modality: structural
 
 - name: Nibabies
   description: fMRIPrep adapted for infant brain MRI, with templates and workflows suited to developing brains.
@@ -33,6 +36,7 @@
   github: nipreps/nibabies
   language: Python
   date_added: 2026-06-16
+  modality: fMRI
 
 - name: HALFpipe
   description: Containerized fMRI pipeline wrapping fMRIPrep with smoothing, filtering, confound regression, and interactive QA.
@@ -40,30 +44,35 @@
   github: HALFpipe/HALFpipe
   language: Python
   date_added: 2026-06-16
+  modality: fMRI
 
 - name: FreeSurfer
   description: Cortical surface reconstruction, parcellation, and cortical thickness analysis from structural MRI.
   url: https://freesurfer.net
   language: C++
   date_added: 2026-06-16
+  modality: structural
 
 - name: CAT12
   description: SPM toolbox for voxel-based and surface-based morphometry of structural MRI data.
   url: https://neuro-jena.github.io/cat
   language: MATLAB
   date_added: 2026-06-16
+  modality: structural
 
 - name: FSL
   description: Comprehensive library for analysis of fMRI, structural, and diffusion MRI data.
   url: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki
   language: C++
   date_added: 2026-06-16
+  modality: multi
 
 - name: AFNI
   description: Suite of programs for fMRI preprocessing, regression modelling, and statistical analysis.
   url: https://afni.nimh.nih.gov
   language: C
   date_added: 2026-06-16
+  modality: fMRI
 
 - name: Tedana
   description: Multi-echo fMRI denoising — separates BOLD signal from noise using T2* decay across echo times.
@@ -71,6 +80,7 @@
   github: ME-ICA/tedana
   language: Python
   date_added: 2026-06-16
+  modality: fMRI
 
 - name: FastSurfer
   description: Deep learning-based cortical surface reconstruction and parcellation; produces FreeSurfer-compatible output in minutes.
@@ -78,12 +88,14 @@
   github: Deep-MI/FastSurfer
   language: Python
   date_added: 2026-06-16
+  modality: structural
 
 - name: SynthStrip
   description: Skull-stripping tool using deep learning; works across contrasts and resolutions without retraining.
   url: https://surfer.nmr.mgh.harvard.edu/docs/synthstrip
   language: Python
   date_added: 2026-06-16
+  modality: multi
 
 - name: SynthSeg
   description: Contrast-agnostic brain segmentation via deep learning; handles any MRI contrast without fine-tuning.
@@ -91,6 +103,7 @@
   github: BBillot/SynthSeg
   language: Python
   date_added: 2026-06-16
+  modality: multi
 
 - name: C-PAC
   description: Configurable Pipeline for the Analysis of Connectomes — a flexible fMRIPrep alternative with GUI configuration.
@@ -98,6 +111,7 @@
   github: FCP-INDI/C-PAC
   language: Python
   date_added: 2026-06-16
+  modality: fMRI
 
 - name: ASLPrep
   description: Arterial spin labeling preprocessing pipeline from the NiPreps family, producing CBF maps and QC reports.
@@ -105,3 +119,28 @@
   github: PennLINC/aslprep
   language: Python
   date_added: 2026-06-16
+  modality: ASL
+
+- name: Mindboggle
+  description: Automated brain morphometry and cortical labeling; computes shape measures from FreeSurfer and ANTs surface outputs.
+  url: https://github.com/nipy/mindboggle
+  github: nipy/mindboggle
+  language: Python
+  date_added: 2026-06-16
+  modality: structural
+
+- name: Nighres
+  description: High-resolution brain MRI processing tools optimized for 7T data, including laminar and columnar analysis.
+  url: https://github.com/nighres/nighres
+  github: nighres/nighres
+  language: Python
+  date_added: 2026-06-16
+  modality: structural
+
+- name: fMRIDenoise
+  description: Automated pipeline for benchmarking fMRI denoising strategies across multiple confound models and QC metrics.
+  url: https://github.com/compneuro-ncu/fmridenoise
+  github: compneuro-ncu/fmridenoise
+  language: Python
+  date_added: 2026-06-16
+  modality: fMRI

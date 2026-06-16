@@ -12,6 +12,7 @@
   github: ANTsX/ANTs
   language: C++
   date_added: 2026-06-16
+  modality: multi
 
 - name: FSL FLIRT/FNIRT
   description: FSL tools for linear (FLIRT) and nonlinear (FNIRT) brain image registration.
@@ -25,3 +26,4 @@
   github: templateflow/templateflow
   language: Python
   date_added: 2026-06-16
+  modality: multi

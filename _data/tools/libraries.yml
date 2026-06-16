@@ -12,6 +12,7 @@
   github: bids-standard/pybids
   language: Python
   date_added: 2026-06-16
+  modality: multi
 
 - name: Nibabel
   description: Python library for reading and writing common neuroimaging file formats including NIfTI, GIFTI, and CIFTI.
@@ -19,3 +20,4 @@
   github: nipy/nibabel
   language: Python
   date_added: 2026-06-16
+  modality: multi

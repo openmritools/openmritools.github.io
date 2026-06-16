@@ -12,6 +12,7 @@
   github: nipoppy/nipoppy
   language: Python
   date_added: 2026-06-16
+  modality: multi
 
 - name: Nipype
   description: Pipeline framework wrapping FSL, SPM, FreeSurfer, and others into reproducible Python workflows.
@@ -19,6 +20,7 @@
   github: nipy/nipype
   language: Python
   date_added: 2026-06-16
+  modality: multi
 
 - name: Brainlife.io
   description: Free cloud platform for running containerized neuroimaging pipelines with provenance tracking.
@@ -32,6 +34,7 @@
   github: NeuroDesk/neurodesktop
   language: Docker
   date_added: 2026-06-16
+  modality: multi
 
 - name: DataLad
   description: Distributed data management system for version-controlled datasets and reproducible analyses.
@@ -39,3 +42,19 @@
   github: datalad/datalad
   language: Python
   date_added: 2026-06-16
+  modality: multi
+
+- name: Clinica
+  description: Software platform for clinical neuroimaging studies, with standardized pipelines for structural, diffusion, and PET data.
+  url: https://aramislab.paris.inria.fr/clinica/docs/public/latest
+  github: aramis-lab/clinica
+  language: Python
+  date_added: 2026-06-16
+  modality: multi
+
+- name: QuNex
+  description: Integrative platform for HCP-style processing of structural, functional, and diffusion MRI across large cohorts.
+  url: https://qunex.yale.edu
+  language: Python
+  date_added: 2026-06-16
+  modality: multi
