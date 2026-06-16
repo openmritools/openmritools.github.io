@@ -57,11 +57,17 @@ body {
   letter-spacing: -0.2px;
 }
 
-.site-tagline {
-  margin-top: 12px;
-  text-align: center;
-  font-size: 15px;
+.site-subtitle {
+  margin-top: 4px;
   color: var(--muted);
+  font-size: 14px;
+}
+
+.site-subline {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
 }
 
 /* ── Controls ── */
