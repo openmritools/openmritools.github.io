@@ -30,15 +30,16 @@ body {
 /* ── Header ── */
 
 .site-header-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: baseline;
-  justify-content: space-between;
 }
 
 .site-nav {
   display: flex;
   gap: 16px;
   font-size: 12px;
+  justify-self: end;
 }
 
 .site-nav a {
@@ -57,17 +58,16 @@ body {
   letter-spacing: -0.2px;
 }
 
+.site-tagline {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
 .site-subtitle {
   margin-top: 4px;
   color: var(--muted);
   font-size: 14px;
-}
-
-.site-subline {
-  margin-top: 2px;
-  font-size: 13px;
-  color: var(--muted);
-  font-style: italic;
 }
 
 /* ── Controls ── */
