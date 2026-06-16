@@ -74,3 +74,11 @@
 - name: PROSPERO
   description: International registry for preregistering systematic reviews and meta-analyses before they begin.
   url: https://www.crd.york.ac.uk/prospero
+
+- name: ENIGMA
+  description: Global consortium for large-scale neuroimaging genetics meta-analyses spanning 45+ working groups and countries.
+  url: https://enigma.ini.usc.edu
+
+- name: ENIGMA Protocols
+  description: Standardized imaging protocols for cortical, subcortical, DTI, and VBM analysis used across ENIGMA working groups.
+  url: https://enigma.ini.usc.edu/protocols/imaging-protocols
