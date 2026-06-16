@@ -281,14 +281,13 @@ body {
   text-underline-offset: 2px;
 }
 
-.new-label {
-  margin-left: 6px;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--muted);
-  vertical-align: middle;
+
+.col-date {
+  display: none;
+}
+
+.tool-table.show-dates .col-date {
+  display: table-cell;
 }
 
 .tool-desc,
@@ -298,8 +297,14 @@ body {
 }
 
 .tool-stage,
-.tool-lang {
+.tool-lang,
+.col-date {
   white-space: nowrap;
+}
+
+.col-date {
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .lang-th {

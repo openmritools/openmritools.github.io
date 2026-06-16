@@ -62,6 +62,7 @@ title: MRI Tools
       <th aria-label="Health"></th>
       <th>Tool</th>
       <th>Description</th>
+      <th class="col-date">Added</th>
       <th class="lang-th">
         <button class="lang-header-btn" id="lang-header-btn">
           <span id="lang-header-label">Language</span> ▾
@@ -92,7 +93,7 @@ title: MRI Tools
       {% assign tools = site.data.tools[cat.id] %}
       {% if tools %}
         <tr class="section-header" data-category="{{ cat.id }}">
-          <td colspan="4">{{ cat.name }}</td>
+          <td colspan="5">{{ cat.name }}</td>
         </tr>
         {% for tool in tools %}
           {% if tool.github %}
@@ -126,9 +127,10 @@ title: MRI Tools
               data-modality="{{ tool.modality }}">
             <td><span class="dot {{ dot }}" title="{{ status }}"></span></td>
             <td class="tool-name">
-              <a href="{{ tool.url }}" target="_blank" rel="noopener noreferrer">{{ tool.name }}</a>{% if tool.date_added %}<span class="new-label" data-added="{{ tool.date_added }}"></span>{% endif %}
+              <a href="{{ tool.url }}" target="_blank" rel="noopener noreferrer">{{ tool.name }}</a>
             </td>
             <td class="tool-desc">{{ tool.description }}</td>
+            <td class="col-date" data-date="{{ tool.date_added }}"></td>
             <td class="tool-lang">{{ tool.language }}</td>
           </tr>
         {% endfor %}
@@ -147,11 +149,15 @@ title: MRI Tools
     resources:      ['data_sources']
   };
 
-  function formatAdded(dateStr) {
-    const d = new Date(dateStr);
-    if (isNaN(d)) return '';
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  }
+  const toolTable = document.querySelector('.tool-table');
+
+  // Pre-populate date cells once on load
+  document.querySelectorAll('.col-date[data-date]').forEach(cell => {
+    const d = new Date(cell.dataset.date);
+    if (!isNaN(d)) {
+      cell.textContent = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+  });
 
   const categoryNames = {
     {% for cat in site.data.categories %}'{{ cat.id }}': '{{ cat.name }}',
@@ -211,12 +217,10 @@ title: MRI Tools
     const groupCats = isNewView ? null : groups[activeFilter];
     const allowed   = activeSubFilter ? [activeSubFilter] : groupCats;
 
-    // Clear all date labels first
-    document.querySelectorAll('.new-label').forEach(el => { el.textContent = ''; });
+    toolTable.classList.toggle('show-dates', isNewView);
 
     let top10 = null;
     if (isNewView) {
-      // Sort all rows with a date by date desc, take top 10
       top10 = new Set(
         [...toolRows]
           .filter(r => r.dataset.added)
@@ -232,13 +236,7 @@ title: MRI Tools
       const langMatch = !activeLang || row.dataset.lang === activeLang;
       const show = catMatch && textMatch && langMatch;
       row.classList.toggle('hidden', !show);
-      if (show) {
-        visible++;
-        if (isNewView) {
-          const label = row.querySelector('.new-label');
-          if (label) label.textContent = formatAdded(row.dataset.added);
-        }
-      }
+      if (show) visible++;
     });
 
     headers.forEach(header => {
