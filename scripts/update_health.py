@@ -2,76 +2,112 @@
 Reads _data/tools/*.yml, queries the GitHub API for each tool with a
 `github: owner/repo` field, and writes health metadata to _data/health.yml.
 
-Status classification:
-  active     — last commit within 6 months
-  maintained — last commit within 2 years
-  quiet      — last commit within 5 years
-  dormant    — last commit older than 5 years
-  archived   — repository is archived on GitHub
+Status classification (based on last push date):
+  active   — committed within the last 6 months
+  quiet    — committed 6–24 months ago
+  inactive — no commit in 2+ years, or repository is archived on GitHub
+
+The key in health.yml is the github slug with '/' replaced by '-',
+matching the lookup used in index.html:
+  {{ tool.github | replace: '/', '-' }}
 """
 
 import os
+import sys
 import glob
 import yaml
 import requests
 from datetime import datetime, timezone, timedelta
+from pathlib import Path
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-HEADERS = {"Authorization": f"Bearer {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
-API = "https://api.github.com/repos/{}"
+if not GITHUB_TOKEN:
+    print("Warning: GITHUB_TOKEN not set — unauthenticated requests are rate-limited to 60/hour",
+          file=sys.stderr)
 
-NOW = datetime.now(timezone.utc)
-THRESHOLDS = {
-    "active":     timedelta(days=180),
-    "maintained": timedelta(days=730),
-    "quiet":      timedelta(days=1825),
+HEADERS = {
+    "Accept": "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28",
 }
+if GITHUB_TOKEN:
+    HEADERS["Authorization"] = f"Bearer {GITHUB_TOKEN}"
+
+API_BASE = "https://api.github.com/repos/{}"
+NOW = datetime.now(timezone.utc)
+
+SIX_MONTHS   = timedelta(days=183)
+TWO_YEARS    = timedelta(days=730)
 
 
-def classify(last_push: datetime, is_archived: bool) -> str:
-    if is_archived:
-        return "archived"
-    age = NOW - last_push
-    for status, threshold in THRESHOLDS.items():
-        if age <= threshold:
-            return status
-    return "dormant"
+def classify(pushed_at: datetime, archived: bool) -> str:
+    if archived:
+        return "inactive"
+    age = NOW - pushed_at
+    if age <= SIX_MONTHS:
+        return "active"
+    if age <= TWO_YEARS:
+        return "quiet"
+    return "inactive"
 
 
-def check_repo(github_slug: str) -> dict:
-    r = requests.get(API.format(github_slug), headers=HEADERS, timeout=10)
-    r.raise_for_status()
+def fetch_repo(slug: str) -> dict | None:
+    try:
+        r = requests.get(API_BASE.format(slug), headers=HEADERS, timeout=15)
+        if r.status_code == 404:
+            print(f"    not found (404)")
+            return None
+        r.raise_for_status()
+    except requests.RequestException as e:
+        print(f"    request failed — {e}")
+        return None
+
     data = r.json()
-    last_push = datetime.fromisoformat(data["pushed_at"].replace("Z", "+00:00"))
+    pushed_at = datetime.fromisoformat(data["pushed_at"].replace("Z", "+00:00"))
     return {
-        "stars": data["stargazers_count"],
-        "last_commit": last_push.strftime("%Y-%m-%d"),
-        "status": classify(last_push, data["archived"]),
-        "checked_at": NOW.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "stars":       data["stargazers_count"],
+        "last_commit": pushed_at.strftime("%Y-%m-%d"),
+        "status":      classify(pushed_at, data["archived"]),
+        "checked_at":  NOW.strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
 
 
-def main():
-    health = {}
-    tool_files = glob.glob("_data/tools/*.yml")
-
-    for path in tool_files:
+def load_slugs() -> list[tuple[str, str]]:
+    """Return [(display_name, owner/repo), ...] for all tools with a github field."""
+    results = []
+    for path in sorted(Path("_data/tools").glob("*.yml")):
         with open(path) as f:
             tools = yaml.safe_load(f) or []
+        if not isinstance(tools, list):
+            continue
         for tool in tools:
             slug = tool.get("github")
-            if not slug:
-                continue
-            key = slug.replace("/", "-")
-            try:
-                health[key] = check_repo(slug)
-                print(f"  {slug}: {health[key]['status']}")
-            except Exception as e:
-                print(f"  {slug}: error — {e}")
+            if slug:
+                results.append((tool.get("name", slug), slug))
+    return results
 
-    with open("_data/health.yml", "w") as f:
+
+def main():
+    tools = load_slugs()
+    print(f"Checking {len(tools)} tools with GitHub repos...")
+
+    health = {}
+    for name, slug in tools:
+        key = slug.replace("/", "-")
+        print(f"  {name} ({slug})...", end=" ", flush=True)
+        result = fetch_repo(slug)
+        if result:
+            health[key] = result
+            print(f"{result['status']}  [{result['last_commit']}  ★{result['stars']}]")
+        else:
+            print("skipped")
+
+    out = Path("_data/health.yml")
+    with open(out, "w") as f:
         f.write("# Auto-generated by scripts/update_health.py — do not edit by hand.\n")
-        yaml.dump(health, f, default_flow_style=False, allow_unicode=True)
+        f.write(f"# Last run: {NOW.strftime('%Y-%m-%dT%H:%M:%SZ')}\n")
+        yaml.dump(health, f, default_flow_style=False, allow_unicode=True, sort_keys=True)
+
+    print(f"\nWrote {len(health)} entries to {out}")
 
 
 if __name__ == "__main__":

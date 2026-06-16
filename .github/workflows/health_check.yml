@@ -3,7 +3,7 @@ name: Update Tool Health
 on:
   schedule:
     - cron: "0 6 * * 1"  # every Monday at 06:00 UTC
-  workflow_dispatch:       # allow manual trigger
+  workflow_dispatch:       # allow manual trigger from the Actions tab
 
 jobs:
   update-health:
@@ -21,15 +21,15 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml requests
 
-      - name: Update health data
+      - name: Run health check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/update_health.py
 
-      - name: Commit updated health data
+      - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add _data/health.yml
-          git diff --staged --quiet || git commit -m "chore: update tool health data"
+          git diff --staged --quiet || git commit -m "chore: update tool health data [skip ci]"
           git push

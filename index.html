@@ -63,6 +63,9 @@ title: MRI Tools
           {% elsif status == 'quiet' %}
             {% assign dot = 'dot-quiet' %}
             {% assign row_class = '' %}
+          {% elsif status == 'inactive' %}
+            {% assign dot = 'dot-inactive' %}
+            {% assign row_class = 'inactive' %}
           {% else %}
             {% assign dot = 'dot-inactive' %}
             {% assign row_class = '' %}
