@@ -6,7 +6,7 @@ Edit the appropriate file in `_data/tools/`:
 
 | File | Stage |
 |------|-------|
-| `bids_conversion.yml` | DICOM → BIDS |
+| `data_conversion.yml` | Data conversion |
 | `qc.yml` | Quality control |
 | `preprocessing.yml` | Preprocessing |
 | `analysis.yml` | Analysis |

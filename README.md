@@ -2,7 +2,7 @@
 
 A community-driven directory of open-source MRI software, organized by workflow stage.
 
-**Workflow stages:** BIDS Conversion → Quality Control → Preprocessing → Analysis → Visualization
+**Workflow stages:** Data Conversion → Quality Control → Preprocessing → Analysis → Visualization
 
 Tool health (last commit, stars, archived status) is updated automatically every week via GitHub Actions. Active tools rise; abandoned tools fade.
 
@@ -11,7 +11,7 @@ Tool health (last commit, stars, archived status) is updated automatically every
 ```
 _data/
   tools/
-    bids_conversion.yml
+    data_conversion.yml
     qc.yml
     preprocessing.yml
     analysis.yml
