@@ -6,11 +6,15 @@ Edit the appropriate file in `_data/tools/`:
 
 | File | Stage |
 |------|-------|
-| `data_conversion.yml` | Data conversion |
-| `qc.yml` | Quality control |
+| `data_conversion.yml` | Data Conversion |
+| `qc.yml` | Quality Control |
 | `preprocessing.yml` | Preprocessing |
-| `analysis.yml` | Analysis |
+| `registration_normalization.yml` | Registration & Normalization |
+| `statistical_analysis.yml` | Statistical Analysis |
+| `connectivity.yml` | Connectivity |
 | `visualization.yml` | Visualization |
+| `workflow_managers.yml` | Workflow Managers |
+| `data_sources.yml` | Data Sources |
 
 Each entry follows this format:
 

@@ -2,7 +2,7 @@
 
 A community-driven directory of open-source MRI software, organized by workflow stage.
 
-**Workflow stages:** Data Conversion → Quality Control → Preprocessing → Analysis → Visualization
+**Workflow stages:** Data Conversion → Quality Control → Preprocessing → Registration & Normalization → Statistical Analysis → Connectivity → Visualization → Workflow Managers → Data Sources
 
 Tool health (last commit, stars, archived status) is updated automatically every week via GitHub Actions. Active tools rise; abandoned tools fade.
 
@@ -14,8 +14,12 @@ _data/
     data_conversion.yml
     qc.yml
     preprocessing.yml
-    analysis.yml
+    registration_normalization.yml
+    statistical_analysis.yml
+    connectivity.yml
     visualization.yml
+    workflow_managers.yml
+    data_sources.yml
   health.yml          # auto-generated, do not edit
 scripts/
   update_health.py    # run by the health check workflow
