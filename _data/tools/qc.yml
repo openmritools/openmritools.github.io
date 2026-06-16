@@ -13,7 +13,7 @@
   language: Python
 
 - name: mrQA
-  description: Checks BIDS datasets for protocol compliance and flags deviations in acquisition parameters.
-  url: https://github.com/Open-MRI-Collective/mrQA
-  github: Open-MRI-Collective/mrQA
+  description: Checks MRI datasets for protocol compliance and flags deviations in acquisition parameters.
+  url: https://github.com/Open-Minds-Lab/mrQA
+  github: Open-Minds-Lab/mrQA
   language: Python

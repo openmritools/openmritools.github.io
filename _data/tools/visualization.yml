@@ -7,14 +7,14 @@
 #   language:    primary implementation language
 
 - name: FSLeyes
-  description: MRI image viewer from the FSL team; supports most neuroimaging file formats including NIfTI and CIFTI.
+  description: Image viewer from the FSL team for overlaying brain images, statistical maps, and atlases.
   url: https://github.com/pauldmccarthy/fsleyes
   github: pauldmccarthy/fsleyes
   language: Python
 
 - name: wb_view
-  description: Connectome Workbench viewer for surface and volume neuroimaging data, especially HCP-style CIFTI files.
-  url: https://github.com/Washington-University/workbench
+  description: Connectome Workbench viewer for surface and volume neuroimaging data, designed for HCP-style CIFTI files.
+  url: https://www.humanconnectome.org/software/connectome-workbench
   github: Washington-University/workbench
   language: C++
 
@@ -22,4 +22,10 @@
   description: Python functions for plotting brain maps, glass brains, and statistical overlays on MRI templates.
   url: https://github.com/nilearn/nilearn
   github: nilearn/nilearn
+  language: Python
+
+- name: NiReports
+  description: Visual reporting library that generates the QC HTML pages used by fMRIPrep and MRIQC.
+  url: https://github.com/nipreps/nireports
+  github: nipreps/nireports
   language: Python

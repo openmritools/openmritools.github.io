@@ -14,5 +14,11 @@
 
 - name: FSL FLIRT/FNIRT
   description: FSL tools for linear (FLIRT) and nonlinear (FNIRT) brain image registration.
-  url: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSL
+  url: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki
   language: C++
+
+- name: Templateflow
+  description: Version-controlled archive of brain MRI templates and atlases with a Python API for programmatic access.
+  url: https://github.com/templateflow/templateflow
+  github: templateflow/templateflow
+  language: Python

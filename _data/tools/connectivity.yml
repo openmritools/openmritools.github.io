@@ -7,12 +7,12 @@
 #   language:    primary implementation language
 
 - name: XCP-D
-  description: Post-processing pipeline for fMRI functional connectivity — denoising, parcellation, and network metrics.
+  description: Post-processing pipeline for functional connectivity from fMRIPrep outputs — denoising, parcellation, and network metrics.
   url: https://github.com/PennLINC/xcp_d
   github: PennLINC/xcp_d
   language: Python
 
-- name: CONN Toolbox
-  description: MATLAB toolbox for functional connectivity MRI analysis, including ROI-to-ROI and seed-based methods.
-  url: https://web.conn-toolbox.org
+- name: CONN
+  description: MATLAB toolbox for functional connectivity with seed-based, ROI-to-ROI, and ICA analysis methods.
+  url: https://www.nitrc.org/projects/conn
   language: MATLAB

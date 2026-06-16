@@ -13,19 +13,25 @@
   language: C++
 
 - name: HeuDiConv
-  description: DICOM-to-BIDS converter that uses user-defined heuristics to handle complex naming schemes.
+  description: Flexible DICOM-to-BIDS converter using user-defined heuristic files to handle complex naming schemes.
   url: https://github.com/nipy/heudiconv
   github: nipy/heudiconv
   language: Python
 
 - name: BIDScoin
-  description: Converts MRI data to BIDS via a GUI-configurable mapping; supports multiple input formats.
+  description: DICOM-to-BIDS conversion with a GUI-configurable mapping and a plugin system.
   url: https://github.com/Donders-Institute/bidscoin
   github: Donders-Institute/bidscoin
   language: Python
 
 - name: ReproIn
-  description: HeuDiConv heuristic and naming convention for fully automated, reproducible DICOM-to-BIDS conversion.
+  description: Convention and scanner setup for fully automatic BIDS-ready data organization at acquisition time.
   url: https://github.com/ReproNim/reproin
   github: ReproNim/reproin
   language: Python
+
+- name: BIDS Validator
+  description: Checks whether a dataset complies with the BIDS standard; run before sharing or submitting data.
+  url: https://github.com/bids-standard/bids-validator
+  github: bids-standard/bids-validator
+  language: JavaScript

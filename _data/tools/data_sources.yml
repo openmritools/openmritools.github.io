@@ -2,34 +2,43 @@
 # Fields:
 #   name:        display name
 #   description: one sentence — what it does, not why it matters
-#   url:         homepage or repo
-#   github:      owner/repo  (required for health checks; omit for data repositories)
+#   url:         homepage
+#   github:      owner/repo  (omit for data repositories without a meaningful GitHub presence)
 
 - name: OpenNeuro
-  description: Open platform for sharing BIDS-formatted neuroimaging datasets; over 1,000 public datasets.
+  description: Free platform for sharing and downloading BIDS-formatted neuroimaging datasets; over 1,000 public datasets.
   url: https://openneuro.org
   github: OpenNeuroOrg/openneuro
 
-- name: UK Biobank
-  description: Population-scale biomedical database with brain MRI from ~100,000 participants; access requires application.
-  url: https://www.ukbiobank.ac.uk
+- name: NeuroVault
+  description: Repository for sharing unthresholded statistical brain maps from published studies.
+  url: https://neurovault.org
 
-- name: HCP
-  description: Human Connectome Project — high-resolution structural, functional, and diffusion MRI from 1,200 healthy adults.
+- name: NeuroBagel
+  description: Federated search across neuroimaging datasets using semantic annotations and a common data model.
+  url: https://github.com/neurobagel
+  github: neurobagel/bagel-cli
+
+- name: Human Connectome Project
+  description: High-resolution structural, functional, and diffusion MRI from 1,200 healthy adults.
   url: https://www.humanconnectome.org
 
 - name: ADNI
-  description: Alzheimer's Disease Neuroimaging Initiative — longitudinal MRI and PET data for Alzheimer's research.
+  description: Longitudinal MRI and PET data from participants across the Alzheimer's disease spectrum.
   url: https://adni.loni.usc.edu
 
 - name: OASIS
-  description: Open Access Series of Imaging Studies — cross-sectional and longitudinal structural MRI across the lifespan.
+  description: Cross-sectional and longitudinal structural brain MRI datasets for aging and dementia research.
   url: https://www.oasis-brains.org
 
 - name: IXI
-  description: Information eXtraction from Images dataset — ~600 structural MRI scans from healthy subjects.
+  description: Around 600 structural MRI scans from healthy subjects collected at three London hospitals.
   url: https://brain-development.org/ixi-dataset
 
 - name: ABCD
-  description: Adolescent Brain Cognitive Development study — longitudinal MRI from ~11,000 children across the US.
+  description: Longitudinal brain imaging study tracking 10,000+ adolescents across the US.
   url: https://abcdstudy.org
+
+- name: UK Biobank
+  description: Population-level brain imaging from 100,000+ UK participants; access requires application.
+  url: https://www.ukbiobank.ac.uk

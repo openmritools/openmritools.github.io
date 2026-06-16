@@ -7,24 +7,30 @@
 #   language:    primary implementation language
 
 - name: Nipoppy
-  description: Framework for standardized organization and processing of neuroimaging datasets across sites and pipelines.
+  description: Manages the full workflow from raw data through BIDS conversion, pipeline execution, and extraction.
   url: https://github.com/nipoppy/nipoppy
   github: nipoppy/nipoppy
   language: Python
 
 - name: Nipype
-  description: Python interface to heterogeneous neuroimaging tools; enables building reproducible multi-tool pipelines.
+  description: Pipeline framework wrapping FSL, SPM, FreeSurfer, and others into reproducible Python workflows.
   url: https://github.com/nipy/nipype
   github: nipy/nipype
   language: Python
 
 - name: Brainlife.io
-  description: Cloud platform for running containerized neuroimaging pipelines on open datasets without local compute.
+  description: Free cloud platform for running containerized neuroimaging pipelines with provenance tracking.
   url: https://brainlife.io
-  language: JavaScript
+  language: Web
 
 - name: Neurodesk
-  description: Containerized neuroimaging environment providing a browser-accessible desktop with 100+ tools pre-installed.
+  description: Containerized neuroimaging desktop environment with 100+ analysis tools, accessible via browser.
   url: https://github.com/NeuroDesk/neurodesktop
   github: NeuroDesk/neurodesktop
-  language: Shell
+  language: Docker
+
+- name: DataLad
+  description: Distributed data management system for version-controlled datasets and reproducible analyses.
+  url: https://github.com/datalad/datalad
+  github: datalad/datalad
+  language: Python
