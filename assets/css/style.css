@@ -194,6 +194,71 @@ body {
   white-space: nowrap;
 }
 
+/* ── Suggest form ── */
+
+.suggest-form {
+  margin-top: 36px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.optional {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.field input,
+.field textarea {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  padding: 7px 8px;
+  outline: none;
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: #aaaaaa;
+}
+
+.submit-btn {
+  align-self: flex-start;
+  font-family: inherit;
+  font-size: 13px;
+  padding: 6px 16px;
+  border: 1px solid var(--text);
+  border-radius: 2px;
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #333;
+  border-color: #333;
+}
+
 /* ── Footer ── */
 
 .footer {

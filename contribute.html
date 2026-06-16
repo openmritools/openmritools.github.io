@@ -1,0 +1,38 @@
+---
+layout: default
+title: Suggest a tool
+permalink: /contribute/
+---
+
+<header>
+  <h1 class="site-title">Suggest a tool</h1>
+  <p class="site-subtitle">Know something that should be listed? Tell us.</p>
+</header>
+
+<form class="suggest-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST">
+  <div class="field">
+    <label for="tool-name">Tool name</label>
+    <input id="tool-name" type="text" name="tool_name" required autocomplete="off">
+  </div>
+
+  <div class="field">
+    <label for="tool-url">URL</label>
+    <input id="tool-url" type="url" name="tool_url" placeholder="https://" required autocomplete="off">
+  </div>
+
+  <div class="field">
+    <label for="tool-desc">What does it do?</label>
+    <textarea id="tool-desc" name="description" rows="4" placeholder="One or two sentences. What it does, not why it matters."></textarea>
+  </div>
+
+  <div class="field">
+    <label for="contact">Your email or GitHub username <span class="optional">(optional)</span></label>
+    <input id="contact" type="text" name="contact" autocomplete="off">
+  </div>
+
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+<footer class="footer">
+  <a href="{{ '/' | relative_url }}">← Back to directory</a>
+</footer>
