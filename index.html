@@ -20,27 +20,7 @@ title: MRI Tools
     <button class="pill" data-filter="resources">Resources & Data</button>
   </div>
   <div class="sub-pills" id="sub-pills"></div>
-  <div class="search-row">
-    <input class="search" id="search" type="search" placeholder="Search tools…" autocomplete="off">
-    <select id="lang-filter" class="lang-select">
-      <option value="">All languages</option>
-      {%- assign all_langs = '' | split: '' -%}
-      {%- for cat in site.data.categories -%}
-        {%- assign tools = site.data.tools[cat.id] -%}
-        {%- for tool in tools -%}
-          {%- if tool.language -%}
-            {%- unless all_langs contains tool.language -%}
-              {%- assign all_langs = all_langs | push: tool.language -%}
-            {%- endunless -%}
-          {%- endif -%}
-        {%- endfor -%}
-      {%- endfor -%}
-      {%- assign sorted_langs = all_langs | sort -%}
-      {%- for lang in sorted_langs -%}
-      <option value="{{ lang }}">{{ lang }}</option>
-      {%- endfor -%}
-    </select>
-  </div>
+  <input class="search" id="search" type="search" placeholder="Search tools…" autocomplete="off">
 </div>
 
 <div class="meta">
@@ -68,7 +48,26 @@ title: MRI Tools
       <th aria-label="Health"></th>
       <th>Tool</th>
       <th>Description</th>
-      <th>Language</th>
+      <th>
+        <select id="lang-filter" class="lang-select">
+          <option value="">Language</option>
+          {%- assign all_langs = '' | split: '' -%}
+          {%- for cat in site.data.categories -%}
+            {%- assign tools = site.data.tools[cat.id] -%}
+            {%- for tool in tools -%}
+              {%- if tool.language -%}
+                {%- unless all_langs contains tool.language -%}
+                  {%- assign all_langs = all_langs | push: tool.language -%}
+                {%- endunless -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+          {%- assign sorted_langs = all_langs | sort -%}
+          {%- for lang in sorted_langs -%}
+          <option value="{{ lang }}">{{ lang }}</option>
+          {%- endfor -%}
+        </select>
+      </th>
     </tr>
   </thead>
   <tbody id="tool-list">

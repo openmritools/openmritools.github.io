@@ -12,9 +12,11 @@ matching the lookup used in index.html:
   {{ tool.github | replace: '/', '-' }}
 """
 
+from __future__ import annotations
+
 import os
 import sys
-import glob
+import time
 import yaml
 import requests
 from datetime import datetime, timezone, timedelta
@@ -22,7 +24,7 @@ from pathlib import Path
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 if not GITHUB_TOKEN:
-    print("Warning: GITHUB_TOKEN not set — unauthenticated requests are rate-limited to 60/hour",
+    print("Warning: GITHUB_TOKEN not set — unauthenticated requests rate-limited to 60/hour",
           file=sys.stderr)
 
 HEADERS = {
@@ -32,11 +34,10 @@ HEADERS = {
 if GITHUB_TOKEN:
     HEADERS["Authorization"] = f"Bearer {GITHUB_TOKEN}"
 
-API_BASE = "https://api.github.com/repos/{}"
-NOW = datetime.now(timezone.utc)
-
-SIX_MONTHS   = timedelta(days=183)
-TWO_YEARS    = timedelta(days=730)
+API_BASE  = "https://api.github.com/repos/{}"
+NOW       = datetime.now(timezone.utc)
+SIX_MONTHS = timedelta(days=183)
+TWO_YEARS  = timedelta(days=730)
 
 
 def classify(pushed_at: datetime, archived: bool) -> str:
@@ -51,28 +52,53 @@ def classify(pushed_at: datetime, archived: bool) -> str:
 
 
 def fetch_repo(slug: str) -> dict | None:
-    try:
-        r = requests.get(API_BASE.format(slug), headers=HEADERS, timeout=15)
-        if r.status_code == 404:
-            print(f"    not found (404)")
+    for attempt in range(3):
+        try:
+            r = requests.get(API_BASE.format(slug), headers=HEADERS, timeout=15)
+        except requests.RequestException as e:
+            print(f"request error — {e}")
             return None
-        r.raise_for_status()
-    except requests.RequestException as e:
-        print(f"    request failed — {e}")
-        return None
 
-    data = r.json()
-    pushed_at = datetime.fromisoformat(data["pushed_at"].replace("Z", "+00:00"))
-    return {
-        "stars":       data["stargazers_count"],
-        "last_commit": pushed_at.strftime("%Y-%m-%d"),
-        "status":      classify(pushed_at, data["archived"]),
-        "checked_at":  NOW.strftime("%Y-%m-%dT%H:%M:%SZ"),
-    }
+        # Rate limit: pause until reset window and retry
+        if r.status_code == 429 or (
+            r.status_code == 403 and int(r.headers.get("X-RateLimit-Remaining", 1)) == 0
+        ):
+            reset_ts = int(r.headers.get("X-RateLimit-Reset", time.time() + 60))
+            wait = max(reset_ts - int(time.time()), 1) + 2
+            print(f"rate limited — sleeping {wait}s", end=" ", flush=True)
+            time.sleep(wait)
+            continue
+
+        if r.status_code == 404:
+            print("not found (404)")
+            return None
+
+        try:
+            r.raise_for_status()
+        except requests.HTTPError as e:
+            print(f"HTTP {r.status_code} — {e}")
+            return None
+
+        # Warn when running low on remaining quota
+        remaining = int(r.headers.get("X-RateLimit-Remaining", 9999))
+        if remaining < 10:
+            print(f"[rate limit: {remaining} requests remaining]", file=sys.stderr)
+
+        data      = r.json()
+        pushed_at = datetime.fromisoformat(data["pushed_at"].replace("Z", "+00:00"))
+        return {
+            "stars":       data["stargazers_count"],
+            "last_commit": pushed_at.strftime("%Y-%m-%d"),
+            "status":      classify(pushed_at, data["archived"]),
+            "checked_at":  NOW.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        }
+
+    print("failed after 3 attempts")
+    return None
 
 
 def load_slugs() -> list[tuple[str, str]]:
-    """Return [(display_name, owner/repo), ...] for all tools with a github field."""
+    """Return [(display_name, owner/repo), ...] for every tool with a github field."""
     results = []
     for path in sorted(Path("_data/tools").glob("*.yml")):
         with open(path) as f:
@@ -88,16 +114,16 @@ def load_slugs() -> list[tuple[str, str]]:
 
 def main():
     tools = load_slugs()
-    print(f"Checking {len(tools)} tools with GitHub repos...")
+    print(f"Checking {len(tools)} tools with GitHub repos...\n")
 
     health = {}
     for name, slug in tools:
         key = slug.replace("/", "-")
-        print(f"  {name} ({slug})...", end=" ", flush=True)
+        print(f"  {name} ({slug}) ... ", end="", flush=True)
         result = fetch_repo(slug)
         if result:
             health[key] = result
-            print(f"{result['status']}  [{result['last_commit']}  ★{result['stars']}]")
+            print(f"{result['status']}  [{result['last_commit']}  ★ {result['stars']}]")
         else:
             print("skipped")
 
@@ -107,7 +133,10 @@ def main():
         f.write(f"# Last run: {NOW.strftime('%Y-%m-%dT%H:%M:%SZ')}\n")
         yaml.dump(health, f, default_flow_style=False, allow_unicode=True, sort_keys=True)
 
-    print(f"\nWrote {len(health)} entries to {out}")
+    active   = sum(1 for v in health.values() if v["status"] == "active")
+    quiet    = sum(1 for v in health.values() if v["status"] == "quiet")
+    inactive = sum(1 for v in health.values() if v["status"] == "inactive")
+    print(f"\nWrote {len(health)} entries → {active} active, {quiet} quiet, {inactive} inactive")
 
 
 if __name__ == "__main__":

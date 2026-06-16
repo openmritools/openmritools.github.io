@@ -87,6 +87,6 @@
 
 - name: ASLPrep
   description: Arterial spin labeling preprocessing pipeline from the NiPreps family, producing CBF maps and QC reports.
-  url: https://github.com/nipreps/aslprep
-  github: nipreps/aslprep
+  url: https://github.com/PennLINC/aslprep
+  github: PennLINC/aslprep
   language: Python
