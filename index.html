@@ -35,24 +35,27 @@ title: MRI Tools
 </div>
 
 <div class="meta">
-  <span id="tool-count">
-    {%- assign total = 0 -%}
-    {%- for cat in site.data.categories -%}
-      {%- assign tools = site.data.tools[cat.id] -%}
-      {%- if tools -%}{%- assign total = total | plus: tools.size -%}{%- endif -%}
-    {%- endfor -%}
-    {{ total }} tools
-  </span>
-  <span id="lang-tag" class="hidden">(filtered: <span id="lang-tag-name"></span> <button id="lang-clear" class="lang-clear">✕</button>)</span>
-  <span class="meta-sep">·</span>
-  <span class="legend-item"><span class="dot dot-active"></span> Active</span>
-  <span class="legend-item"><span class="dot dot-quiet"></span> Quiet</span>
-  <span class="legend-item"><span class="dot dot-inactive"></span> Inactive</span>
-  <span class="legend-item"><span class="dot dot-external"></span> Not on GitHub</span>
-  <span class="meta-sep">·</span>
-  <span>Updated weekly via GitHub API</span>
-  <span class="meta-sep">·</span>
-  <a class="meta-link" href="https://github.com/openmritools/openmritools.github.io" target="_blank" rel="noopener noreferrer">Contribute on GitHub</a>
+  <div class="meta-left">
+    <span id="tool-count">
+      {%- assign total = 0 -%}
+      {%- for cat in site.data.categories -%}
+        {%- assign tools = site.data.tools[cat.id] -%}
+        {%- if tools -%}{%- assign total = total | plus: tools.size -%}{%- endif -%}
+      {%- endfor -%}
+      {{ total }} tools
+    </span>
+    <span id="lang-tag" class="hidden">(filtered: <span id="lang-tag-name"></span> <button id="lang-clear" class="lang-clear">✕</button>)</span>
+    <span class="meta-sep">·</span>
+    <span class="legend-item"><span class="dot dot-active"></span> Active</span>
+    <span class="legend-item"><span class="dot dot-quiet"></span> Quiet</span>
+    <span class="legend-item"><span class="dot dot-inactive"></span> Inactive</span>
+    <span class="legend-item"><span class="dot dot-external"></span> Not on GitHub</span>
+  </div>
+  <div class="meta-right">
+    <span>Updated weekly via GitHub API</span>
+    <span class="meta-sep">·</span>
+    <a class="meta-link" href="https://github.com/openmritools/openmritools.github.io" target="_blank" rel="noopener noreferrer">Contribute on GitHub</a>
+  </div>
 </div>
 
 <table class="tool-table" aria-label="MRI tools directory">
