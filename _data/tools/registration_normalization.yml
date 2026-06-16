@@ -6,20 +6,19 @@
 #   github:      owner/repo  (required for health checks)
 #   language:    primary implementation language
 
-  date_added: 2026-06-16
 - name: ANTs
   description: Toolkit for deformable image registration, segmentation, and normalization of brain images.
   url: https://github.com/ANTsX/ANTs
   github: ANTsX/ANTs
   language: C++
-
   date_added: 2026-06-16
+
 - name: FSL FLIRT/FNIRT
   description: FSL tools for linear (FLIRT) and nonlinear (FNIRT) brain image registration.
   url: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki
   language: C++
-
   date_added: 2026-06-16
+
 - name: Templateflow
   description: Version-controlled archive of brain MRI templates and atlases with a Python API for programmatic access.
   url: https://github.com/templateflow/templateflow

@@ -6,35 +6,34 @@
 #   github:      owner/repo  (required for health checks)
 #   language:    primary implementation language
 
-  date_added: 2026-06-16
 - name: FSLeyes
   description: Image viewer from the FSL team for overlaying brain images, statistical maps, and atlases.
   url: https://github.com/pauldmccarthy/fsleyes
   github: pauldmccarthy/fsleyes
   language: Python
-
   date_added: 2026-06-16
+
 - name: wb_view
   description: Connectome Workbench viewer for surface and volume neuroimaging data, designed for HCP-style CIFTI files.
   url: https://www.humanconnectome.org/software/connectome-workbench
   github: Washington-University/workbench
   language: C++
-
   date_added: 2026-06-16
+
 - name: Nilearn plotting
   description: Python functions for plotting brain maps, glass brains, and statistical overlays on MRI templates.
   url: https://github.com/nilearn/nilearn
   github: nilearn/nilearn
   language: Python
-
   date_added: 2026-06-16
+
 - name: NiReports
   description: Visual reporting library that generates the QC HTML pages used by fMRIPrep and MRIQC.
   url: https://github.com/nipreps/nireports
   github: nipreps/nireports
   language: Python
-
   date_added: 2026-06-16
+
 - name: ITK-SNAP
   description: Interactive tool for segmentation of 3D medical images with manual editing and automatic active contour methods.
   url: https://github.com/pyushkevich/itksnap

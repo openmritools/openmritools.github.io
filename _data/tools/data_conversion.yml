@@ -6,35 +6,34 @@
 #   github:      owner/repo  (required for health checks)
 #   language:    primary implementation language
 
-  date_added: 2026-06-16
 - name: dcm2niix
   description: Converts DICOM files to NIfTI format; the standard first step after scanner output.
   url: https://github.com/rordenlab/dcm2niix
   github: rordenlab/dcm2niix
   language: C++
-
   date_added: 2026-06-16
+
 - name: HeuDiConv
   description: Flexible DICOM-to-BIDS converter using user-defined heuristic files to handle complex naming schemes.
   url: https://github.com/nipy/heudiconv
   github: nipy/heudiconv
   language: Python
-
   date_added: 2026-06-16
+
 - name: BIDScoin
   description: DICOM-to-BIDS conversion with a GUI-configurable mapping and a plugin system.
   url: https://github.com/Donders-Institute/bidscoin
   github: Donders-Institute/bidscoin
   language: Python
-
   date_added: 2026-06-16
+
 - name: ReproIn
   description: Convention and scanner setup for fully automatic BIDS-ready data organization at acquisition time.
   url: https://github.com/ReproNim/reproin
   github: ReproNim/reproin
   language: Python
-
   date_added: 2026-06-16
+
 - name: BIDS Validator
   description: Checks whether a dataset complies with the BIDS standard; run before sharing or submitting data.
   url: https://github.com/bids-standard/bids-validator
