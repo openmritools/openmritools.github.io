@@ -122,6 +122,12 @@ body {
   color: var(--hairline);
 }
 
+.meta-link {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* ── Table ── */
 
 .tool-table {
@@ -274,8 +280,6 @@ body {
   background: #333;
   border-color: #333;
 }
-
-/* ── Footer ── */
 
 .footer {
   margin-top: 52px;
