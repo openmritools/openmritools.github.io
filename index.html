@@ -6,18 +6,20 @@ title: MRI Tools
 <header>
   <h1 class="site-title">MRI Tools</h1>
   <p class="site-subtitle">The overview I wish existed when I started.</p>
-  <p class="site-subline"><em>"If nobody can find your tool, does it exist?" — <a href="{{ '/contribute/' | relative_url }}">Add yours.</a></em></p>
+  <p class="site-subline"><em>"If nobody can find your tool, does it exist?" — <a href="{{ '/contribute/' | relative_url }}">Add yours.</a> · <a href="{{ '/about/' | relative_url }}">About.</a></em></p>
 </header>
 
 <div class="controls">
   <div class="pills" id="pills">
     <button class="pill selected" data-filter="all">All</button>
+    <button class="pill" data-filter="new">New</button>
     <button class="pill" data-filter="prepare">Prepare</button>
     <button class="pill" data-filter="analyze">Analyze</button>
     <button class="pill" data-filter="visualize">Visualize</button>
     <button class="pill" data-filter="infrastructure">Infrastructure</button>
     <button class="pill" data-filter="resources">Resources & Data</button>
   </div>
+  <div class="sub-pills" id="sub-pills"></div>
   <input class="search" id="search" type="search" placeholder="Search tools…" autocomplete="off">
 </div>
 
@@ -76,9 +78,12 @@ title: MRI Tools
           <tr class="{{ row_class }}"
               data-category="{{ cat.id }}"
               data-name="{{ tool.name | downcase }}"
-              data-desc="{{ tool.description | downcase }}">
+              data-desc="{{ tool.description | downcase }}"
+              data-added="{{ tool.date_added }}">
             <td><span class="dot {{ dot }}" title="{{ status }}"></span></td>
-            <td class="tool-name"><a href="{{ tool.url }}" target="_blank" rel="noopener noreferrer">{{ tool.name }}</a></td>
+            <td class="tool-name">
+              <a href="{{ tool.url }}" target="_blank" rel="noopener noreferrer">{{ tool.name }}</a>{% if tool.date_added %}<span class="new-label" data-added="{{ tool.date_added }}"></span>{% endif %}
+            </td>
             <td class="tool-desc">{{ tool.description }}</td>
             <td class="tool-lang">{{ tool.language }}</td>
           </tr>
@@ -98,29 +103,53 @@ title: MRI Tools
     resources:      ['data_sources']
   };
 
-  const pills    = document.querySelectorAll('.pill');
-  const search   = document.getElementById('search');
-  const allRows  = document.querySelectorAll('#tool-list tr');
-  const toolRows = document.querySelectorAll('#tool-list tr:not(.section-header)');
-  const headers  = document.querySelectorAll('#tool-list tr.section-header');
-  const countEl  = document.getElementById('tool-count');
-  let activeFilter = 'all';
+  const NEW_DAYS = 60;
+  const now = new Date();
+
+  // Render 'new' labels for tools added within 60 days
+  document.querySelectorAll('.new-label[data-added]').forEach(el => {
+    const added = new Date(el.dataset.added);
+    if (!isNaN(added) && (now - added) / 86400000 <= NEW_DAYS) {
+      el.textContent = 'new';
+    }
+  });
+
+  function isNew(row) {
+    const added = new Date(row.dataset.added);
+    return !isNaN(added) && (now - added) / 86400000 <= NEW_DAYS;
+  }
+
+  const categoryNames = {
+    {% for cat in site.data.categories %}'{{ cat.id }}': '{{ cat.name }}',
+    {% endfor %}
+  };
+
+  const mainPills  = document.querySelectorAll('#pills .pill');
+  const subPillsEl = document.getElementById('sub-pills');
+  const search     = document.getElementById('search');
+  const toolRows   = document.querySelectorAll('#tool-list tr:not(.section-header)');
+  const headers    = document.querySelectorAll('#tool-list tr.section-header');
+  const countEl    = document.getElementById('tool-count');
+
+  let activeFilter    = 'all';
+  let activeSubFilter = null;
 
   function applyFilters() {
-    const q = search.value.toLowerCase().trim();
-    const allowed = groups[activeFilter];
+    const q         = search.value.toLowerCase().trim();
+    const isNewView = activeFilter === 'new';
+    const groupCats = isNewView ? null : groups[activeFilter];
+    const allowed   = activeSubFilter ? [activeSubFilter] : groupCats;
 
-    // Show/hide tool rows
     let visible = 0;
     toolRows.forEach(row => {
       const catMatch  = !allowed || allowed.includes(row.dataset.category);
+      const newMatch  = !isNewView || isNew(row);
       const textMatch = !q || row.dataset.name.includes(q) || row.dataset.desc.includes(q);
-      const show = catMatch && textMatch;
+      const show = catMatch && newMatch && textMatch;
       row.classList.toggle('hidden', !show);
       if (show) visible++;
     });
 
-    // Show section headers only if their category is allowed AND has at least one visible tool
     headers.forEach(header => {
       const cat = header.dataset.category;
       const catAllowed = !allowed || allowed.includes(cat);
@@ -133,11 +162,37 @@ title: MRI Tools
     countEl.textContent = visible + ' tool' + (visible === 1 ? '' : 's');
   }
 
-  pills.forEach(pill => {
+  function showSubPills(filter) {
+    const cats = groups[filter];
+    if (!cats || cats.length <= 1) {
+      subPillsEl.innerHTML = '';
+      subPillsEl.classList.remove('visible');
+      return;
+    }
+
+    subPillsEl.innerHTML = cats.map(id =>
+      `<button class="pill sub-pill" data-cat="${id}">${categoryNames[id] || id}</button>`
+    ).join('');
+
+    subPillsEl.querySelectorAll('.sub-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        subPillsEl.querySelectorAll('.sub-pill').forEach(p => p.classList.remove('selected'));
+        pill.classList.add('selected');
+        activeSubFilter = pill.dataset.cat;
+        applyFilters();
+      });
+    });
+
+    subPillsEl.classList.add('visible');
+  }
+
+  mainPills.forEach(pill => {
     pill.addEventListener('click', () => {
-      pills.forEach(p => p.classList.remove('selected'));
+      mainPills.forEach(p => p.classList.remove('selected'));
       pill.classList.add('selected');
-      activeFilter = pill.dataset.filter;
+      activeFilter    = pill.dataset.filter;
+      activeSubFilter = null;
+      showSubPills(activeFilter);
       applyFilters();
     });
   });

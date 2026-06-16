@@ -31,6 +31,7 @@ Each entry follows this format:
   url: https://...
   github: owner/repo   # omit if not on GitHub
   language: Python     # primary implementation language
+  date_added: 2026-06-16  # YYYY-MM-DD — controls the 'New' filter
 ```
 
 ## Rules

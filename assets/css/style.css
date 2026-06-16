@@ -91,6 +91,49 @@ body {
   border-color: var(--pill-active-bg);
 }
 
+.sub-pills {
+  display: none;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.sub-pills.visible {
+  display: flex;
+}
+
+.sub-pill {
+  font-size: 11px;
+  padding: 2px 8px;
+  color: var(--muted);
+  border-color: var(--hairline);
+}
+
+.sub-pill.selected {
+  background: var(--pill-active-bg);
+  color: var(--pill-active-text);
+  border-color: var(--pill-active-bg);
+}
+
+/* ── About page ── */
+
+.about-body {
+  margin-top: 32px;
+  max-width: 560px;
+}
+
+.about-body p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.about-body a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .search {
   width: 260px;
   padding: 5px 8px;
@@ -203,6 +246,16 @@ body {
 .tool-name a:hover {
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.new-label {
+  margin-left: 6px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  vertical-align: middle;
 }
 
 .tool-desc,
