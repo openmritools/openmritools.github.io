@@ -57,10 +57,10 @@ body {
 /* ── Controls ── */
 
 .controls {
-  margin-top: 36px;
+  margin-top: 48px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .pills {
@@ -159,7 +159,7 @@ body {
 /* ── Meta bar ── */
 
 .meta {
-  margin-top: 16px;
+  margin-top: 28px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
