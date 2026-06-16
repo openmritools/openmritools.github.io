@@ -57,23 +57,11 @@ body {
   letter-spacing: -0.2px;
 }
 
-.site-subtitle {
-  margin-top: 4px;
+.site-tagline {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 15px;
   color: var(--muted);
-  font-size: 14px;
-}
-
-.site-subline {
-  margin-top: 2px;
-  font-size: 13px;
-  color: var(--muted);
-  font-style: italic;
-}
-
-.site-subline a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
 /* ── Controls ── */
