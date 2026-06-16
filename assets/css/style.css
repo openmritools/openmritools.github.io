@@ -106,6 +106,7 @@ body {
 
 .sub-pills.visible {
   display: flex;
+  justify-content: center;
 }
 
 .sub-pill {
