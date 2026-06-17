@@ -1,0 +1,60 @@
+# Diffusion Analysis tools
+# Fields:
+#   name:        display name
+#   description: one sentence — what it does, not why it matters
+#   url:         homepage or repo
+#   github:      owner/repo  (required for health checks)
+#   language:    primary implementation language
+
+- name: MRtrix3
+  description: Suite for diffusion MRI processing, tractography, and connectome construction using constrained spherical deconvolution.
+  url: https://github.com/MRtrix3/mrtrix3
+  github: MRtrix3/mrtrix3
+  language: C++
+  date_added: 2026-06-17
+  modality: diffusion
+
+- name: DIPY
+  description: Python library for diffusion MRI analysis including reconstruction, tractography, registration, and simulation.
+  url: https://github.com/dipy/dipy
+  github: dipy/dipy
+  language: Python
+  date_added: 2026-06-17
+  modality: diffusion
+
+- name: DSI Studio
+  description: Tractography tool for diffusion MRI with deterministic fiber tracking and connectometry analysis.
+  url: https://github.com/frankyeh/DSI-Studio
+  github: frankyeh/DSI-Studio
+  language: C++
+  date_added: 2026-06-17
+  modality: diffusion
+
+- name: TractSeg
+  description: Deep learning-based white matter tract segmentation directly from diffusion MRI, without full tractography.
+  url: https://github.com/MIC-DKFZ/TractSeg
+  github: MIC-DKFZ/TractSeg
+  language: Python
+  date_added: 2026-06-17
+  modality: diffusion
+
+- name: TBSS
+  description: Voxelwise cross-subject analysis of diffusion data projected onto a mean FA skeleton.
+  url: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/TBSS
+  language: C++
+  date_added: 2026-06-17
+  modality: diffusion
+
+- name: Tracula
+  description: Automated probabilistic tractography of major white matter pathways using FreeSurfer's anatomical priors.
+  url: https://surfer.nmr.mgh.harvard.edu/fswiki/Tracula
+  language: Python
+  date_added: 2026-06-17
+  modality: diffusion
+
+- name: XTRACT
+  description: Automated tractography of white matter bundles using standardized protocols across species.
+  url: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/XTRACT
+  language: C++
+  date_added: 2026-06-17
+  modality: diffusion

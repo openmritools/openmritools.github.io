@@ -10,11 +10,17 @@
 - id: registration_normalization
   name: Registration & Normalization
 
+- id: harmonization
+  name: Harmonization
+
 - id: statistical_analysis
   name: Statistical Analysis
 
 - id: connectivity
   name: Connectivity
+
+- id: diffusion_analysis
+  name: Diffusion Analysis
 
 - id: visualization
   name: Visualization

@@ -11,6 +11,19 @@ permalink: /contribute/
 
 <form class="suggest-form" action="https://formspree.io/f/mwvjjkay" method="POST">
   <div class="field">
+    <div class="radio-group">
+      <label class="radio-label">
+        <input type="radio" name="type" value="suggest" checked>
+        Suggest a tool
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="type" value="flag">
+        Flag an edit
+      </label>
+    </div>
+  </div>
+
+  <div class="field">
     <label for="tool-name">Tool name</label>
     <input id="tool-name" type="text" name="tool_name" required autocomplete="off">
     <div id="tool-hint" class="tool-hint"></div>
@@ -22,7 +35,7 @@ permalink: /contribute/
   </div>
 
   <div class="field">
-    <label for="tool-desc">What does it do?</label>
+    <label id="desc-label" for="tool-desc">What does it do?</label>
     <textarea id="tool-desc" name="description" rows="4" placeholder="One or two sentences. What it does, not why it matters."></textarea>
   </div>
 
@@ -43,6 +56,19 @@ permalink: /contribute/
     {% endfor %}
     {% endfor %}
   ];
+
+  const descCopy = {
+    suggest: { label: 'What does it do?', placeholder: 'One or two sentences. What it does, not why it matters.' },
+    flag:    { label: 'What needs fixing?', placeholder: 'Which tool, and what\'s wrong.' }
+  };
+  const descLabel = document.getElementById('desc-label');
+  const descArea  = document.getElementById('tool-desc');
+  document.querySelectorAll('input[name="type"]').forEach(r => {
+    r.addEventListener('change', () => {
+      descLabel.textContent = descCopy[r.value].label;
+      descArea.placeholder  = descCopy[r.value].placeholder;
+    });
+  });
 
   const nameInput = document.getElementById('tool-name');
   const hint = document.getElementById('tool-hint');

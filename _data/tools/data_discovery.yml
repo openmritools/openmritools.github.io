@@ -15,3 +15,8 @@
   description: Q&A forum for neuroinformatics, neuroimaging methods, and tool support.
   url: https://neurostars.org
   date_added: 2026-06-16
+
+- name: NITRC
+  description: Registry of neuroimaging analysis tools, datasets, and computational resources with a searchable database.
+  url: https://www.nitrc.org
+  date_added: 2026-06-17

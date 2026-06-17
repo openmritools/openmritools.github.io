@@ -1,0 +1,95 @@
+# Harmonization tools
+# Fields:
+#   name:        display name
+#   description: one sentence — what it does, not why it matters
+#   url:         homepage or repo
+#   github:      owner/repo  (required for health checks)
+#   language:    primary implementation language
+
+- name: neuroCombat
+  description: Reference Python implementation of ComBat for removing scanner and site batch effects from neuroimaging feature matrices.
+  url: https://github.com/Jfortin1/neuroCombat
+  github: Jfortin1/neuroCombat
+  language: Python
+  date_added: 2026-06-17
+  modality: multi
+
+- name: neuroCombat R
+  description: R implementation of ComBat for harmonizing multi-site neuroimaging data by removing scanner and site batch effects.
+  url: https://github.com/Jfortin1/neuroCombat_Rpackage
+  github: Jfortin1/neuroCombat_Rpackage
+  language: R
+  date_added: 2026-06-17
+  modality: multi
+
+- name: neuroHarmonize
+  description: Extends neuroCombat with GAM-based nonlinear covariate modeling and direct NIFTI image harmonization support.
+  url: https://github.com/rpomponio/neuroHarmonize
+  github: rpomponio/neuroHarmonize
+  language: Python
+  date_added: 2026-06-17
+  modality: multi
+
+- name: ComBatFamily
+  description: Unified R package wrapping ComBat, ComBat-GAM, CovBat, and longCombat under a single interface for multi-site harmonization.
+  url: https://github.com/andy1764/ComBatFamily
+  github: andy1764/ComBatFamily
+  language: R
+  date_added: 2026-06-17
+  modality: multi
+
+- name: longCombat
+  description: Adapts ComBat for longitudinal multi-scanner imaging data by modeling subject-level random effects alongside site batch effects.
+  url: https://github.com/jcbeer/longCombat
+  github: jcbeer/longCombat
+  language: R
+  date_added: 2026-06-17
+  modality: multi
+
+- name: CovBat
+  description: Extends ComBat to remove site effects from the covariance structure of neuroimaging features, not just their mean and variance.
+  url: https://github.com/andy1764/CovBat_Harmonization
+  github: andy1764/CovBat_Harmonization
+  language: R
+  date_added: 2026-06-17
+  modality: multi
+
+- name: Harmonizer
+  description: Wraps ComBat as a scikit-learn transformer to integrate site-effect correction into cross-validated machine learning pipelines without data leakage.
+  url: https://github.com/Imaging-AI-for-Health-virtual-lab/harmonizer
+  github: Imaging-AI-for-Health-virtual-lab/harmonizer
+  language: Python
+  date_added: 2026-06-17
+  modality: multi
+
+- name: dMRIharmonization
+  description: Harmonizes diffusion MRI data across scanners and sites using RISH (Rotational Invariant Spherical Harmonic) features.
+  url: https://github.com/pnlbwh/dMRIharmonization
+  github: pnlbwh/dMRIharmonization
+  language: Python
+  date_added: 2026-06-17
+  modality: diffusion
+
+- name: RISH-GLM
+  description: RISH-based diffusion MRI harmonization that does not require matched training subjects across sites.
+  url: https://github.com/delucaal/RISH-GLM
+  github: delucaal/RISH-GLM
+  language: Python
+  date_added: 2026-06-17
+  modality: diffusion
+
+- name: dmri-harmonization
+  description: Cross-scanner diffusion MRI harmonization using adaptive dictionary learning to match signal distributions across sites.
+  url: https://github.com/samuelstjean/harmonization
+  github: samuelstjean/harmonization
+  language: Python
+  date_added: 2026-06-17
+  modality: diffusion
+
+- name: HACA3
+  description: Harmonizes structural MRI across sites using deep learning with disentangled representations of anatomy, contrast, and acquisition artifacts.
+  url: https://github.com/lianruizuo/haca3
+  github: lianruizuo/haca3
+  language: Python
+  date_added: 2026-06-17
+  modality: multi
