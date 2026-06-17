@@ -7,7 +7,7 @@
 #   language:    primary implementation language
 
 - name: dcm2niix
-  description: Converts DICOM files to NIfTI format; the standard first step after scanner output.
+  description: Converts DICOM files to NIfTI format with BIDS-compatible JSON sidecar output.
   url: https://github.com/rordenlab/dcm2niix
   github: rordenlab/dcm2niix
   language: C++
@@ -31,7 +31,7 @@
   modality: multi
 
 - name: ReproIn
-  description: Convention and scanner setup for fully automatic BIDS-ready data organization at acquisition time.
+  description: Scanner naming convention and setup for fully automatic BIDS-ready data organization at acquisition time.
   url: https://github.com/ReproNim/reproin
   github: ReproNim/reproin
   language: Python
@@ -39,7 +39,7 @@
   modality: multi
 
 - name: BIDS Validator
-  description: Checks whether a dataset complies with the BIDS standard; run before sharing or submitting data.
+  description: Checks whether a dataset complies with the BIDS specification before sharing or pipeline submission.
   url: https://github.com/bids-standard/bids-validator
   github: bids-standard/bids-validator
   language: JavaScript

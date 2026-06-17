@@ -55,7 +55,7 @@
   modality: structural
 
 - name: MRIcroGL
-  description: Volume rendering and visualization of NIfTI brain images.
+  description: GPU-accelerated volume rendering and visualization of NIfTI brain images with MIP and raycasting modes.
   url: https://github.com/rordenlab/MRIcroGL
   github: rordenlab/MRIcroGL
   language: Pascal

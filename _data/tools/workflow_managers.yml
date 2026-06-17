@@ -7,7 +7,7 @@
 #   language:    primary implementation language
 
 - name: Nipoppy
-  description: Manages the full workflow from raw data through BIDS conversion, pipeline execution, and extraction.
+  description: Manages the full neuroimaging workflow from raw data through BIDS conversion, pipeline execution, and derivative extraction.
   url: https://github.com/nipoppy/nipoppy
   github: nipoppy/nipoppy
   language: Python

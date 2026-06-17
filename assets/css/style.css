@@ -65,7 +65,7 @@ body {
 }
 
 .site-subtitle {
-  margin-top: 28px;
+  margin-top: 8px;
   color: var(--muted);
   font-size: 13px;
 }
@@ -73,7 +73,7 @@ body {
 /* ── Controls ── */
 
 .controls {
-  margin-top: 60px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   gap: 20px;

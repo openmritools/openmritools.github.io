@@ -1,17 +1,17 @@
 # Preregistration & Publishing
 
 - name: OSF
-  description: Preregister studies, share data, code, and materials, and get DOIs; the central platform for open science.
+  description: Open platform for preregistration, data and code sharing, and DOI-based archiving of study materials.
   url: https://osf.io
   date_added: 2026-06-16
 
 - name: AsPredicted
-  description: Quick, lightweight preregistration for studies — fill in nine questions and lock your hypotheses before data collection.
+  description: Lightweight preregistration platform — answer a short fixed questionnaire to lock hypotheses before data collection.
   url: https://aspredicted.org
   date_added: 2026-06-16
 
 - name: bioRxiv
-  description: Preprint server for biology and neuroscience; post before peer review to share findings early.
+  description: Preprint server for biology and neuroscience; shares findings publicly before peer review.
   url: https://www.biorxiv.org
   date_added: 2026-06-16
 
@@ -21,7 +21,7 @@
   date_added: 2026-06-16
 
 - name: Zenodo
-  description: Archive code, data, or posters and receive a citable DOI; integrates directly with GitHub releases.
+  description: Archives code, data, and posters with citable DOIs; integrates directly with GitHub releases.
   url: https://zenodo.org
   date_added: 2026-06-16
 

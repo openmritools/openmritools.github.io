@@ -106,7 +106,7 @@
   modality: multi
 
 - name: C-PAC
-  description: Configurable Pipeline for the Analysis of Connectomes — a flexible fMRIPrep alternative with GUI configuration.
+  description: Configurable Pipeline for the Analysis of Connectomes — flexible fMRI preprocessing and connectivity analysis with GUI configuration.
   url: https://github.com/FCP-INDI/C-PAC
   github: FCP-INDI/C-PAC
   language: Python

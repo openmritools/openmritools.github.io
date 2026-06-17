@@ -29,7 +29,7 @@
   modality: fMRI
 
 - name: NiMARE
-  description: Coordinate- and image-based neuroimaging meta-analysis in Python; successor to Neurosynth.
+  description: Python library for coordinate- and image-based neuroimaging meta-analysis, implementing ALE, MKDA, and other methods.
   url: https://github.com/neurostuff/NiMARE
   github: neurostuff/NiMARE
   language: Python
@@ -95,7 +95,7 @@
   modality: fMRI
 
 - name: GingerALE
-  description: Coordinate-based meta-analysis using Activation Likelihood Estimation; the most widely used CBMA tool.
+  description: Coordinate-based meta-analysis using Activation Likelihood Estimation to identify consistent activation foci across studies.
   url: https://www.brainmap.org/ale
   language: Java
   date_added: 2026-06-17
