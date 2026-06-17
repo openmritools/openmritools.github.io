@@ -152,6 +152,7 @@ title: MRI Tools
               data-added="{{ tool.date_added }}"
               data-lang="{{ tool.language }}"
               data-modality="{{ tool.modality }}"
+              {% unless tool.github %}data-external="true"{% endunless %}
               {% if health.stars %}data-stars="{{ health.stars }}"{% endif %}>
             <td><span class="dot {{ dot }}" title="{{ status }}"></span></td>
             <td class="tool-name">
@@ -355,8 +356,18 @@ title: MRI Tools
         tbody.appendChild(row);
       }
     } else {
-      // Restore original category order
-      originalOrder.forEach(el => tbody.appendChild(el));
+      // Restore default order: categories in original order, non-GitHub tools first within each category
+      for (const el of originalOrder) {
+        if (el.classList.contains('section-header')) {
+          const cat = el.dataset.category;
+          tbody.appendChild(el);
+          const catRows = originalOrder.filter(r =>
+            !r.classList.contains('section-header') && r.dataset.category === cat
+          );
+          catRows.filter(r => r.dataset.external === 'true').forEach(r => tbody.appendChild(r));
+          catRows.filter(r => r.dataset.external !== 'true').forEach(r => tbody.appendChild(r));
+        }
+      }
     }
 
     let visible = 0;
@@ -384,13 +395,15 @@ title: MRI Tools
 
     if (starsSortDir) {
       const visibleRows = [...toolRows].filter(r => !r.classList.contains('hidden'));
-      visibleRows.sort((a, b) => {
+      const withGithub  = visibleRows.filter(r => r.dataset.external !== 'true');
+      const noGithub    = visibleRows.filter(r => r.dataset.external === 'true');
+      withGithub.sort((a, b) => {
         const sa = parseInt(a.dataset.stars) || 0;
         const sb = parseInt(b.dataset.stars) || 0;
         return starsSortDir === 'desc' ? sb - sa : sa - sb;
       });
       const seenCats = new Set();
-      for (const row of visibleRows) {
+      for (const row of [...withGithub, ...noGithub]) {
         const cat = row.dataset.category;
         if (!seenCats.has(cat)) {
           const header = [...headers].find(h => h.dataset.category === cat);
