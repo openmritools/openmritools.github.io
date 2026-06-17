@@ -38,7 +38,7 @@ permalink: /contribute/
 
   <div class="field">
     <label for="tool-url">URL</label>
-    <input id="tool-url" type="text" name="tool_url" placeholder="https://" required autocomplete="off">
+    <input id="tool-url" type="text" name="tool_url" placeholder="URL" required autocomplete="off">
   </div>
 
   <div class="field">
@@ -83,7 +83,7 @@ permalink: /contribute/
       descLabel.textContent    = descCopy[r.value].label;
       descArea.placeholder     = descCopy[r.value].placeholder;
       urlInput.required    = !isFlag;
-      urlInput.placeholder = isFlag ? 'Optional — include if relevant.' : 'https://';
+      urlInput.placeholder = isFlag ? 'Optional — include if relevant.' : 'URL';
     });
   });
 
