@@ -2,7 +2,7 @@
 
 A community-driven directory of open-source MRI software — automatically tracking what exists and what's still maintained.
 
-**Live site:** [openmritools.github.io](https://openmritools.github.io)
+**Live site:** [openmritools.com](https://openmritools.com)
 
 ## How it works
 
@@ -10,4 +10,4 @@ Tools are stored as YAML files in `_data/tools/`. A weekly GitHub Actions cron j
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) or use the suggest form at [openmritools.github.io/contribute](https://openmritools.github.io/contribute).
+See [CONTRIBUTING.md](CONTRIBUTING.md) or use the suggest form at [openmritools.com/contribute](https://openmritools.com/contribute).
