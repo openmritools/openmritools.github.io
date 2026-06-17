@@ -185,8 +185,10 @@ title: MRI Tools
   const mainPills      = document.querySelectorAll('#pills .pill');
   const subPillsEl     = document.getElementById('sub-pills');
   const search         = document.getElementById('search');
+  const tbody          = document.getElementById('tool-list');
   const toolRows       = document.querySelectorAll('#tool-list tr:not(.section-header)');
   const headers        = document.querySelectorAll('#tool-list tr.section-header');
+  const originalOrder  = [...tbody.children];
   const countEl        = document.getElementById('tool-count');
   const langTagEl         = document.getElementById('lang-tag');
   const langTagName       = document.getElementById('lang-tag-name');
@@ -283,12 +285,26 @@ title: MRI Tools
 
     let top10 = null;
     if (isNewView) {
-      top10 = new Set(
-        [...toolRows]
-          .filter(r => r.dataset.added)
-          .sort((a, b) => new Date(b.dataset.added) - new Date(a.dataset.added))
-          .slice(0, 10)
-      );
+      const sorted = [...toolRows]
+        .filter(r => r.dataset.added)
+        .sort((a, b) => new Date(b.dataset.added) - new Date(a.dataset.added))
+        .slice(0, 10);
+      top10 = new Set(sorted);
+
+      // Reorder DOM: place section header then tools in date-descending order
+      const seenCats = new Set();
+      for (const row of sorted) {
+        const cat = row.dataset.category;
+        if (!seenCats.has(cat)) {
+          const header = [...headers].find(h => h.dataset.category === cat);
+          if (header) tbody.appendChild(header);
+          seenCats.add(cat);
+        }
+        tbody.appendChild(row);
+      }
+    } else {
+      // Restore original category order
+      originalOrder.forEach(el => tbody.appendChild(el));
     }
 
     let visible = 0;
