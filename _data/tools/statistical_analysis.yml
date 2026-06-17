@@ -49,7 +49,7 @@
   date_added: 2026-06-16
 
 - name: ENIGMA Toolbox
-  description: Python/MATLAB ecosystem for accessing 100+ ENIGMA datasets and contextualizing findings with connectomic and transcriptomic data.
+  description: Python/MATLAB ecosystem for accessing 80+ ENIGMA working group datasets and contextualizing findings with connectomic and transcriptomic data.
   url: https://github.com/MICA-MNI/ENIGMA
   github: MICA-MNI/ENIGMA
   language: Python/MATLAB
@@ -104,6 +104,14 @@
 - name: SDM-PSI
   description: Seed-based d Mapping with Permutation of Subject Images — hybrid CBMA tool that combines coordinate and image-based data.
   url: https://www.sdmproject.com
+  language: MATLAB
+  date_added: 2026-06-17
+  modality: fMRI
+
+- name: SnPM
+  description: Nonparametric permutation testing toolbox for SPM; controls for multiple comparisons without distributional assumptions.
+  url: https://github.com/SnPM-toolbox/SnPM-devel
+  github: SnPM-toolbox/SnPM-devel
   language: MATLAB
   date_added: 2026-06-17
   modality: fMRI

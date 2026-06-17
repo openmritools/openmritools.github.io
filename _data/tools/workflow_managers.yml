@@ -58,3 +58,11 @@
   language: Python
   date_added: 2026-06-16
   modality: multi
+
+- name: Pydra
+  description: Next-generation dataflow engine from the NiPype team for building reproducible, scalable neuroimaging workflows.
+  url: https://github.com/nipype/pydra
+  github: nipype/pydra
+  language: Python
+  date_added: 2026-06-17
+  modality: multi

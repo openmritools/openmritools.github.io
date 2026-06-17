@@ -45,7 +45,8 @@ title: MRI Tools
       {%- endfor -%}
       {{ total }} tools
     </span>
-    <span id="lang-tag" class="hidden">(filtered: <span id="lang-tag-name"></span> <button id="lang-clear" class="lang-clear">✕</button>)</span>
+    <span id="lang-tag" class="hidden">(lang: <span id="lang-tag-name"></span> <button id="lang-clear" class="lang-clear">✕</button>)</span>
+    <span id="modality-tag" class="hidden">(modality: <span id="modality-tag-name"></span> <button id="modality-clear" class="lang-clear">✕</button>)</span>
     <span class="meta-sep">·</span>
     <span class="legend-item"><span class="dot dot-active"></span> Active</span>
     <span class="legend-item"><span class="dot dot-quiet"></span> Quiet</span>
@@ -89,6 +90,19 @@ title: MRI Tools
           {%- endfor -%}
         </div>
       </th>
+      <th class="modality-th">
+        <button class="modality-header-btn" id="modality-header-btn">
+          <span id="modality-header-label">Modality</span> ▾
+        </button>
+        <div class="modality-dropdown" id="modality-dropdown">
+          <button class="modality-option selected" data-modality="">All</button>
+          <button class="modality-option" data-modality="fMRI">fMRI</button>
+          <button class="modality-option" data-modality="structural">Structural</button>
+          <button class="modality-option" data-modality="diffusion">Diffusion</button>
+          <button class="modality-option" data-modality="ASL">ASL</button>
+          <button class="modality-option" data-modality="multi">Multi-modal</button>
+        </div>
+      </th>
     </tr>
   </thead>
   <tbody id="tool-list">
@@ -96,7 +110,7 @@ title: MRI Tools
       {% assign tools = site.data.tools[cat.id] %}
       {% if tools %}
         <tr class="section-header" data-category="{{ cat.id }}">
-          <td colspan="5">{{ cat.name }}</td>
+          <td colspan="6">{{ cat.name }}</td>
         </tr>
         {% for tool in tools %}
           {% if tool.github %}
@@ -135,6 +149,7 @@ title: MRI Tools
             <td class="tool-desc">{{ tool.description }}</td>
             <td class="col-date" data-date="{{ tool.date_added }}"></td>
             <td class="tool-lang">{{ tool.language }}</td>
+            <td class="tool-modality">{%- if tool.modality == 'fMRI' -%}fMRI{%- elsif tool.modality == 'structural' -%}Structural{%- elsif tool.modality == 'diffusion' -%}Diffusion{%- elsif tool.modality == 'ASL' -%}ASL{%- elsif tool.modality == 'multi' -%}Multi-modal{%- endif -%}</td>
           </tr>
         {% endfor %}
       {% endif %}
@@ -173,17 +188,28 @@ title: MRI Tools
   const toolRows       = document.querySelectorAll('#tool-list tr:not(.section-header)');
   const headers        = document.querySelectorAll('#tool-list tr.section-header');
   const countEl        = document.getElementById('tool-count');
-  const langTagEl      = document.getElementById('lang-tag');
-  const langTagName    = document.getElementById('lang-tag-name');
-  const langClearEl    = document.getElementById('lang-clear');
-  const langHeaderBtn  = document.getElementById('lang-header-btn');
-  const langHeaderLabel= document.getElementById('lang-header-label');
-  const langDropdown   = document.getElementById('lang-dropdown');
-  const langOptions    = langDropdown.querySelectorAll('.lang-option');
+  const langTagEl         = document.getElementById('lang-tag');
+  const langTagName       = document.getElementById('lang-tag-name');
+  const langClearEl       = document.getElementById('lang-clear');
+  const langHeaderBtn     = document.getElementById('lang-header-btn');
+  const langHeaderLabel   = document.getElementById('lang-header-label');
+  const langDropdown      = document.getElementById('lang-dropdown');
+  const langOptions       = langDropdown.querySelectorAll('.lang-option');
+
+  const modalityTagEl     = document.getElementById('modality-tag');
+  const modalityTagName   = document.getElementById('modality-tag-name');
+  const modalityClearEl   = document.getElementById('modality-clear');
+  const modalityHeaderBtn = document.getElementById('modality-header-btn');
+  const modalityHeaderLabel = document.getElementById('modality-header-label');
+  const modalityDropdown  = document.getElementById('modality-dropdown');
+  const modalityOptions   = modalityDropdown.querySelectorAll('.modality-option');
+
+  const modalityLabels = { fMRI: 'fMRI', structural: 'Structural', diffusion: 'Diffusion', ASL: 'ASL', multi: 'Multi-modal' };
 
   let activeFilter    = 'all';
   let activeSubFilter = null;
   let activeLang      = null;
+  let activeModality  = null;
 
   function setLang(lang) {
     activeLang = lang || null;
@@ -199,8 +225,24 @@ title: MRI Tools
     applyFilters();
   }
 
+  function setModality(mod) {
+    activeModality = mod || null;
+    const label = activeModality ? (modalityLabels[activeModality] || activeModality) : null;
+    modalityHeaderLabel.textContent = label ? 'Modality: ' + label : 'Modality';
+    modalityHeaderBtn.classList.toggle('modality-header-active', !!activeModality);
+    modalityOptions.forEach(o => o.classList.toggle('selected', o.dataset.modality === (activeModality || '')));
+    if (activeModality) {
+      modalityTagName.textContent = label;
+      modalityTagEl.classList.remove('hidden');
+    } else {
+      modalityTagEl.classList.add('hidden');
+    }
+    applyFilters();
+  }
+
   langHeaderBtn.addEventListener('click', e => {
     e.stopPropagation();
+    modalityDropdown.classList.remove('open');
     langDropdown.classList.toggle('open');
   });
 
@@ -212,7 +254,24 @@ title: MRI Tools
     });
   });
 
-  document.addEventListener('click', () => langDropdown.classList.remove('open'));
+  modalityHeaderBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    langDropdown.classList.remove('open');
+    modalityDropdown.classList.toggle('open');
+  });
+
+  modalityOptions.forEach(opt => {
+    opt.addEventListener('click', e => {
+      e.stopPropagation();
+      setModality(opt.dataset.modality);
+      modalityDropdown.classList.remove('open');
+    });
+  });
+
+  document.addEventListener('click', () => {
+    langDropdown.classList.remove('open');
+    modalityDropdown.classList.remove('open');
+  });
 
   function applyFilters() {
     const q         = search.value.toLowerCase().trim();
@@ -234,10 +293,11 @@ title: MRI Tools
 
     let visible = 0;
     toolRows.forEach(row => {
-      const catMatch  = isNewView ? top10.has(row) : (!allowed || allowed.includes(row.dataset.category));
-      const textMatch = !q || row.dataset.name.includes(q) || row.dataset.desc.includes(q);
-      const langMatch = !activeLang || row.dataset.lang === activeLang;
-      const show = catMatch && textMatch && langMatch;
+      const catMatch      = isNewView ? top10.has(row) : (!allowed || allowed.includes(row.dataset.category));
+      const textMatch     = !q || row.dataset.name.includes(q) || row.dataset.desc.includes(q);
+      const langMatch     = !activeLang || row.dataset.lang === activeLang;
+      const modalityMatch = !activeModality || row.dataset.modality === activeModality;
+      const show = catMatch && textMatch && langMatch && modalityMatch;
       row.classList.toggle('hidden', !show);
       if (show) visible++;
     });
@@ -291,5 +351,6 @@ title: MRI Tools
   });
 
   langClearEl.addEventListener('click', () => setLang(null));
+  modalityClearEl.addEventListener('click', () => setModality(null));
   search.addEventListener('input', applyFilters);
 </script>

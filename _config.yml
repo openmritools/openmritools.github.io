@@ -1,7 +1,7 @@
 title: MRI Tools
 description: A community-driven directory of open-source MRI software, organized by workflow stage.
 baseurl: ""
-url: "https://openmritools.github.io"
+url: "https://openmritools.com"
 
 exclude:
   - scripts/

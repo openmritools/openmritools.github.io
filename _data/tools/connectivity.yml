@@ -16,7 +16,7 @@
 
 - name: CONN
   description: MATLAB toolbox for functional connectivity with seed-based, ROI-to-ROI, and ICA analysis methods.
-  url: https://www.nitrc.org/projects/conn
+  url: https://web.conn-toolbox.org
   language: MATLAB
   date_added: 2026-06-16
   modality: fMRI

@@ -1,7 +1,7 @@
 # Consortia
 
 - name: ENIGMA
-  description: Global consortium for large-scale neuroimaging genetics meta-analyses spanning 45+ working groups and countries.
+  description: Global consortium for large-scale neuroimaging genetics meta-analyses spanning 80+ working groups and countries.
   url: https://enigma.ini.usc.edu
   date_added: 2026-06-16
 
@@ -22,5 +22,5 @@
 
 - name: OHBM Open Science SIG
   description: OHBM special interest group advancing open sharing of ideas, data, and tools in neuroimaging.
-  url: https://ohbm-open-science.github.io
+  url: https://ossig.netlify.app
   date_added: 2026-06-16

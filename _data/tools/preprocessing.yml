@@ -144,3 +144,11 @@
   language: Python
   date_added: 2026-06-16
   modality: fMRI
+
+- name: LayNii
+  description: Layer-fMRI analysis tools for cortical layerification, columnarization, layer-smoothing, and VASO analysis.
+  url: https://github.com/layerfMRI/LayNii
+  github: layerfMRI/LayNii
+  language: C++
+  date_added: 2026-06-17
+  modality: fMRI

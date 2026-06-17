@@ -53,3 +53,11 @@
   language: R
   date_added: 2026-06-16
   modality: structural
+
+- name: MRIcroGL
+  description: Volume rendering and visualization of NIfTI brain images.
+  url: https://github.com/rordenlab/MRIcroGL
+  github: rordenlab/MRIcroGL
+  language: Pascal
+  date_added: 2026-06-17
+  modality: multi
