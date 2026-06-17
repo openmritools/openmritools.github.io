@@ -84,6 +84,7 @@ permalink: /contribute/
       descArea.placeholder     = descCopy[r.value].placeholder;
       urlInput.required        = !isFlag;
       urlInput.placeholder     = isFlag ? 'Optional — include if relevant.' : 'https://';
+      urlInput.type            = isFlag ? 'text' : 'url';
     });
   });
 
