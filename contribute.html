@@ -9,7 +9,14 @@ permalink: /contribute/
   <p class="site-subtitle">Know something that should be listed, or spot something wrong? Tell us.</p>
 </header>
 
-<form class="suggest-form" action="https://formspree.io/f/mwvjjkay" method="POST">
+<div id="submitted-msg" style="display:none">
+  <p>Thanks — your suggestion is now <a href="https://github.com/openmritools/openmritools.github.io/issues?q=is%3Aissue+label%3Asuggestion%2Cedit" target="_blank" rel="noopener noreferrer">visible on GitHub</a>.</p>
+</div>
+
+<form id="suggest-form" class="suggest-form" action="https://openmritools-webhook-bridge.openmritools.workers.dev" method="POST">
+  <!-- Honeypot: hidden from real users, bots fill it in -->
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
   <div class="field">
     <div class="radio-group">
       <label class="radio-label">
@@ -49,6 +56,11 @@ permalink: /contribute/
 </form>
 
 <script>
+  if (new URLSearchParams(window.location.search).get('submitted') === 'true') {
+    document.getElementById('submitted-msg').style.display = '';
+    document.getElementById('suggest-form').style.display = 'none';
+  }
+
   const existingTools = [
     {% for cat in site.data.categories %}
     {% assign cat_tools = site.data.tools[cat.id] %}

@@ -1,18 +1,16 @@
-# Webhook bridge: Formspree → GitHub Issues
+# Webhook bridge: contribute form → GitHub Issues
 
-Cloudflare Worker that receives Formspree form submissions and triggers
-the `formspree-to-issue.yml` GitHub Actions workflow, which creates a
-GitHub Issue for each submission.
+Cloudflare Worker that receives direct form POSTs from openmritools.com/contribute
+and creates a GitHub Issue for each submission, then redirects the visitor back
+to /contribute/?submitted=true.
 
 ## Flow
 
 ```
-openmritools.com/contribute
-  → Formspree (form host)
-  → this Worker (auth + format bridge)
-  → GitHub repository_dispatch
-  → GitHub Actions workflow
-  → GitHub Issue created
+openmritools.com/contribute (HTML form POST)
+  → this Worker (parses fields, creates issue)
+  → GitHub Issues API
+  → redirect → /contribute/?submitted=true
 ```
 
 ## One-time setup
@@ -25,7 +23,7 @@ Fine-grained tokens → Generate new token**.
 - Resource owner: `openmritools`
 - Repository access: only `openmritools.github.io`
 - Permissions:
-  - Repository permissions → **Contents: Read and write** (required for repository_dispatch)
+  - Repository permissions → **Issues: Read and write**
   - Repository permissions → **Metadata: Read-only**
 
 Copy the token — you'll need it in step 3.
@@ -39,7 +37,7 @@ cd scripts/webhook-bridge
 wrangler deploy
 ```
 
-Copy the Worker URL printed at the end (e.g. `https://openmritools-webhook-bridge.your-subdomain.workers.dev`).
+The Worker deploys to `https://openmritools-webhook-bridge.openmritools.workers.dev`.
 
 ### 3. Add Worker secrets
 
@@ -49,26 +47,15 @@ wrangler secret put GITHUB_TOKEN
 
 wrangler secret put GITHUB_REPO
 # enter: openmritools/openmritools.github.io
-
-wrangler secret put FORMSPREE_SECRET
-# paste the signing secret from step 4
 ```
 
-### 4. Configure Formspree webhook
+### 4. Test
 
-1. Go to **Formspree dashboard → your form (mwvjjkay) → Integrations → Webhooks**
-2. Add a new webhook:
-   - **URL:** the Worker URL from step 2
-   - **Events:** New submission
-3. Copy the **Signing Secret** shown and use it in `wrangler secret put FORMSPREE_SECRET` above
-
-### 5. Test
-
-Submit a test entry via `openmritools.com/contribute` and verify:
-- A GitHub Actions run appears under the **Actions** tab
-- A GitHub Issue is created with the correct title and label
+Submit a test entry via `openmritools.com/contribute`. Verify:
+- Browser redirects to `/contribute/?submitted=true` with the success message
+- A GitHub Issue appears under the Issues tab with the correct title and label
 
 ## Updating the issue format
 
-Edit `.github/workflows/formspree-to-issue.yml`. No Worker redeploy needed.
-The Worker only forwards data — all issue logic lives in the workflow.
+Edit `worker.js` and redeploy with `wrangler deploy`. No GitHub Actions involved —
+the Worker talks to the GitHub Issues API directly.
