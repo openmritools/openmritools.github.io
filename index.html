@@ -103,7 +103,14 @@ title: MRI Tools
         </div>
       </th>
       <th class="stars-th">
-        <button class="stars-sort-btn" id="stars-sort-btn">Stars <span id="stars-arrow"></span></button>
+        <button class="stars-header-btn" id="stars-header-btn">
+          <span id="stars-header-label">Stars</span> <span id="stars-sort-icon">▾</span>
+        </button>
+        <div class="stars-dropdown" id="stars-dropdown">
+          <button class="stars-option selected" data-sort="">Default</button>
+          <button class="stars-option" data-sort="desc">Most first</button>
+          <button class="stars-option" data-sort="asc">Fewest first</button>
+        </div>
       </th>
     </tr>
   </thead>
@@ -225,16 +232,34 @@ title: MRI Tools
   let activeSubFilter = null;
   let activeLang      = null;
   let activeModality  = null;
-  let starsSortDir    = null; // null | 'desc' | 'asc'
+  let starsSortDir = null; // null | 'desc' | 'asc'
 
-  const starsBtn  = document.getElementById('stars-sort-btn');
-  const starsArrow = document.getElementById('stars-arrow');
+  const starsHeaderBtn   = document.getElementById('stars-header-btn');
+  const starsSortIcon    = document.getElementById('stars-sort-icon');
+  const starsDropdown    = document.getElementById('stars-dropdown');
+  const starsOptions     = starsDropdown.querySelectorAll('.stars-option');
 
-  starsBtn.addEventListener('click', () => {
-    starsSortDir = starsSortDir === null ? 'desc' : starsSortDir === 'desc' ? 'asc' : null;
-    starsArrow.textContent = starsSortDir === 'desc' ? '↓' : starsSortDir === 'asc' ? '↑' : '';
-    starsBtn.classList.toggle('active', starsSortDir !== null);
+  function setStarsSort(dir) {
+    starsSortDir = dir || null;
+    starsSortIcon.textContent = starsSortDir === 'desc' ? '↓' : starsSortDir === 'asc' ? '↑' : '▾';
+    starsHeaderBtn.classList.toggle('stars-header-active', !!starsSortDir);
+    starsOptions.forEach(o => o.classList.toggle('selected', o.dataset.sort === (starsSortDir || '')));
     applyFilters();
+  }
+
+  starsHeaderBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    langDropdown.classList.remove('open');
+    modalityDropdown.classList.remove('open');
+    starsDropdown.classList.toggle('open');
+  });
+
+  starsOptions.forEach(opt => {
+    opt.addEventListener('click', e => {
+      e.stopPropagation();
+      setStarsSort(opt.dataset.sort);
+      starsDropdown.classList.remove('open');
+    });
   });
 
   function setLang(lang) {
@@ -269,6 +294,7 @@ title: MRI Tools
   langHeaderBtn.addEventListener('click', e => {
     e.stopPropagation();
     modalityDropdown.classList.remove('open');
+    starsDropdown.classList.remove('open');
     langDropdown.classList.toggle('open');
   });
 
@@ -283,6 +309,7 @@ title: MRI Tools
   modalityHeaderBtn.addEventListener('click', e => {
     e.stopPropagation();
     langDropdown.classList.remove('open');
+    starsDropdown.classList.remove('open');
     modalityDropdown.classList.toggle('open');
   });
 
@@ -297,6 +324,7 @@ title: MRI Tools
   document.addEventListener('click', () => {
     langDropdown.classList.remove('open');
     modalityDropdown.classList.remove('open');
+    starsDropdown.classList.remove('open');
   });
 
   function applyFilters() {

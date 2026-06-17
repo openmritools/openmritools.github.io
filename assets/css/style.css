@@ -305,13 +305,14 @@ body {
 }
 
 .lang-th,
-.modality-th {
+.modality-th,
+.stars-th {
   position: relative;
 }
 
 .lang-header-btn,
 .modality-header-btn,
-.stars-sort-btn {
+.stars-header-btn {
   font-family: inherit;
   font-size: 11px;
   font-weight: 500;
@@ -329,27 +330,14 @@ body {
 .lang-header-btn.lang-header-active,
 .modality-header-btn:hover,
 .modality-header-btn.modality-header-active,
-.stars-sort-btn:hover,
-.stars-sort-btn.active {
+.stars-header-btn:hover,
+.stars-header-btn.stars-header-active {
   color: var(--text);
 }
 
-.stars-sort-btn {
-  font-family: inherit;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
 .lang-dropdown,
-.modality-dropdown {
+.modality-dropdown,
+.stars-dropdown {
   display: none;
   position: absolute;
   right: 0;
@@ -364,12 +352,14 @@ body {
 }
 
 .lang-dropdown.open,
-.modality-dropdown.open {
+.modality-dropdown.open,
+.stars-dropdown.open {
   display: flex;
 }
 
 .lang-option,
-.modality-option {
+.modality-option,
+.stars-option {
   font-family: inherit;
   font-size: 12px;
   color: var(--muted);
@@ -382,13 +372,15 @@ body {
 }
 
 .lang-option:hover,
-.modality-option:hover {
+.modality-option:hover,
+.stars-option:hover {
   color: var(--text);
   background: var(--hairline);
 }
 
 .lang-option.selected,
-.modality-option.selected {
+.modality-option.selected,
+.stars-option.selected {
   color: var(--text);
   font-weight: 500;
 }
