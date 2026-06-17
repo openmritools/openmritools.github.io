@@ -45,3 +45,13 @@
   description: Longitudinal study of early brain and cognitive development tracking children from birth to age ten with structural and functional MRI.
   url: https://hbcdstudy.org
   date_added: 2026-06-16
+
+- name: NeuroStore
+  description: Centralized database of 30,000+ neuroimaging studies with pre-extracted activation coordinates, powering Neurosynth Compose.
+  url: https://neurostore.org
+  date_added: 2026-06-17
+
+- name: BrainMap
+  description: Curated database of neuroimaging coordinates and metadata from peer-reviewed studies; powers GingerALE meta-analyses.
+  url: https://www.brainmap.org
+  date_added: 2026-06-17

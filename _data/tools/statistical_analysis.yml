@@ -86,3 +86,24 @@
   language: MATLAB
   date_added: 2026-06-16
   modality: multi
+
+- name: Neurosynth Compose
+  description: Web platform for reproducible neuroimaging meta-analysis with PRISMA-guided study curation, integrated with NeuroStore.
+  url: https://compose.neurosynth.org
+  language: Web
+  date_added: 2026-06-17
+  modality: fMRI
+
+- name: GingerALE
+  description: Coordinate-based meta-analysis using Activation Likelihood Estimation; the most widely used CBMA tool.
+  url: https://www.brainmap.org/ale
+  language: Java
+  date_added: 2026-06-17
+  modality: fMRI
+
+- name: SDM-PSI
+  description: Seed-based d Mapping with Permutation of Subject Images — hybrid CBMA tool that combines coordinate and image-based data.
+  url: https://www.sdmproject.com
+  language: MATLAB
+  date_added: 2026-06-17
+  modality: fMRI
