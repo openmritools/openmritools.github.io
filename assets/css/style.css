@@ -488,3 +488,72 @@ body {
 }
 
 .hidden { display: none !important; }
+
+/* ── Mobile ── */
+
+@media (max-width: 640px) {
+  body {
+    padding: 32px 16px 64px;
+  }
+
+  .site-nav {
+    gap: 10px;
+  }
+
+  .controls {
+    margin-top: 52px;
+    gap: 14px;
+  }
+
+  .pills {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .pill-group {
+    flex-wrap: wrap;
+  }
+
+  .sub-pills.visible {
+    justify-content: flex-start;
+  }
+
+  .search {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .meta {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .meta-right {
+    display: none;
+  }
+
+  .meta-left {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* Hide language and modality columns — keep dot, tool name, description */
+  .lang-th,
+  .tool-lang,
+  .modality-th,
+  .tool-modality {
+    display: none;
+  }
+
+  .tool-desc {
+    font-size: 12px;
+  }
+
+  .tool-table th,
+  .tool-table td {
+    padding-right: 8px;
+  }
+}
