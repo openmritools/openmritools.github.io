@@ -76,10 +76,14 @@ permalink: /contribute/
   };
   const descLabel = document.getElementById('desc-label');
   const descArea  = document.getElementById('tool-desc');
+  const urlInput  = document.getElementById('tool-url');
   document.querySelectorAll('input[name="type"]').forEach(r => {
     r.addEventListener('change', () => {
-      descLabel.textContent = descCopy[r.value].label;
-      descArea.placeholder  = descCopy[r.value].placeholder;
+      const isFlag = r.value === 'flag';
+      descLabel.textContent    = descCopy[r.value].label;
+      descArea.placeholder     = descCopy[r.value].placeholder;
+      urlInput.required        = !isFlag;
+      urlInput.placeholder     = isFlag ? 'Optional — include if relevant.' : 'https://';
     });
   });
 
