@@ -4,3 +4,4 @@ __pycache__/
 .env
 _site/
 .jekyll-cache/
+.wrangler/
