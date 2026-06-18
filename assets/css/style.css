@@ -278,6 +278,7 @@ body {
 .dot-quiet     { background: var(--dot-quiet); }
 .dot-inactive  { background: var(--dot-inactive); }
 .dot-external  { background: var(--dot-external); }
+.dot-unknown   { background: transparent; border: 1.5px solid var(--dot-inactive); }
 
 .tool-name a {
   color: var(--text);
