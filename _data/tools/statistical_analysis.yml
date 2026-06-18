@@ -117,7 +117,7 @@
   modality: fMRI
 
 - name: DiagnoseHarmonisation (DHARM)
-  description: Library for applying and assessing MRI harmonisation algorithms at the summary-measure level, with implementations of validated methods from the literature.
+  description: In-development library for applying and assessing MRI harmonisation algorithms at the summary-measure level, with implementations of validated methods from the literature.
   url: https://jake-turnbull.github.io/HarmonisationDiagnostics/
   github: Jake-Turnbull/HarmonisationDiagnostics
   language: Python
