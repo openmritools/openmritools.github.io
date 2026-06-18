@@ -225,8 +225,9 @@
   date_added: 2026-06-18
 
 - name: UBO Detector
-  description: Cluster-based fully automated WMH extraction pipeline with built-in pretrained KNN classifier.
-  url: https://www.cheba.unsw.edu.au
+  description: Cluster-based fully automated WMH extraction pipeline with regional quantification in lobes and arterial territories.
+  url: https://github.com/cheba-nil/CNS
+  github: cheba-nil/CNS
   language: MATLAB
   modality: structural
   date_added: 2026-06-18
