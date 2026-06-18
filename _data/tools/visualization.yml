@@ -61,3 +61,18 @@
   language: Pascal
   date_added: 2026-06-17
   modality: multi
+
+- name: TrackVis
+  description: Visualizes and analyzes fiber tract data from diffusion MRI tractography with interactive 3D display.
+  url: https://trackvis.org
+  language: C++
+  modality: diffusion
+  date_added: 2026-06-18
+
+- name: TractEdit
+  description: Interactive tool for virtual dissection and manual refinement of diffusion MRI tractography.
+  url: https://github.com/marcotag93/TractEdit
+  github: marcotag93/TractEdit
+  language: Python
+  modality: diffusion
+  date_added: 2026-06-18

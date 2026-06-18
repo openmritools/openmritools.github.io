@@ -115,3 +115,11 @@
   language: MATLAB
   date_added: 2026-06-17
   modality: fMRI
+
+- name: DiagnoseHarmonisation
+  description: Library for applying and assessing harmonisation algorithms at the summary-measure level, with implementations of validated methods from the literature.
+  url: https://github.com/Jake-Turnbull/HarmonisationDiagnostics
+  github: Jake-Turnbull/HarmonisationDiagnostics
+  language: Python
+  modality: multi
+  date_added: 2026-06-18
