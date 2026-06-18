@@ -9,3 +9,8 @@
   description: Annual hackathon for collaborative neuroimaging projects, co-located with the OHBM annual meeting.
   url: https://humanbrainmapping.org/26Brainhack/
   date_added: 2026-06-16
+
+- name: Brainhack
+  description: Worldwide network of collaborative hackathons for open neuroscience tool development, with tutorials, proceedings, and a code of conduct.
+  url: https://brainhack.org
+  date_added: 2026-06-18
