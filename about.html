@@ -14,7 +14,13 @@ permalink: /about/
 
   <p>MRI Tools is a shared overview of open-source software for MRI analysis. If everyone contributes what they know, it becomes a way for the whole community to stay updated and discover each other's work.</p>
 
-  <p><strong>How health status works.</strong> A weekly GitHub Actions cron job checks each tool's repository. Active means committed within 6 months. Quiet means 6 to 24 months. Inactive means 2+ years or archived. Tools without a GitHub repo show a blue dot.</p>
+  <p><strong>How health status works.</strong> A weekly GitHub Actions cron job checks each tool's repository.</p>
+  <ul class="health-legend">
+    <li><span class="dot dot-active"></span> Active — committed within 6 months</li>
+    <li><span class="dot dot-quiet"></span> Quiet — 6 to 24 months</li>
+    <li><span class="dot dot-inactive"></span> Inactive — 2+ years or archived</li>
+    <li><span class="dot dot-external"></span> Not on GitHub</li>
+  </ul>
 
   <p><strong>How to contribute.</strong> Use the form at <a href="{{ '/contribute/' | relative_url }}">/contribute</a> — your submission becomes a public GitHub Issue automatically. You can also open an issue directly on GitHub, or submit a pull request. Each tool is a YAML entry: name, url, description, language, modality, and optionally github (owner/repo for health tracking).</p>
 
