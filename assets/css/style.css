@@ -56,8 +56,11 @@ body {
   font-weight: 600;
   letter-spacing: -0.2px;
 }
-.site-title a {
-  color: inherit;
+.site-title a,
+.site-title a:visited,
+.site-title a:hover,
+.site-title a:active {
+  color: var(--text);
   text-decoration: none;
 }
 
