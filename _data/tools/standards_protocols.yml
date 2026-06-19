@@ -25,3 +25,35 @@
   language: JavaScript
   date_added: 2026-06-19
   modality: multi
+
+- name: ENIGMA FreeSurfer Protocol
+  description: Standardized scripts for cortical thickness, surface area, and subcortical volume extraction and QC from FreeSurfer outputs across ENIGMA working groups.
+  url: https://github.com/ENIGMA-git/ENIGMA-FreeSurfer-protocol
+  github: ENIGMA-git/ENIGMA-FreeSurfer-protocol
+  language: MATLAB
+  date_added: 2026-06-19
+  modality: structural
+
+- name: ENIGMA DTI-TBSS Protocol
+  description: Standardized pipeline for registering FA images to the ENIGMA-DTI template and performing tract-based spatial statistics with ROI extraction.
+  url: https://github.com/ENIGMA-git/ENIGMA-DTI-TBSS-Protocol
+  github: ENIGMA-git/ENIGMA-DTI-TBSS-Protocol
+  language: MATLAB
+  date_added: 2026-06-19
+  modality: diffusion
+
+- name: ENIGMA DTI Preprocessing Guidelines
+  description: Standardized preprocessing scripts for diffusion MRI eddy current correction and EPI distortion correction across ENIGMA-DTI sites.
+  url: https://github.com/ENIGMA-git/ENIGMA-DTI-Preprocessing-Guidelines
+  github: ENIGMA-git/ENIGMA-DTI-Preprocessing-Guidelines
+  language: Shell
+  date_added: 2026-06-19
+  modality: diffusion
+
+- name: ENIGMA-CNV Protocol
+  description: Protocols and scripts for the ENIGMA copy number variant working group, covering neuroimaging QC and analysis steps for CNV carriers.
+  url: https://github.com/ENIGMA-git/ENIGMA-CNV
+  github: ENIGMA-git/ENIGMA-CNV
+  language: Shell
+  date_added: 2026-06-19
+  modality: multi

@@ -146,3 +146,11 @@
   language: MATLAB
   date_added: 2026-06-19
   modality: multi
+
+- name: ENIGMA Disease Working Group Stats
+  description: Batch GLM and effect-size scripts for ROI and vertexwise meta-analysis across ENIGMA disease working groups.
+  url: https://github.com/ENIGMA-git/ENIGMADiseaseWorkingGroupStats
+  github: ENIGMA-git/ENIGMADiseaseWorkingGroupStats
+  language: R
+  date_added: 2026-06-19
+  modality: multi
