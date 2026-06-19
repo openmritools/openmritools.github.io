@@ -29,3 +29,11 @@
   language: Python
   modality: multi
   date_added: 2026-06-19
+
+- name: KomaMRI.jl
+  description: GPU-accelerated, Pulseq-compatible MRI simulation framework for designing and testing pulse sequences.
+  url: https://github.com/JuliaHealth/KomaMRI.jl
+  github: JuliaHealth/KomaMRI.jl
+  language: Julia
+  date_added: 2026-06-19
+  modality: multi

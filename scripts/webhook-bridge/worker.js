@@ -55,7 +55,7 @@ export default {
       `*Submitted via [openmritools.com/contribute](https://openmritools.com/contribute)*`,
     ].join('\n');
 
-    await fetch(
+    const ghResp = await fetch(
       `https://api.github.com/repos/${env.GITHUB_REPO}/issues`,
       {
         method: 'POST',
@@ -73,6 +73,10 @@ export default {
         }),
       }
     );
+
+    const ghBody = await ghResp.text();
+    console.log('GitHub API status:', ghResp.status);
+    console.log('GitHub API response:', ghBody);
 
     // Always redirect — don't expose GitHub API errors to visitors
     return Response.redirect(REDIRECT_BASE + '?submitted=true', 302);

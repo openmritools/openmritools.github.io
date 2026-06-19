@@ -123,3 +123,27 @@
   language: Python
   modality: multi
   date_added: 2026-06-18
+
+- name: TAPAS
+  description: Collection of algorithms for computational psychiatry and neuroscience, including the HGF for computational modelling and HUGE for functional connectivity analysis.
+  url: https://github.com/translationalneuromodeling/tapas
+  github: translationalneuromodeling/tapas
+  language: MATLAB
+  date_added: 2026-06-19
+  modality: fMRI
+
+- name: BrainIAK
+  description: Python toolkit for advanced fMRI analysis including shared response modelling, Bayesian RSA, and searchlight decoding.
+  url: https://github.com/brainiak/brainiak
+  github: brainiak/brainiak
+  language: Python
+  date_added: 2026-06-19
+  modality: fMRI
+
+- name: FEMA
+  description: Fast and efficient mixed-effects algorithm for mass-univariate whole-brain analysis; designed for large-sample studies such as ABCD with voxelwise, vertexwise, and connectivity matrix support.
+  url: https://github.com/cmig-research-group/cmig_tools
+  github: cmig-research-group/cmig_tools
+  language: MATLAB
+  date_added: 2026-06-19
+  modality: multi

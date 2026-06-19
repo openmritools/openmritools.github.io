@@ -9,3 +9,11 @@
   description: Platform for sharing and discovering versioned, citable step-by-step research protocols.
   url: https://www.protocols.io
   date_added: 2026-06-16
+
+- name: BIDS specification
+  description: Community standard for organizing and describing neuroimaging, MRI, EEG, and related datasets in a consistent file structure.
+  url: https://github.com/bids-standard/bids-specification
+  github: bids-standard/bids-specification
+  language: Web
+  date_added: 2026-06-19
+  modality: multi

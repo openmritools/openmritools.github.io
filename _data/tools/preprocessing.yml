@@ -239,3 +239,11 @@
   language: Python
   modality: multi
   date_added: 2026-06-19
+
+- name: intensity-normalization
+  description: Collection of MRI intensity normalization methods including Z-score, Nyul histogram matching, WhiteStripe, and deep learning approaches.
+  url: https://github.com/jcreinhold/intensity-normalization
+  github: jcreinhold/intensity-normalization
+  language: Python
+  date_added: 2026-06-19
+  modality: multi

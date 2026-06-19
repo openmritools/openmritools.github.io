@@ -27,3 +27,11 @@
   language: Python
   date_added: 2026-06-16
   modality: multi
+
+- name: ANTsPy
+  description: Python interface to ANTs for image registration, segmentation, and template building without writing C++ code.
+  url: https://github.com/ANTsX/ANTsPy
+  github: ANTsX/ANTsPy
+  language: Python
+  date_added: 2026-06-19
+  modality: multi

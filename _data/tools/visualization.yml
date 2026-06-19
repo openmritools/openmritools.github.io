@@ -76,3 +76,19 @@
   language: Python
   modality: diffusion
   date_added: 2026-06-18
+
+- name: pycortex
+  description: Interactive 3D surface viewer for fMRI data; renders cortical activations on inflated and flat maps in a browser.
+  url: https://github.com/gallantlab/pycortex
+  github: gallantlab/pycortex
+  language: Python
+  date_added: 2026-06-19
+  modality: fMRI
+
+- name: brainchop
+  description: In-browser 3D brain MRI segmentation using deep learning; runs fully client-side without uploading data.
+  url: https://github.com/neuroneural/brainchop
+  github: neuroneural/brainchop
+  language: JavaScript
+  date_added: 2026-06-19
+  modality: structural
