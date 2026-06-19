@@ -1,0 +1,29 @@
+name: Discover New Tools
+
+on:
+  schedule:
+    - cron: "0 8 * * 1"  # every Monday at 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml requests
+
+      - name: Run discovery
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+        run: python scripts/discover_tools.py
