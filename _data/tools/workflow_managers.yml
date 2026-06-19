@@ -45,7 +45,7 @@
   modality: multi
 
 - name: Clinica
-  description: Software platform for clinical neuroimaging studies, with standardized pipelines for structural, diffusion, and PET data.
+  description: Software platform for clinical neuroimaging studies, with standardized pipelines for structural and diffusion MRI data.
   url: https://aramislab.paris.inria.fr/clinica/docs/public/latest
   github: aramis-lab/clinica
   language: Python
