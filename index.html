@@ -376,7 +376,7 @@ title: MRI Tools
       const catMatch      = isNewView ? top10.has(row) : (!allowed || allowed.includes(row.dataset.category));
       const textMatch     = !q || row.dataset.name.includes(q) || row.dataset.desc.includes(q);
       const langMatch     = !activeLang || row.dataset.lang === activeLang;
-      const modalityMatch = !activeModality || row.dataset.modality === activeModality;
+      const modalityMatch = !activeModality || row.dataset.modality === activeModality || (activeModality !== 'multi' && row.dataset.modality === 'multi');
       const show = catMatch && textMatch && langMatch && modalityMatch;
       row.classList.toggle('hidden', !show);
       if (show) visible++;
