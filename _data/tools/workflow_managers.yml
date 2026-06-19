@@ -23,7 +23,7 @@
   modality: multi
 
 - name: Brainlife.io
-  description: Free cloud platform for running containerized neuroimaging pipelines with provenance tracking.
+  description: Cloud platform for running containerized neuroimaging pipelines with provenance tracking.
   url: https://brainlife.io
   language: Web
   date_added: 2026-06-16
@@ -76,7 +76,7 @@
   modality: multi
 
 - name: Snakemake
-  description: Workflow management system for building reproducible, scalable data analysis pipelines; widely used for neuroimaging processing chains.
+  description: Workflow management system for building reproducible, scalable data analysis pipelines in Python.
   url: https://github.com/snakemake/snakemake
   github: snakemake/snakemake
   language: Python

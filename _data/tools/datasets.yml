@@ -1,7 +1,7 @@
 # Datasets
 
 - name: OpenNeuro
-  description: Free platform for sharing and downloading BIDS-formatted neuroimaging datasets; over 1,000 public datasets.
+  description: Platform for sharing and downloading BIDS-formatted neuroimaging datasets.
   url: https://openneuro.org
   github: OpenNeuroOrg/openneuro
   date_added: 2026-06-16
@@ -63,7 +63,7 @@
   date_added: 2026-06-18
 
 - name: HBN
-  description: Large-scale open pediatric dataset from the Child Mind Institute with structural and functional MRI alongside behavioral and EEG measures.
+  description: Open pediatric dataset from the Child Mind Institute with structural and functional MRI alongside behavioral measures.
   url: https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/
   modality: multi
   date_added: 2026-06-18

@@ -11,7 +11,7 @@
   date_added: 2026-06-16
 
 - name: BIDS specification
-  description: Community standard for organizing and describing neuroimaging, MRI, EEG, and related datasets in a consistent file structure.
+  description: Community standard for organizing and describing neuroimaging datasets in a consistent file and metadata structure.
   url: https://github.com/bids-standard/bids-specification
   github: bids-standard/bids-specification
   language: Web
