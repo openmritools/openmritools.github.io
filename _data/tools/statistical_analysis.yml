@@ -154,3 +154,11 @@
   language: R
   date_added: 2026-06-19
   modality: multi
+
+- name: multiverse
+  description: R package for declaring and running multiverse analyses — systematically exploring all reasonable analytical choices and summarising their effect on results.
+  url: https://github.com/MUCollective/multiverse
+  github: MUCollective/multiverse
+  language: R
+  date_added: 2026-06-19
+  modality: multi
