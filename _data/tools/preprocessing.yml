@@ -233,7 +233,7 @@
   date_added: 2026-06-18
 
 - name: SIAM
-  description: Contrast-, resolution-, and pathology-robust head tissue segmentation trained from synthetic data; handles T1, T2, FLAIR, and CT volumes.
+  description: Contrast-, resolution-, and pathology-robust head tissue segmentation trained from synthetic data; handles T1, T2, and FLAIR volumes.
   url: https://github.com/romainVala/SIAM
   github: romainVala/SIAM
   language: Python
