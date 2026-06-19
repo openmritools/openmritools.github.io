@@ -67,6 +67,22 @@
   date_added: 2026-06-17
   modality: multi
 
+- name: Neurodocker
+  description: Generates custom Dockerfiles and Singularity recipes for reproducible neuroimaging environments with any combination of tools and versions.
+  url: https://github.com/ReproNim/neurodocker
+  github: ReproNim/neurodocker
+  language: Python
+  date_added: 2026-06-19
+  modality: multi
+
+- name: Snakemake
+  description: Workflow management system for building reproducible, scalable data analysis pipelines; widely used for neuroimaging processing chains.
+  url: https://github.com/snakemake/snakemake
+  github: snakemake/snakemake
+  language: Python
+  date_added: 2026-06-19
+  modality: multi
+
 - name: fmriflows
   description: Suite of dependent fMRI analysis pipelines covering anatomical and functional preprocessing, univariate GLM, and multivariate pattern analysis.
   url: https://github.com/miykael/fmriflows

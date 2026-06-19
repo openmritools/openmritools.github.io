@@ -264,6 +264,14 @@
   date_added: 2026-06-19
   modality: structural
 
+- name: fmripost-aroma
+  description: BIDS App for running ICA-AROMA denoising on fMRIPrep derivatives, removing motion-related noise components from functional MRI.
+  url: https://github.com/nipreps/fmripost-aroma
+  github: nipreps/fmripost-aroma
+  language: Python
+  date_added: 2026-06-19
+  modality: fMRI
+
 - name: hMRI toolbox
   description: SPM toolbox for creating quantitative MRI maps (T1, MT, PD, R2*) from multi-parameter mapping acquisitions for in vivo histology.
   url: https://github.com/hMRI-group/hMRI-toolbox

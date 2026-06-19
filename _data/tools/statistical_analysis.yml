@@ -155,6 +155,14 @@
   date_added: 2026-06-19
   modality: multi
 
+- name: PCNtoolkit
+  description: Python toolbox for probabilistic normative modelling of neuroimaging and clinical data, estimating individualized deviation scores from a reference population.
+  url: https://github.com/predictive-clinical-neuroscience/PCNtoolkit
+  github: predictive-clinical-neuroscience/PCNtoolkit
+  language: Python
+  date_added: 2026-06-19
+  modality: multi
+
 - name: multiverse
   description: R package for declaring and running multiverse analyses — systematically exploring all reasonable analytical choices and summarising their effect on results.
   url: https://github.com/MUCollective/multiverse
