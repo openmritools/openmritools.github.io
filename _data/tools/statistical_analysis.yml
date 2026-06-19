@@ -125,10 +125,9 @@
   date_added: 2026-06-18
 
 - name: TAPAS
-  description: Collection of algorithms for computational psychiatry and neuroscience, including the HGF for computational modelling and HUGE for functional connectivity analysis.
-  url: https://github.com/translationalneuromodeling/tapas
-  github: translationalneuromodeling/tapas
-  language: MATLAB
+  description: Suite of computational psychiatry tools (HGF, rDCM, PhysIO, and more) now maintained as individual packages under the ComputationalPsychiatry GitHub organization.
+  url: https://github.com/ComputationalPsychiatry
+  language: MATLAB/Python
   date_added: 2026-06-19
   modality: fMRI
 
