@@ -1,7 +1,7 @@
 # Datasets
 
 - name: OpenNeuro
-  description: Platform for sharing and downloading BIDS-formatted neuroimaging datasets.
+  description: Free and open platform for sharing and analyzing BIDS-formatted neuroimaging datasets.
   url: https://openneuro.org
   github: OpenNeuroOrg/openneuro
   date_added: 2026-06-16
