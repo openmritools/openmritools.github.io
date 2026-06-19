@@ -3,6 +3,9 @@ name: Update Tool Health
 on:
   schedule:
     - cron: "0 0 * * 0"  # every Sunday at 00:00 UTC
+  push:
+    paths:
+      - "_data/tools/**.yml"  # only when tool data changes
   workflow_dispatch:       # allow manual trigger from the Actions tab
 
 jobs:
