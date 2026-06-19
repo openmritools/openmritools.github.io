@@ -264,13 +264,6 @@
   date_added: 2026-06-19
   modality: structural
 
-- name: PETPrep
-  description: Nipreps pipeline for robust preprocessing of PET data, following the same design principles as fMRIPrep.
-  url: https://github.com/nipreps/petprep
-  github: nipreps/petprep
-  language: Python
-  date_added: 2026-06-20
-  modality: multi
 
 - name: fmripost-aroma
   description: BIDS App for running ICA-AROMA denoising on fMRIPrep derivatives, removing motion-related noise components from functional MRI.
