@@ -48,7 +48,8 @@ TOPICS = [
     "brain-imaging",
 ]
 
-MIN_STARS = 25  # only surface repos with meaningful community adoption
+MIN_STARS_NEW         = 25   # new repos (created last 7 days)
+MIN_STARS_ESTABLISHED = 50   # established repos (any age)
 
 NOW    = datetime.now(timezone.utc)
 SINCE  = NOW - timedelta(days=7)
@@ -86,46 +87,55 @@ def gh_get(url: str, params: dict | None = None) -> dict | None:
 
 # ── Source 1: GitHub Search ───────────────────────────────────────────────────
 
-def search_github(known: set[str]) -> list[dict]:
-    date_str  = SINCE.strftime("%Y-%m-%d")
-    seen      = set()
-    candidates = []
+def _search_topic(topic: str, extra_query: str, min_stars: int, seen: set, known: set) -> list[dict]:
+    data = gh_get(
+        "https://api.github.com/search/repositories",
+        params={
+            "q":        f"topic:{topic} {extra_query} stars:>={min_stars}",
+            "sort":     "stars",
+            "order":    "desc",
+            "per_page": 30,
+        },
+    )
+    time.sleep(1.2)  # stay well within search rate limit (10 req/min)
+
+    results = []
+    for repo in (data or {}).get("items", []):
+        slug = repo["full_name"]
+        if slug.lower() in known or slug in seen:
+            continue
+        seen.add(slug)
+        results.append({
+            "slug":        slug,
+            "url":         repo["html_url"],
+            "stars":       repo["stargazers_count"],
+            "description": (repo["description"] or "").strip(),
+            "topics":      repo.get("topics", []),
+            "matched_on":  topic,
+        })
+    return results
+
+
+def search_github(known: set[str]) -> tuple[list[dict], list[dict]]:
+    date_str = SINCE.strftime("%Y-%m-%d")
+    seen     = set()
+    new_hits  = []
+    old_hits  = []
 
     for topic in TOPICS:
         print(f"  topic:{topic} ...", end=" ", flush=True)
-        data = gh_get(
-            "https://api.github.com/search/repositories",
-            params={
-                "q":        f"topic:{topic} created:>{date_str} stars:>={MIN_STARS}",
-                "sort":     "stars",
-                "order":    "desc",
-                "per_page": 30,
-            },
-        )
-        time.sleep(1.2)  # stay well within search rate limit (10 req/min)
 
-        if not data:
-            print("skipped")
-            continue
+        new = _search_topic(topic, f"created:>{date_str}", MIN_STARS_NEW, seen, known)
+        est = _search_topic(topic, "",                      MIN_STARS_ESTABLISHED, seen, known)
 
-        items = data.get("items", [])
-        print(f"{len(items)} results")
+        new_hits.extend(new)
+        old_hits.extend(est)
+        print(f"{len(new)} new  {len(est)} established")
 
-        for repo in items:
-            slug = repo["full_name"]
-            if slug.lower() in known or slug in seen:
-                continue
-            seen.add(slug)
-            candidates.append({
-                "slug":        slug,
-                "url":         repo["html_url"],
-                "stars":       repo["stargazers_count"],
-                "description": (repo["description"] or "").strip(),
-                "topics":      repo.get("topics", []),
-                "matched_on":  topic,
-            })
-
-    return sorted(candidates, key=lambda x: -x["stars"])
+    return (
+        sorted(new_hits, key=lambda x: -x["stars"]),
+        sorted(old_hits, key=lambda x: -x["stars"])[:20],  # top 20 established
+    )
 
 
 # ── Source 2: bioRxiv ─────────────────────────────────────────────────────────
@@ -177,9 +187,20 @@ def search_biorxiv(known: set[str]) -> list[dict]:
 
 # ── Issue creation ────────────────────────────────────────────────────────────
 
-def create_issue(github_hits: list[dict], biorxiv_hits: list[dict]) -> str:
-    week = NOW.strftime("%Y-%m-%d")
-    total = len(github_hits) + len(biorxiv_hits)
+def _repo_table(hits: list[dict]) -> list[str]:
+    lines = [
+        "| Repo | Stars | Matched topic | Description |",
+        "|---|---|---|---|",
+    ]
+    for r in hits:
+        desc = r["description"][:79] + "…" if len(r["description"]) > 79 else r["description"]
+        lines.append(f"| [{r['slug']}]({r['url']}) | {r['stars']} | `{r['matched_on']}` | {desc} |")
+    return lines
+
+
+def create_issue(new_hits: list[dict], est_hits: list[dict], biorxiv_hits: list[dict]) -> str:
+    week  = NOW.strftime("%Y-%m-%d")
+    total = len(new_hits) + len(est_hits) + len(biorxiv_hits)
 
     lines = [f"## Tool candidates — week of {week}", ""]
 
@@ -189,20 +210,14 @@ def create_issue(github_hits: list[dict], biorxiv_hits: list[dict]) -> str:
         lines.append(f"{total} candidate(s) for review. Add to `_data/tools/` if relevant, then close this issue.")
         lines.append("")
 
-    if github_hits:
-        lines += [
-            f"### GitHub — {len(github_hits)} new repos with neuroimaging topics",
-            "",
-            "| Repo | Stars | Matched topic | Description |",
-            "|---|---|---|---|",
-        ]
-        for r in github_hits:
-            desc = r["description"]
-            if len(desc) > 80:
-                desc = desc[:79] + "…"
-            lines.append(
-                f"| [{r['slug']}]({r['url']}) | {r['stars']} | `{r['matched_on']}` | {desc} |"
-            )
+    if new_hits:
+        lines += [f"### GitHub — {len(new_hits)} new repos this week (≥{MIN_STARS_NEW} stars)", ""]
+        lines += _repo_table(new_hits)
+        lines.append("")
+
+    if est_hits:
+        lines += [f"### GitHub — {len(est_hits)} established repos not yet listed (≥{MIN_STARS_ESTABLISHED} stars)", ""]
+        lines += _repo_table(est_hits)
         lines.append("")
 
     if biorxiv_hits:
@@ -245,15 +260,15 @@ def main():
     print(f"  {len(known)} tools already in directory\n")
 
     print("Searching GitHub...")
-    github_hits = search_github(known)
-    print(f"  → {len(github_hits)} new candidates\n")
+    new_hits, est_hits = search_github(known)
+    print(f"  → {len(new_hits)} new this week, {len(est_hits)} established not yet listed\n")
 
     print("Searching bioRxiv...")
     biorxiv_hits = search_biorxiv(known)
     print(f"  → {len(biorxiv_hits)} papers with GitHub links\n")
 
     print("Creating issue...")
-    url = create_issue(github_hits, biorxiv_hits)
+    url = create_issue(new_hits, est_hits, biorxiv_hits)
     print(f"  → {url}")
 
 
