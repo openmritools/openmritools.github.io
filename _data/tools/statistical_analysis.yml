@@ -7,7 +7,7 @@
 #   language:    primary implementation language
 
 - name: SPM
-  description: Statistical parametric mapping framework for fMRI, PET, and voxel-based morphometry analysis.
+  description: Statistical parametric mapping framework for fMRI and voxel-based morphometry analysis.
   url: https://www.fil.ion.ucl.ac.uk/spm
   language: MATLAB
   date_added: 2026-06-16

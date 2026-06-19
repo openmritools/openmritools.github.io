@@ -17,7 +17,7 @@
   date_added: 2026-06-16
 
 - name: ADNI
-  description: Longitudinal MRI and PET data from participants across the Alzheimer's disease spectrum.
+  description: Longitudinal MRI data from participants across the Alzheimer's disease spectrum.
   url: https://adni.loni.usc.edu
   date_added: 2026-06-16
 
