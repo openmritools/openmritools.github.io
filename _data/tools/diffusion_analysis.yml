@@ -58,3 +58,19 @@
   language: C++
   date_added: 2026-06-17
   modality: diffusion
+
+- name: Scilpy
+  description: Python diffusion MRI processing toolbox from the Sherbrooke Connectivity Imaging Lab, covering tractography, filtering, and tractometry.
+  url: https://github.com/scilus/scilpy
+  github: scilus/scilpy
+  language: Python
+  date_added: 2026-06-19
+  modality: diffusion
+
+- name: QSIPrep
+  description: BIDS-compatible preprocessing pipeline for diffusion MRI with distortion correction, motion correction, and denoising.
+  url: https://github.com/PennLINC/qsiprep
+  github: PennLINC/qsiprep
+  language: Python
+  date_added: 2026-06-19
+  modality: diffusion

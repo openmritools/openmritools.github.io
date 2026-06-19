@@ -247,3 +247,19 @@
   language: Python
   date_added: 2026-06-19
   modality: multi
+
+- name: micapipe
+  description: Multimodal MRI processing pipeline for cortical and subcortical analysis of structural, diffusion, and functional data.
+  url: https://github.com/MICA-MNI/micapipe
+  github: MICA-MNI/micapipe
+  language: Python
+  date_added: 2026-06-19
+  modality: multi
+
+- name: Spinal Cord Toolbox
+  description: Comprehensive open-source toolbox for processing and analysis of spinal cord MRI, covering registration, segmentation, and template-based analysis.
+  url: https://github.com/spinalcordtoolbox/spinalcordtoolbox
+  github: spinalcordtoolbox/spinalcordtoolbox
+  language: Python
+  date_added: 2026-06-19
+  modality: structural

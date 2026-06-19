@@ -37,3 +37,11 @@
   language: Julia
   date_added: 2026-06-19
   modality: multi
+
+- name: MONAI
+  description: PyTorch-based open-source framework for deep learning in medical imaging, with pre-built transforms, networks, and training workflows for MRI segmentation and classification.
+  url: https://github.com/Project-MONAI/MONAI
+  github: Project-MONAI/MONAI
+  language: Python
+  date_added: 2026-06-19
+  modality: multi
