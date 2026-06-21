@@ -339,6 +339,19 @@ title: Open MRI Tools
     starsDropdown.classList.remove('open');
   });
 
+  function updateURL() {
+    const params = new URLSearchParams();
+    if (activeFilter && activeFilter !== 'all') params.set('filter', activeFilter);
+    if (activeSubFilter) params.set('cat', activeSubFilter);
+    if (activeModality) params.set('modality', activeModality);
+    if (activeLang) params.set('lang', activeLang);
+    if (starsSortDir) params.set('sort', starsSortDir);
+    const q = search.value.trim();
+    if (q) params.set('q', q);
+    const str = params.toString();
+    history.replaceState(null, '', str ? '?' + str : window.location.pathname);
+  }
+
   function applyFilters() {
     const q         = search.value.toLowerCase().trim();
     const isNewView = activeFilter === 'new';
@@ -403,6 +416,7 @@ title: Open MRI Tools
     });
 
     countEl.textContent = visible + ' tool' + (visible === 1 ? '' : 's');
+    updateURL();
 
     if (starsSortDir) {
       const visibleRows = [...toolRows].filter(r => !r.classList.contains('hidden'));
@@ -465,4 +479,35 @@ title: Open MRI Tools
   modalityClearEl.addEventListener('click', () => setModality(null));
   mobileModalityBtns.forEach(btn => btn.addEventListener('click', () => setModality(btn.dataset.modality)));
   search.addEventListener('input', applyFilters);
+
+  // Load state from URL on page load
+  (function() {
+    const p = new URLSearchParams(window.location.search);
+    const initFilter = p.get('filter');
+    const initCat = p.get('cat');
+    if (initFilter) {
+      const pill = [...mainPills].find(pl => pl.dataset.filter === initFilter);
+      if (pill) {
+        mainPills.forEach(pl => pl.classList.remove('selected'));
+        pill.classList.add('selected');
+        activeFilter = initFilter;
+        showSubPills(activeFilter);
+      }
+    }
+    if (initCat) {
+      activeSubFilter = initCat;
+      const sub = subPillsEl.querySelector(`[data-cat="${initCat}"]`);
+      if (sub) { subPillsEl.querySelectorAll('.sub-pill').forEach(s => s.classList.remove('selected')); sub.classList.add('selected'); }
+    }
+    if (p.get('modality')) setModality(p.get('modality'));
+    if (p.get('lang')) setLang(p.get('lang'));
+    if (p.get('sort')) setStarsSort(p.get('sort'));
+    if (p.get('q')) { search.value = p.get('q'); }
+    if (p.toString()) applyFilters();
+  })();
+
+  // / to focus search
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement !== search) { e.preventDefault(); search.focus(); }
+  });
 </script>
