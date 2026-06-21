@@ -280,3 +280,11 @@
   language: MATLAB
   date_added: 2026-06-19
   modality: structural
+
+- name: QUIT
+  description: Set of tools for processing quantitative MR images, with utilities and fitting methods for T1, T2, and magnetization transfer.
+  url: https://github.com/spinicist/QUIT
+  github: spinicist/QUIT
+  language: C++
+  date_added: 2026-06-21
+  modality: structural
