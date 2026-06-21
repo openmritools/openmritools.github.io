@@ -141,31 +141,31 @@ body {
 /* ── About page ── */
 
 .about-body {
-  margin-top: 32px;
+  margin-top: 52px;
   max-width: 560px;
 }
 
 .health-legend {
   list-style: none;
-  margin: 8px 0 20px;
+  margin: 16px 0 36px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .health-legend li {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 14px;
   color: var(--text);
 }
 
 .about-body p {
   font-size: 14px;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--text);
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
 .about-body a {
