@@ -649,3 +649,43 @@ body {
     font-size: 12px;
   }
 }
+
+/* ── Dark mode ── */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text:             #ededec;
+    --muted:            #888888;
+    --hairline:         #2a2a2a;
+    --pill-active-bg:   #ededec;
+    --pill-active-text: #111111;
+  }
+
+  body {
+    background: #111111;
+  }
+
+  .lang-dropdown,
+  .modality-dropdown,
+  .stars-dropdown {
+    background: #1a1a1a;
+  }
+
+  .search,
+  .field input,
+  .field textarea {
+    background: #1a1a1a;
+    color: var(--text);
+  }
+
+  .submit-btn {
+    background: var(--text);
+    color: #111111;
+    border-color: var(--text);
+  }
+
+  .submit-btn:hover {
+    background: #cccccc;
+    border-color: #cccccc;
+  }
+}
