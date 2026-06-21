@@ -7,7 +7,7 @@
 #   language:    primary implementation language
 
 - name: XCP-D
-  description: Post-processing pipeline for functional connectivity from fMRIPrep outputs — denoising, parcellation, and network metrics.
+  description: Robust fMRI post-processing pipeline for denoising, parcellation, and connectivity analysis; supports fMRIPrep, NiBabies, and HCP outputs.
   url: https://github.com/PennLINC/xcp_d
   github: PennLINC/xcp_d
   language: Python
