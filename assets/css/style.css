@@ -541,6 +541,10 @@ body {
 
 .hidden { display: none !important; }
 
+.mobile-modality {
+  display: none;
+}
+
 /* ── Mobile ── */
 
 @media (max-width: 640px) {
@@ -622,6 +626,13 @@ body {
   #lang-tag,
   #modality-tag {
     display: none !important;
+  }
+
+  .mobile-modality {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
   }
 
   .tool-table td {

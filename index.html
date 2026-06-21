@@ -33,6 +33,14 @@ title: Open MRI Tools
   </div>
   <div class="sub-pills" id="sub-pills"></div>
   <input class="search" id="search" type="search" placeholder="Search tools…" autocomplete="off">
+  <div class="mobile-modality" id="mobile-modality">
+    <button class="pill selected" data-modality="">All</button>
+    <button class="pill" data-modality="fMRI">fMRI</button>
+    <button class="pill" data-modality="structural">Structural</button>
+    <button class="pill" data-modality="diffusion">Diffusion</button>
+    <button class="pill" data-modality="ASL">ASL</button>
+    <button class="pill" data-modality="multi">Multi-modal</button>
+  </div>
 </div>
 
 <div class="meta">
@@ -227,6 +235,7 @@ title: Open MRI Tools
   const modalityHeaderLabel = document.getElementById('modality-header-label');
   const modalityDropdown  = document.getElementById('modality-dropdown');
   const modalityOptions   = modalityDropdown.querySelectorAll('.modality-option');
+  const mobileModalityBtns = document.querySelectorAll('#mobile-modality .pill');
 
   const modalityLabels = { fMRI: 'fMRI', structural: 'Structural', diffusion: 'Diffusion', ASL: 'ASL', multi: 'Multi-modal' };
 
@@ -284,6 +293,7 @@ title: Open MRI Tools
     modalityHeaderLabel.textContent = label ? 'Modality: ' + label : 'Modality';
     modalityHeaderBtn.classList.toggle('modality-header-active', !!activeModality);
     modalityOptions.forEach(o => o.classList.toggle('selected', o.dataset.modality === (activeModality || '')));
+    mobileModalityBtns.forEach(b => b.classList.toggle('selected', b.dataset.modality === (activeModality || '')));
     if (activeModality) {
       modalityTagName.textContent = label;
       modalityTagEl.classList.remove('hidden');
@@ -453,5 +463,6 @@ title: Open MRI Tools
 
   langClearEl.addEventListener('click', () => setLang(null));
   modalityClearEl.addEventListener('click', () => setModality(null));
+  mobileModalityBtns.forEach(btn => btn.addEventListener('click', () => setModality(btn.dataset.modality)));
   search.addEventListener('input', applyFilters);
 </script>
