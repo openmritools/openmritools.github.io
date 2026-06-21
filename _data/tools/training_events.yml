@@ -14,3 +14,13 @@
   description: Worldwide network of collaborative hackathons for open neuroscience tool development, with tutorials, proceedings, and a code of conduct.
   url: https://brainhack.org
   date_added: 2026-06-18
+
+- name: MRI Together
+  description: Annual ESMRMB workshop on open and reproducible MRI science, run virtually with talks, discussions, and hands-on sessions.
+  url: https://mritogether.github.io
+  date_added: 2026-06-21
+
+- name: OpenMR Benelux
+  description: Annual community meeting on open MRI science, covering reproducibility, open-source tools, and open data practices.
+  url: https://openmrbenelux.github.io
+  date_added: 2026-06-21
