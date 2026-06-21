@@ -100,3 +100,11 @@
   language: JavaScript
   date_added: 2026-06-19
   modality: structural
+
+- name: 3D Slicer
+  description: Open-source platform for medical image informatics, processing, and 3D visualization; widely used for MRI segmentation and registration.
+  url: https://www.slicer.org
+  github: Slicer/Slicer
+  language: C++/Python
+  date_added: 2026-06-21
+  modality: multi

@@ -14,3 +14,18 @@
   description: Worldwide network of collaborative hackathons for open neuroscience tool development, with tutorials, proceedings, and a code of conduct.
   url: https://brainhack.org
   date_added: 2026-06-18
+
+- name: Andy's Brain Book
+  description: Step-by-step online tutorials covering fMRI, structural MRI, diffusion, and FreeSurfer analysis using FSL, SPM, and AFNI.
+  url: https://andysbrainbook.readthedocs.io/en/latest/
+  date_added: 2026-06-21
+
+- name: Andy's Brain Blog
+  description: Blog and linked video tutorials by Andy Jahn covering practical MRI analysis workflows.
+  url: https://www.andysbrainblog.com
+  date_added: 2026-06-21
+
+- name: The Poldrack Lab Substack
+  description: Newsletter by Russ Poldrack on neuroimaging, statistical methods, and reproducibility in neuroscience.
+  url: https://russpoldrack.substack.com
+  date_added: 2026-06-21

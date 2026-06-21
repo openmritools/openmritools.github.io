@@ -74,3 +74,11 @@
   language: Python
   date_added: 2026-06-19
   modality: diffusion
+
+- name: TORTOISE
+  description: Suite of programs for preprocessing, tensor model fitting, and tractography of diffusion MRI data.
+  url: https://github.com/QMICodeBase/TORTOISEV4
+  github: QMICodeBase/TORTOISEV4
+  language: C++
+  date_added: 2026-06-21
+  modality: diffusion
