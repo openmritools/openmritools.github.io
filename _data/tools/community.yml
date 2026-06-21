@@ -1,0 +1,37 @@
+# Community
+
+- name: NeuroStars
+  description: Q&A forum for neuroinformatics, neuroimaging methods, and tool support.
+  url: https://neurostars.org
+  date_added: 2026-06-16
+
+- name: NITRC
+  description: Registry of neuroimaging analysis tools, datasets, and computational resources with a searchable database.
+  url: https://www.nitrc.org
+  date_added: 2026-06-17
+
+- name: MR-Hub
+  description: Community directory of open-source MRI reconstruction and simulation software, maintained by the ISMRM.
+  url: https://ismrm.github.io/mrhub
+  date_added: 2026-06-16
+
+- name: NeuroBagel
+  description: Federated search across neuroimaging datasets using semantic annotations and a common data model.
+  url: https://github.com/neurobagel
+  github: neurobagel/bagel-cli
+  date_added: 2026-06-16
+
+- name: Andy's Brain Book
+  description: Step-by-step online tutorials covering fMRI, structural MRI, diffusion, and FreeSurfer analysis using FSL, SPM, and AFNI.
+  url: https://andysbrainbook.readthedocs.io/en/latest/
+  date_added: 2026-06-21
+
+- name: Andy's Brain Blog
+  description: Blog and linked video tutorials by Andy Jahn covering practical MRI analysis workflows.
+  url: https://www.andysbrainblog.com
+  date_added: 2026-06-21
+
+- name: Neural Strategies
+  description: Russ Poldrack's newsletter: thoughts on minds, brains, and AI, with a heavy dose of coding.
+  url: https://russpoldrack.substack.com
+  date_added: 2026-06-21

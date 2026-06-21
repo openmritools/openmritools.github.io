@@ -34,9 +34,6 @@
 - id: datasets
   name: Datasets
 
-- id: data_discovery
-  name: Data Discovery
-
 - id: consortia
   name: Consortia
 
@@ -46,5 +43,8 @@
 - id: preregistration
   name: Preregistration & Publishing
 
+- id: community
+  name: Community
+
 - id: training_events
-  name: Training & Events
+  name: Events
