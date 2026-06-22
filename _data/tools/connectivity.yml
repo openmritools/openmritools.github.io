@@ -43,3 +43,16 @@
   language: Python
   date_added: 2026-06-16
   modality: diffusion
+
+- name: Brain Connectivity Toolbox
+  description: MATLAB and Python toolbox for complex network analysis of structural and functional brain connectivity data.
+  url: https://sites.google.com/site/bctnet/
+  language: MATLAB
+  date_added: 2026-06-22
+
+- name: Lead-DBS
+  description: MATLAB toolbox for DBS electrode reconstruction and connectome-based analysis using postoperative MRI and CT imaging.
+  url: https://www.lead-dbs.org
+  github: netstim/leaddbs
+  language: MATLAB
+  date_added: 2026-06-22
