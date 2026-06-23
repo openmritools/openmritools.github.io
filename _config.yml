@@ -3,6 +3,9 @@ description: A community-driven directory of open-source MRI software, organized
 baseurl: ""
 url: "https://openmritools.com"
 
+plugins:
+  - jekyll-sitemap
+
 exclude:
   - scripts/
   - Gemfile
