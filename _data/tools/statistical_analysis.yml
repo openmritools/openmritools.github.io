@@ -178,3 +178,11 @@
   language: R
   date_added: 2026-06-23
   modality: structural
+
+- name: SubCortexMesh
+  description: Converts subcortical segmentation volumes to surface meshes and computes vertex-wise metrics for surface-based analysis.
+  url: https://github.com/chabld/SubCortexMesh
+  github: chabld/SubCortexMesh
+  language: Python
+  date_added: 2026-06-23
+  modality: structural
