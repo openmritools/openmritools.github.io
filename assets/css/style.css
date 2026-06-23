@@ -554,13 +554,18 @@ body {
 
   .site-header-row {
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+  }
+
+  .site-subtitle {
+    margin-top: 3px;
   }
 
   .site-nav {
     gap: 10px;
     flex-wrap: wrap;
     row-gap: 6px;
+    justify-content: center;
   }
 
   .controls {
