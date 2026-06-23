@@ -153,9 +153,13 @@ body {
 
 /* ── About page ── */
 
-.about-body {
-  margin: 12px auto 0;
+.about-wrap {
   max-width: 560px;
+  margin: 0 auto;
+}
+
+.about-body {
+  margin-top: 12px;
 }
 
 .health-legend {
