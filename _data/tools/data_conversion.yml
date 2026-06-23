@@ -45,3 +45,11 @@
   language: JavaScript
   date_added: 2026-06-16
   modality: multi
+
+- name: Dcm2Bids
+  description: Reorganises NIfTI files from dcm2niix into BIDS structure using a JSON configuration file.
+  url: https://github.com/UNFmontreal/Dcm2Bids
+  github: UNFmontreal/Dcm2Bids
+  language: Python
+  date_added: 2026-06-23
+  modality: multi

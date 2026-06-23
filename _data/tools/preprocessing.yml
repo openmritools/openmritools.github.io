@@ -288,3 +288,11 @@
   language: C++
   date_added: 2026-06-21
   modality: structural
+
+- name: GOUHFI
+  description: Contrast- and resolution-agnostic segmentation tool for subcortical and cortical parcellation, optimised for ultra-high field MRI (>3T).
+  url: https://github.com/mafortin/GOUHFI
+  github: mafortin/GOUHFI
+  language: Python
+  date_added: 2026-06-23
+  modality: structural
