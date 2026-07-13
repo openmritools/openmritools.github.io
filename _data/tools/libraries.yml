@@ -77,3 +77,10 @@
   language: Python
   date_added: 2026-07-13
   modality: multi
+
+- name: SDV (Synthetic Data Vault)
+  description: General-purpose Python library for generating synthetic tabular, relational, and time-series data, used for privacy-preserving data sharing and augmentation.
+  url: https://sdv.dev
+  github: sdv-dev/SDV
+  language: Python
+  date_added: 2026-07-13
