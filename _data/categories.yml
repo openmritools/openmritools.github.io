@@ -43,6 +43,9 @@
 - id: preregistration
   name: Preregistration & Publishing
 
+- id: reproducibility
+  name: Reproducibility & Coding
+
 - id: community
   name: Community
 
