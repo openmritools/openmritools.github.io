@@ -69,3 +69,11 @@
   language: MATLAB/Python
   date_added: 2026-06-19
   modality: multi
+
+- name: ClinicaDL
+  description: Python library for reproducible deep learning in neuroimaging, providing pipelines for data preparation, training, and evaluation on MRI and PET.
+  url: https://github.com/aramis-lab/clinicadl
+  github: aramis-lab/clinicadl
+  language: Python
+  date_added: 2026-07-13
+  modality: multi

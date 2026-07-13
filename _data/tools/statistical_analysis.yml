@@ -186,3 +186,11 @@
   language: Python
   date_added: 2026-06-23
   modality: structural
+
+- name: CanlabCore
+  description: Object-oriented MATLAB toolbox for fMRI data analysis, including GLM, mediation, and machine learning on brain images; the core of the Canlab toolboxes.
+  url: https://github.com/canlab/CanlabCore
+  github: canlab/CanlabCore
+  language: MATLAB
+  date_added: 2026-07-13
+  modality: fMRI

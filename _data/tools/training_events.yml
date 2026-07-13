@@ -19,3 +19,8 @@
   description: Annual ESMRMB workshop on open and reproducible MRI science, run virtually with talks, discussions, and hands-on sessions.
   url: https://mritogether.github.io
   date_added: 2026-06-21
+
+- name: Software Carpentry
+  description: Hands-on workshops teaching researchers foundational computing skills — the Unix shell, version control with Git, and programming in Python or R.
+  url: https://software-carpentry.org
+  date_added: 2026-07-13
