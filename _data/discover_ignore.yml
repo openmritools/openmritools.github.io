@@ -1,0 +1,27 @@
+# Dismiss-list for scripts/discover_tools.py
+#
+# Repos listed here will never appear in the weekly "Tool candidates" issue.
+# Use it for candidates you've reviewed and rejected, tools already on the site
+# under a non-GitHub homepage, or tools that belong on a sibling site.
+#
+# One "owner/repo" slug per line (case-insensitive). Add to this list when
+# triaging a weekly issue so the same items don't come back.
+
+# ── Already on the site under a canonical (non-GitHub) homepage ──
+- freesurfer/freesurfer          # listed via nmr.mgh.harvard.edu
+- spm/spm                        # listed via fil.ion.ucl.ac.uk/spm
+- afni/afni                      # listed via afni.nimh.nih.gov
+- translationalneuromodeling/tapas  # listed via ComputationalPsychiatry org
+
+# ── Not MRI — belong on openimagingtools.com (EEG/MEG) ──
+- mne-tools/mne-python
+- fieldtrip/fieldtrip
+- braindecode/braindecode
+
+# ── Reviewed and rejected ──
+- Slicer/SlicerGitSVNArchive     # marked OBSOLETE by its authors
+- mikeroyal/Neuromorphic-Computing-Guide  # a reading list, not a tool
+- arnab39/FewShot_GAN-Unet3D     # one-off paper code
+- NYUMedML/CNN_design_for_AD     # one-off paper code
+- DLTK/DLTK                      # abandoned since 2019
+- StanfordMIMI/DDM2              # ICLR paper code, inactive, no license

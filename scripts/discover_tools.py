@@ -57,6 +57,9 @@ SINCE  = NOW - timedelta(days=7)
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
+KNOWN_URL_RE = re.compile(r'github\.com/([\w.-]+/[\w.-]+?)(?:\.git)?(?:[/?#]|$)', re.I)
+
+
 def load_known_repos() -> set[str]:
     known = set()
     for path in Path("_data/tools").glob("*.yml"):
@@ -67,6 +70,20 @@ def load_known_repos() -> set[str]:
             slug = tool.get("github")
             if slug:
                 known.add(slug.lower())
+            # Also catch tools listed by a github.com URL without an explicit github: field
+            m = KNOWN_URL_RE.search(tool.get("url") or "")
+            if m:
+                known.add(m.group(1).lower())
+
+    # Merge the manual dismiss-list: repos already covered elsewhere, off-topic,
+    # or reviewed and rejected. Keeps them from resurfacing every week.
+    ignore_path = Path("_data/discover_ignore.yml")
+    if ignore_path.exists():
+        ignore = yaml.safe_load(ignore_path.read_text()) or []
+        for slug in ignore:
+            if isinstance(slug, str):
+                known.add(slug.lower())
+
     return known
 
 
