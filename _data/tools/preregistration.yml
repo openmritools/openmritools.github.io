@@ -29,3 +29,8 @@
   description: International registry for preregistering systematic reviews and meta-analyses before they begin.
   url: https://www.crd.york.ac.uk/prospero
   date_added: 2026-06-16
+
+- name: PreReg
+  description: Build a study plan from a concise preregistration to a full Registered Reports manuscript; run by the Leibniz Institute for Psychology (ZPID).
+  url: https://prereg-psych.org/create/
+  date_added: 2026-07-13
