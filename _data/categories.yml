@@ -43,8 +43,8 @@
 - id: preregistration
   name: Preregistration & Publishing
 
-- id: reproducibility
-  name: Reproducibility & Coding
+- id: general_purpose
+  name: General-Purpose Tools
 
 - id: community
   name: Community
