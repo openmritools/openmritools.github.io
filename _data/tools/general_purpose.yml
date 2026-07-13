@@ -1,22 +1,12 @@
 # General-Purpose Tools
-# General-purpose tools and resources used heavily in MRI work — coding
-# practices, reproducibility, and data sharing. For newcomers finding their feet.
+# General-purpose software tools used heavily in MRI work, even though they
+# aren't MRI-specific — e.g. data generation, validation, and sharing.
 # Fields:
 #   name:        display name
 #   description: one sentence — what it does, not why it matters
 #   url:         homepage or repo
 #   github:      owner/repo  (optional, for health checks)
 #   language:    primary implementation language (optional)
-
-- name: Better Code, Better Science
-  description: Open online book by Russ Poldrack on writing readable, robust, and reproducible scientific code, including AI-assisted coding practices.
-  url: https://bettercode-book.org
-  date_added: 2026-07-13
-
-- name: Software Carpentry
-  description: Hands-on workshops teaching researchers foundational computing skills — the Unix shell, version control with Git, and programming in Python or R.
-  url: https://software-carpentry.org
-  date_added: 2026-07-13
 
 - name: SDV (Synthetic Data Vault)
   description: General-purpose Python library for generating synthetic tabular, relational, and time-series data, used for privacy-preserving data sharing and augmentation.

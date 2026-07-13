@@ -29,3 +29,8 @@
   description: "Russ Poldrack's newsletter: thoughts on minds, brains, and AI, with a heavy dose of coding."
   url: https://russpoldrack.substack.com
   date_added: 2026-06-21
+
+- name: Better Code, Better Science
+  description: Open online book by Russ Poldrack on writing readable, robust, and reproducible scientific code, including AI-assisted coding practices.
+  url: https://bettercode-book.org
+  date_added: 2026-07-13
