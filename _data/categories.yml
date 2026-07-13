@@ -43,11 +43,11 @@
 - id: preregistration
   name: Preregistration & Publishing
 
-- id: general_purpose
-  name: General-Purpose Tools
-
 - id: community
   name: Community
 
 - id: training_events
   name: Events
+
+- id: general_purpose
+  name: General-Purpose Tools
