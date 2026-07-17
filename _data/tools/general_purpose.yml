@@ -36,6 +36,13 @@
   language: Rust
   date_added: 2026-07-17
 
+- name: Pixi
+  description: Fast package and environment manager built on the conda ecosystem, for reproducible per-project environments.
+  url: https://pixi.sh
+  github: prefix-dev/pixi
+  language: Rust
+  date_added: 2026-07-17
+
 - name: Jupyter
   description: Interactive notebooks for writing and running code, text, and figures together; the standard surface for exploratory analysis.
   url: https://jupyter.org
