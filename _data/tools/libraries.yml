@@ -38,6 +38,14 @@
   date_added: 2026-06-16
   modality: multi
 
+- name: neuropythy
+  description: Python library for cortical surface mesh analysis, registration, and retinotopic mapping; complements nibabel with tools for working with FreeSurfer surfaces.
+  url: https://github.com/noahbenson/neuropythy
+  github: noahbenson/neuropythy
+  language: Python
+  date_added: 2026-07-17
+  modality: structural
+
 - name: epgpy
   description: Python library for simulating MRI signals using the Extended Phase Graph (EPG) formalism, with extensions for diffusion, magnetization transfer, and sequence optimization.
   url: https://github.com/py-baudin/epgpy
