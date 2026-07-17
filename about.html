@@ -35,6 +35,36 @@ permalink: /about/
 
   <p><strong>How to contribute.</strong> Use the form at <a href="{{ '/contribute/' | relative_url }}">/contribute</a> — your submission becomes a public GitHub Issue automatically. You can also open an issue directly on GitHub, or submit a pull request. Each tool is a YAML entry: name, url, description, language, modality, optionally github (owner/repo for health tracking), and added_by to credit whoever suggested it.</p>
 
+  {%- assign contributors = '' | split: '' -%}
+  {%- for cat in site.data.categories -%}
+    {%- assign cat_tools = site.data.tools[cat.id] -%}
+    {%- for tool in cat_tools -%}
+      {%- if tool.added_by -%}
+        {%- unless contributors contains tool.added_by -%}
+          {%- assign contributors = contributors | push: tool.added_by -%}
+        {%- endunless -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+  {%- assign contributors = contributors | sort_natural -%}
+
+  <p><strong>Contributors.</strong>
+  {%- if contributors.size > 0 %} Tools suggested by the community, with thanks:
+    {% for name in contributors -%}
+      {%- assign profile = '' -%}
+      {%- for cat in site.data.categories -%}
+        {%- assign cat_tools = site.data.tools[cat.id] -%}
+        {%- for tool in cat_tools -%}
+          {%- if tool.added_by == name and tool.added_by_url and profile == '' -%}
+            {%- assign profile = tool.added_by_url -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+      {%- if profile != '' %}<a href="{{ profile }}" target="_blank" rel="noopener noreferrer">{{ name }}</a>{% else %}{{ name }}{% endif %}{% unless forloop.last %}, {% endunless %}
+    {%- endfor -%}.
+  {%- else %} No outside suggestions yet — <a href="{{ '/contribute/' | relative_url }}">suggest a tool</a> and your name goes here.
+  {%- endif %}</p>
+
   <p>Started by <a href="mailto:henrfo@uio.no">Henrik Formoe (University of Oslo)</a>. Open to everyone.</p>
 </div>
 

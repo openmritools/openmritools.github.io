@@ -169,7 +169,7 @@ title: Open MRI Tools
             <td class="tool-name">
               <a href="{{ tool.url }}" target="_blank" rel="noopener noreferrer">{{ tool.name }}</a>
             </td>
-            <td class="tool-desc">{{ tool.description }}{% if tool.added_by %} <span class="added-by">— added by {% if tool.added_by_url %}<a href="{{ tool.added_by_url }}" target="_blank" rel="noopener noreferrer">{{ tool.added_by }}</a>{% else %}{{ tool.added_by }}{% endif %}</span>{% endif %}</td>
+            <td class="tool-desc">{{ tool.description }}</td>
             <td class="col-date" data-date="{{ tool.date_added }}"></td>
             <td class="tool-lang">{{ tool.language }}</td>
             <td class="tool-modality">{%- if tool.modality == 'fMRI' -%}fMRI{%- elsif tool.modality == 'structural' -%}Structural{%- elsif tool.modality == 'diffusion' -%}Diffusion{%- elsif tool.modality == 'ASL' -%}ASL{%- elsif tool.modality == 'multi' -%}Multi-modal{%- endif -%}</td>
