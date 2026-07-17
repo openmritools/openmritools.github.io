@@ -82,3 +82,11 @@
   language: C++
   date_added: 2026-06-21
   modality: diffusion
+
+- name: pyAFQ
+  description: Automated fiber quantification for diffusion MRI — delineates white matter bundles and computes tract profiles of tissue properties along them.
+  url: https://github.com/tractometry/pyAFQ
+  github: tractometry/pyAFQ
+  language: Python
+  date_added: 2026-07-17
+  modality: diffusion
