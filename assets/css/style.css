@@ -315,6 +315,17 @@ body {
   text-underline-offset: 2px;
 }
 
+.added-by {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.added-by a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 
 .col-date {
   display: none;
