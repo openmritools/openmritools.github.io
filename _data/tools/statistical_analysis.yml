@@ -120,6 +120,8 @@
   description: In-development library for applying and assessing MRI harmonisation algorithms at the summary-measure level; also a centralised reference for validated harmonisation methods from the literature.
   url: https://jake-turnbull.github.io/HarmonisationDiagnostics/
   github: Jake-Turnbull/HarmonisationDiagnostics
+  added_by: Jake-Turnbull
+  added_by_github: Jake-Turnbull
   language: Python
   modality: multi
   date_added: 2026-06-18
@@ -175,6 +177,8 @@
   description: R package for extracting, analyzing, and visualizing cortical and subcortical vertex-wise data from FreeSurfer, CAT12, and fMRIPrep outputs.
   url: https://github.com/CogBrainHealthLab/VertexWiseR
   github: CogBrainHealthLab/VertexWiseR
+  added_by: chabld
+  added_by_github: chabld
   language: R
   date_added: 2026-06-23
   modality: structural
@@ -183,6 +187,8 @@
   description: Converts subcortical segmentation volumes to surface meshes and computes vertex-wise metrics for surface-based analysis.
   url: https://github.com/chabld/SubCortexMesh
   github: chabld/SubCortexMesh
+  added_by: chabld
+  added_by_github: chabld
   language: Python
   date_added: 2026-06-23
   modality: structural

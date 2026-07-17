@@ -61,6 +61,8 @@
   url: https://fcon_1000.projects.nitrc.org/indi/retro/atlas.html
   modality: structural
   date_added: 2026-06-18
+  added_by: youwanM
+  added_by_github: youwanM
 
 - name: HBN
   description: Open pediatric dataset from the Child Mind Institute with structural and functional MRI alongside behavioral measures.

@@ -79,6 +79,8 @@
   description: Suite of programs for preprocessing, tensor model fitting, and tractography of diffusion MRI data.
   url: https://github.com/QMICodeBase/TORTOISEV4
   github: QMICodeBase/TORTOISEV4
+  added_by: marcotag93
+  added_by_github: marcotag93
   language: C++
   date_added: 2026-06-21
   modality: diffusion

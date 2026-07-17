@@ -68,11 +68,15 @@
   language: C++
   modality: diffusion
   date_added: 2026-06-18
+  added_by: marcotag93
+  added_by_github: marcotag93
 
 - name: TractEdit
   description: Interactive tool for virtual dissection and manual refinement of diffusion MRI tractography.
   url: https://github.com/marcotag93/TractEdit
   github: marcotag93/TractEdit
+  added_by: marcotag93
+  added_by_github: marcotag93
   language: Python
   modality: diffusion
   date_added: 2026-06-18
