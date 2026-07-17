@@ -23,7 +23,7 @@ permalink: /about/
 
   <p>Open MRI Tools is a shared overview of open-source software for MRI analysis. If everyone contributes what they know, it becomes a way for the whole community to stay updated and discover each other's work.</p>
 
-  <p><strong>How health status works.</strong> A weekly GitHub Actions cron job checks each tool's repository.</p>
+  <p class="about-gap"><strong>How health status works.</strong> A weekly GitHub Actions cron job checks each tool's repository.</p>
   <ul class="health-legend">
     <li><span class="dot dot-active"></span> Active — committed within 6 months</li>
     <li><span class="dot dot-quiet"></span> Quiet — 6 to 24 months</li>
@@ -48,7 +48,7 @@ permalink: /about/
   {%- endfor -%}
   {%- assign contributors = contributors | sort_natural -%}
 
-  <p><strong>Contributors:</strong></p>
+  <p class="about-gap"><strong>Contributors:</strong></p>
   <div class="contributor-wall">
     <span class="contributor"><a href="https://github.com/henrfo" target="_blank" rel="noopener noreferrer"><img class="contributor-avatar" src="https://github.com/henrfo.png?size=48" alt="" loading="lazy">henrfo</a></span>
     {%- for name in contributors -%}
