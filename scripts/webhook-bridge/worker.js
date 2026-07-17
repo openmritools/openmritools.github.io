@@ -34,6 +34,7 @@ export default {
     const toolUrl     = (form.get('tool_url')     || '').trim();
     const description = (form.get('description')  || '').trim();
     const contact     = (form.get('contact')      || '').trim();
+    const listMe      = form.get('list_contributor') ? 'yes' : 'no';
 
     if (!toolName) {
       return Response.redirect(REDIRECT_BASE + '?submitted=true', 302);
@@ -51,6 +52,7 @@ export default {
       `| URL | ${toolUrl ? `[${toolUrl}](${toolUrl})` : '—'} |`,
       `| Description | ${description ? description.replace(/\n/g, ' ') : '—'} |`,
       `| Contact | ${contact || '—'} |`,
+      `| List as contributor | ${listMe} |`,
       ``,
       `*Submitted via [openmritools.com/contribute](https://openmritools.com/contribute)*`,
     ].join('\n');
