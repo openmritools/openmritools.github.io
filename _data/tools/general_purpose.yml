@@ -1,12 +1,61 @@
 # General-Purpose Tools
 # General-purpose software tools used heavily in MRI work, even though they
-# aren't MRI-specific — e.g. data generation, validation, and sharing.
+# aren't MRI-specific — the reproducible-computing backbone. For newcomers.
 # Fields:
 #   name:        display name
 #   description: one sentence — what it does, not why it matters
 #   url:         homepage or repo
 #   github:      owner/repo  (optional, for health checks)
 #   language:    primary implementation language (optional)
+
+- name: Git
+  description: Distributed version control system for tracking changes in code and collaborating with others.
+  url: https://git-scm.com
+  github: git/git
+  language: C
+  date_added: 2026-07-17
+
+- name: Docker
+  description: Packages software and its dependencies into containers that run identically across machines; the basis for BIDS Apps.
+  url: https://www.docker.com
+  github: moby/moby
+  language: Go
+  date_added: 2026-07-17
+
+- name: conda
+  description: Cross-platform package and environment manager for Python and other languages; mamba is a faster drop-in reimplementation.
+  url: https://docs.conda.io
+  github: conda/conda
+  language: Python
+  date_added: 2026-07-17
+
+- name: uv
+  description: Fast Python package and project manager written in Rust, replacing pip and virtualenv workflows.
+  url: https://docs.astral.sh/uv
+  github: astral-sh/uv
+  language: Rust
+  date_added: 2026-07-17
+
+- name: Jupyter
+  description: Interactive notebooks for writing and running code, text, and figures together; the standard surface for exploratory analysis.
+  url: https://jupyter.org
+  github: jupyterlab/jupyterlab
+  language: TypeScript
+  date_added: 2026-07-17
+
+- name: DataLad
+  description: Version control for datasets — tracks and shares data alongside code using Git and git-annex.
+  url: https://www.datalad.org
+  github: datalad/datalad
+  language: Python
+  date_added: 2026-07-17
+
+- name: Pydantic
+  description: Data validation library for Python using type annotations; checks that data has the expected structure.
+  url: https://docs.pydantic.dev
+  github: pydantic/pydantic
+  language: Python
+  date_added: 2026-07-17
 
 - name: SDV (Synthetic Data Vault)
   description: General-purpose Python library for generating synthetic tabular, relational, and time-series data, used for privacy-preserving data sharing and augmentation.

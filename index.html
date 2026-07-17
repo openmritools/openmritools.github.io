@@ -456,9 +456,15 @@ title: Open MRI Tools
 
     subPillsEl.querySelectorAll('.sub-pill').forEach(pill => {
       pill.addEventListener('click', () => {
+        const wasSelected = pill.classList.contains('selected');
         subPillsEl.querySelectorAll('.sub-pill').forEach(p => p.classList.remove('selected'));
-        pill.classList.add('selected');
-        activeSubFilter = pill.dataset.cat;
+        if (wasSelected) {
+          // Clicking the active sub-filter again deselects it (back to the whole group)
+          activeSubFilter = null;
+        } else {
+          pill.classList.add('selected');
+          activeSubFilter = pill.dataset.cat;
+        }
         applyFilters();
       });
     });
