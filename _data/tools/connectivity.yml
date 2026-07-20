@@ -56,3 +56,13 @@
   github: netstim/leaddbs
   language: MATLAB
   date_added: 2026-06-22
+
+- name: Functionnectome
+  description: Python package that combines fMRI functional signal across distant voxels using anatomical priors of structural brain circuits.
+  url: https://github.com/NotaCS/Functionnectome
+  github: NotaCS/Functionnectome
+  language: Python
+  date_added: 2026-07-21
+  modality: fMRI
+  added_by: LaraRessin
+  added_by_github: LaraRessin

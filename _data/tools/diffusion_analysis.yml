@@ -92,3 +92,22 @@
   language: Python
   date_added: 2026-07-17
   modality: diffusion
+
+- name: NBLtools
+  description: Preprocessing pipeline for diffusion MRI with automated quality control and correction.
+  url: https://nbl-research.github.io/nbltools.html
+  github: nbl-research/nbltools
+  language: Python
+  date_added: 2026-07-21
+  modality: diffusion
+  added_by: LaraRessin
+  added_by_github: LaraRessin
+
+- name: StarTrack
+  description: Analyses diffusion MRI using DTI, spherical deconvolution, and whole-brain tractography, with interactive display of fibre orientation distributions.
+  url: https://nbl-research.github.io/startrack.html
+  language: C++
+  date_added: 2026-07-21
+  modality: diffusion
+  added_by: LaraRessin
+  added_by_github: LaraRessin
