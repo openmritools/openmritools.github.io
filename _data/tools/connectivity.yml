@@ -66,3 +66,13 @@
   modality: fMRI
   added_by: LaraRessin
   added_by_github: LaraRessin
+
+- name: DeepDisco
+  description: Deep learning tool that generates white matter disconnectivity maps from binary lesion masks, bypassing tractography.
+  url: https://github.com/annamatsulevits/DeepDisco
+  github: annamatsulevits/DeepDisco
+  language: Python
+  date_added: 2026-07-21
+  modality: structural
+  added_by: LaraRessin
+  added_by_github: LaraRessin
