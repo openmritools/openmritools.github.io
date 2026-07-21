@@ -77,6 +77,16 @@
   added_by: LaraRessin
   added_by_github: LaraRessin
 
+  - name: BCBtoolkit
+  description: software package with several tools to indirectly assess brain disconnections
+  url: https://github.com/chrisfoulon/BCBToolKit
+  github: https://github.com/chrisfoulon/BCBToolKit
+  language: Python
+  date_added: 2026-07-21
+  modality: multi
+  added_by: LaraRessin
+  added_by_github: LaraRessin
+
 - name: netneurotools
   description: Network Neuroscience Lab toolbox for network construction, null models, and statistical analysis of brain connectivity data.
   url: https://github.com/netneurolab/netneurotools
@@ -84,3 +94,4 @@
   language: Python
   date_added: 2026-07-21
   modality: multi
+  
