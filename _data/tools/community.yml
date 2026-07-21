@@ -34,3 +34,8 @@
   description: Open online book by Russ Poldrack on writing readable, robust, and reproducible scientific code, including AI-assisted coding practices.
   url: https://bettercode-book.org
   date_added: 2026-07-13
+
+- name: K-Space Explorer
+  description: Interactive tool for visualising k-space and understanding how MRI images are formed, with real-time inverse Fourier transforms.
+  url: https://kspace-explorer.streamlit.app
+  date_added: 2026-07-20
