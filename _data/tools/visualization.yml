@@ -112,3 +112,11 @@
   language: C++/Python
   date_added: 2026-06-21
   modality: multi
+
+- name: NiChord
+  description: Python package for creating chord diagrams to visualize brain networks and functional connectivity.
+  url: https://github.com/paulcbogdan/NiChord
+  github: paulcbogdan/NiChord
+  language: Python
+  date_added: 2026-07-21
+  modality: fMRI

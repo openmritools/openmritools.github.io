@@ -25,3 +25,15 @@
 - NYUMedML/CNN_design_for_AD     # one-off paper code
 - DLTK/DLTK                      # abandoned since 2019
 - StanfordMIMI/DDM2              # ICLR paper code, inactive, no license
+- PolarBean/DeepSlice            # histology-to-atlas, not MRI
+- NSBLab/BrainEigenmodes         # one-off paper code
+- egyptdj/stagin                 # one-off paper code (GNN model)
+- gongzix/NeuroClips             # NeurIPS paper code
+- MaciejMazurowski/brain-segmentation  # one-off paper code
+- nitrain/nitrain                # general medical-imaging AI, quiet
+- bids-standard/bids-examples    # example datasets, not a tool
+- adamkwolf/3d-nii-visualizer    # basic NIfTI viewer
+- cwatson/brainGraph             # aging (2024), no license
+- dPys/PyNets                    # aging (2024), no license
+- makism/dyconnmap               # inactive since 2023
+- iitzco/deepbrain               # aging, superseded skull-stripping

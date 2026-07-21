@@ -9,6 +9,7 @@
 - name: NeuroVault
   description: Repository for sharing unthresholded statistical brain maps from published studies.
   url: https://neurovault.org
+  github: NeuroVault/NeuroVault
   date_added: 2026-06-16
 
 - name: Human Connectome Project

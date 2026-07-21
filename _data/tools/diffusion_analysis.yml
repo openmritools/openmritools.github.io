@@ -111,3 +111,19 @@
   modality: diffusion
   added_by: LaraRessin
   added_by_github: LaraRessin
+
+- name: dmipy
+  description: Python toolbox for reproducible diffusion MRI microstructure estimation using modular multi-compartment models.
+  url: https://github.com/AthenaEPI/dmipy
+  github: AthenaEPI/dmipy
+  language: Python
+  date_added: 2026-07-21
+  modality: diffusion
+
+- name: MITK Diffusion
+  description: Diffusion MRI reconstruction, tractography, and visualization; part of the Medical Imaging Interaction Toolkit from DKFZ.
+  url: https://github.com/MIC-DKFZ/MITK-Diffusion
+  github: MIC-DKFZ/MITK-Diffusion
+  language: C++
+  date_added: 2026-07-21
+  modality: diffusion

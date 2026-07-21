@@ -76,3 +76,11 @@
   modality: structural
   added_by: LaraRessin
   added_by_github: LaraRessin
+
+- name: netneurotools
+  description: Network Neuroscience Lab toolbox for network construction, null models, and statistical analysis of brain connectivity data.
+  url: https://github.com/netneurolab/netneurotools
+  github: netneurolab/netneurotools
+  language: Python
+  date_added: 2026-07-21
+  modality: multi

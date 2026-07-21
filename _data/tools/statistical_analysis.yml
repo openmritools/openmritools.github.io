@@ -200,3 +200,27 @@
   language: MATLAB
   date_added: 2026-07-13
   modality: fMRI
+
+- name: nltools
+  description: Python toolbox for analyzing fMRI data, covering multivariate prediction, functional connectivity, and mediation analysis.
+  url: https://github.com/cosanlab/nltools
+  github: cosanlab/nltools
+  language: Python
+  date_added: 2026-07-21
+  modality: fMRI
+
+- name: neuropredict
+  description: Automated estimation and comparison of predictive accuracy across neuroimaging features, with rigorous cross-validation.
+  url: https://github.com/raamana/neuropredict
+  github: raamana/neuropredict
+  language: Python
+  date_added: 2026-07-21
+  modality: multi
+
+- name: NeuroRA
+  description: Python toolbox for representational similarity analysis of multimodal neural data, including fMRI, EEG, and behavioural measures.
+  url: https://github.com/ZitongLu1996/NeuroRA
+  github: ZitongLu1996/NeuroRA
+  language: Python
+  date_added: 2026-07-21
+  modality: fMRI
