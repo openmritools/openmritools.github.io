@@ -70,6 +70,14 @@
   date_added: 2026-06-19
   modality: multi
 
+- name: NIDL
+  description: Deep learning library for neuroimaging (anatomical volumes, surfaces, and fMRI), following the PyTorch training design and scikit-learn model API.
+  url: https://github.com/neurospin-deepinsight/nidl
+  github: neurospin-deepinsight/nidl
+  language: Python
+  date_added: 2026-07-22
+  modality: multi
+
 - name: qMRLab
   description: MATLAB/Python toolbox for simulation, analysis, and visualization of quantitative MRI data including T1, T2, magnetization transfer, and diffusion models.
   url: https://github.com/qMRLab/qMRLab
