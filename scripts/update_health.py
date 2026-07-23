@@ -15,12 +15,24 @@ matching the lookup used in index.html:
 from __future__ import annotations
 
 import os
+import re
 import sys
 import time
 import yaml
 import requests
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+
+_GITHUB_URL_PREFIX = re.compile(r'^(?:https?://)?(?:www\.)?github\.com/', re.I)
+
+
+def normalize_slug(raw: str) -> str:
+    """Accept 'owner/repo' or a full GitHub URL; return the 'owner/repo' slug."""
+    s = _GITHUB_URL_PREFIX.sub('', str(raw).strip()).rstrip('/')
+    if s.endswith('.git'):
+        s = s[:-4]
+    parts = [p for p in s.split('/') if p]
+    return f"{parts[0]}/{parts[1]}" if len(parts) >= 2 else s
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 if not GITHUB_TOKEN:
@@ -108,6 +120,7 @@ def load_slugs() -> list[tuple[str, str]]:
         for tool in tools:
             slug = tool.get("github")
             if slug:
+                slug = normalize_slug(slug)
                 results.append((tool.get("name", slug), slug))
     return results
 

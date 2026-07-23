@@ -69,7 +69,9 @@ def load_known_repos() -> set[str]:
         for tool in tools:
             slug = tool.get("github")
             if slug:
-                known.add(slug.lower())
+                # Accept a full github.com URL or a bare owner/repo slug
+                m = KNOWN_URL_RE.search(slug)
+                known.add((m.group(1) if m else slug).lower())
             # Also catch tools listed by a github.com URL without an explicit github: field
             m = KNOWN_URL_RE.search(tool.get("url") or "")
             if m:

@@ -135,7 +135,11 @@ title: Open MRI Tools
         </tr>
         {% for tool in tools %}
           {% if tool.github %}
-            {% assign hkey = tool.github | replace: '/', '-' %}
+            {% comment %} Accept a full github.com URL or a bare owner/repo slug {% endcomment %}
+            {% assign gh_slug = tool.github | remove: 'https://github.com/' | remove: 'http://github.com/' | remove: 'github.com/' | remove: '.git' %}
+            {% assign gh_parts = gh_slug | split: '/' %}
+            {% assign gh_slug = gh_parts[0] | append: '/' | append: gh_parts[1] %}
+            {% assign hkey = gh_slug | replace: '/', '-' %}
             {% assign health = site.data.health[hkey] %}
             {% assign status = health.status | default: 'unknown' %}
             {% if status == 'active' or status == 'maintained' %}
