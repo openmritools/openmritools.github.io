@@ -84,3 +84,13 @@
   language: Python
   date_added: 2026-07-21
   modality: multi
+
+- name: BCBToolKit
+  description: Software package with several tools to indirectly assess brain disconnection from focal lesions.
+  url: https://github.com/chrisfoulon/BCBToolKit
+  github: chrisfoulon/BCBToolKit
+  language: Java
+  date_added: 2026-07-23
+  modality: structural
+  added_by: LaraRessin
+  added_by_github: LaraRessin
