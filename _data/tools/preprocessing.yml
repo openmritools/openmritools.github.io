@@ -298,3 +298,13 @@
   modality: structural
   added_by: mafortin
   added_by_github: mafortin
+
+- name: SynthSR
+  description: Deep learning super-resolution that turns images of any orientation, resolution, and contrast into 1 mm isotropic MP-RAGE.
+  url: https://github.com/BBillot/SynthSR
+  github: BBillot/SynthSR
+  language: Python
+  date_added: 2026-07-23
+  modality: structural
+  added_by: shivaram-k
+  added_by_github: shivaram-k
