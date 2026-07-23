@@ -49,16 +49,22 @@
 - name: FreeSurfer
   description: Cortical surface reconstruction, parcellation, and cortical thickness analysis from structural MRI.
   url: https://freesurfer.net
+  github: freesurfer/freesurfer
   language: C++
   date_added: 2026-06-16
   modality: structural
+  added_by: samtorrisi
+  added_by_github: samtorrisi
 
 - name: CAT12
   description: SPM toolbox for voxel-based and surface-based morphometry of structural MRI data.
   url: https://neuro-jena.github.io/cat
+  github: ChristianGaser/cat12
   language: MATLAB
   date_added: 2026-06-16
   modality: structural
+  added_by: samtorrisi
+  added_by_github: samtorrisi
 
 - name: FSL
   description: Comprehensive library for analysis of fMRI, structural, and diffusion MRI data.
@@ -70,9 +76,12 @@
 - name: AFNI
   description: Suite of programs for fMRI preprocessing, regression modelling, and statistical analysis.
   url: https://afni.nimh.nih.gov
+  github: afni/afni
   language: C
   date_added: 2026-06-16
   modality: fMRI
+  added_by: samtorrisi
+  added_by_github: samtorrisi
 
 - name: Tedana
   description: Multi-echo fMRI denoising — separates BOLD signal from noise using T2* decay across echo times.
