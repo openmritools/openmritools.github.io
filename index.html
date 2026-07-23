@@ -78,10 +78,11 @@ title: Open MRI Tools
       <th>Description</th>
       <th class="col-date">Added</th>
       <th class="lang-th">
-        <button class="lang-header-btn" id="lang-header-btn">
+        <button class="lang-header-btn" id="lang-header-btn" title="What the tool is written in — most are usable from the command line regardless">
           <span id="lang-header-label">Language</span> ▾
         </button>
         <div class="lang-dropdown" id="lang-dropdown">
+          <p class="lang-note">What it's written in — most tools are usable from the command line regardless.</p>
           <button class="lang-option selected" data-lang="">All</button>
           {%- assign all_langs = '' | split: '' -%}
           {%- for cat in site.data.categories -%}

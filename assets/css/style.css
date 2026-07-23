@@ -436,6 +436,19 @@ body {
   display: flex;
 }
 
+.lang-note {
+  max-width: 200px;
+  padding: 4px 12px 8px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0;
+  white-space: normal;
+}
+
 .lang-option,
 .modality-option,
 .stars-option {
