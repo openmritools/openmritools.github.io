@@ -39,3 +39,10 @@
   description: Interactive tool for visualising k-space and understanding how MRI images are formed, with real-time inverse Fourier transforms.
   url: https://kspace-explorer.streamlit.app
   date_added: 2026-07-20
+
+- name: fMRI-Resources
+  description: Curated page of fMRI information and resources — useful websites, analysis software, and brain-anatomy references.
+  url: https://github.com/jpyles/fMRI-Resources
+  github: jpyles/fMRI-Resources
+  date_added: 2026-07-24
+  modality: fMRI
