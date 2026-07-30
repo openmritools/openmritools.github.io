@@ -224,3 +224,23 @@
   language: Python
   date_added: 2026-07-21
   modality: fMRI
+
+- name: GIFT
+  description: MATLAB toolbox for independent component analysis of neuroimaging data across fMRI, EEG, and PET, with multiple ICA algorithms.
+  url: https://github.com/trendscenter/gift
+  github: trendscenter/gift
+  language: MATLAB
+  date_added: 2026-07-30
+  modality: fMRI
+  added_by: miacasburn
+  added_by_github: miacasburn
+
+- name: JuBrain Anatomy Toolbox
+  description: SPM toolbox that integrates probabilistic cytoarchitectonic brain maps with functional data, assigning anatomy to fMRI results.
+  url: https://github.com/inm7/jubrain-anatomy-toolbox
+  github: inm7/jubrain-anatomy-toolbox
+  language: MATLAB
+  date_added: 2026-07-30
+  modality: fMRI
+  added_by: miacasburn
+  added_by_github: miacasburn
