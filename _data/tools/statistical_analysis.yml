@@ -244,3 +244,11 @@
   modality: fMRI
   added_by: miacasburn
   added_by_github: miacasburn
+
+- name: neurolabel
+  description: Python package for generating anatomical and functional labels for Neurosynth parcellations, with interactive exploration.
+  url: https://github.com/amishavyas/neurolabel
+  github: amishavyas/neurolabel
+  language: Python
+  date_added: 2026-08-06
+  modality: fMRI
