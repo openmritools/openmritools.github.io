@@ -120,3 +120,13 @@
   language: Python
   date_added: 2026-07-21
   modality: fMRI
+
+- name: quickbrain
+  description: Lightweight Python package for fast, minimalistic brain surface visualizations with contour overlays, including the cerebellum.
+  url: https://pni-lab.github.io/quickbrain/
+  github: pni-lab/quickbrain
+  language: Python
+  date_added: 2026-08-16
+  modality: multi
+  added_by: spisakt
+  added_by_github: spisakt
