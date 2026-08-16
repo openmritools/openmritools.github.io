@@ -93,3 +93,19 @@
   language: Python
   date_added: 2026-07-13
   modality: multi
+
+- name: QMRITools
+  description: Processing, analysis, and visualization tools for quantitative MRI data, built in Wolfram Language.
+  url: https://github.com/mfroeling/QMRITools
+  github: mfroeling/QMRITools
+  language: Wolfram Language
+  date_added: 2026-08-16
+  modality: multi
+
+- name: NIfTI.jl
+  description: Julia package for reading and writing NIfTI neuroimaging files.
+  url: https://github.com/JuliaNeuroscience/NIfTI.jl
+  github: JuliaNeuroscience/NIfTI.jl
+  language: Julia
+  date_added: 2026-08-16
+  modality: multi

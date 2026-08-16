@@ -29,3 +29,11 @@
   language: Python
   date_added: 2026-06-19
   modality: fMRI
+
+- name: VisualQC
+  description: Assistive tool for quality control of neuroimaging data, with rating interfaces for structural, functional, and surface data.
+  url: https://github.com/raamana/visualqc
+  github: raamana/visualqc
+  language: Python
+  date_added: 2026-08-16
+  modality: multi

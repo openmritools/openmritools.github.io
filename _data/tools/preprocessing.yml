@@ -317,3 +317,11 @@
   modality: structural
   added_by: shivaram-k
   added_by_github: shivaram-k
+
+- name: AssemblyNet
+  description: Deep learning pipeline for whole-brain MRI segmentation into fine-grained anatomical structures.
+  url: https://github.com/volBrain-net/AssemblyNet
+  github: volBrain-net/AssemblyNet
+  language: Python
+  date_added: 2026-08-16
+  modality: structural

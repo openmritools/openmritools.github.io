@@ -130,3 +130,19 @@
   modality: multi
   added_by: spisakt
   added_by_github: spisakt
+
+- name: BrainPainter
+  description: Software for creating custom brain-structure visualizations by colouring anatomical regions for figures.
+  url: https://github.com/razvanmarinescu/brain-coloring
+  github: razvanmarinescu/brain-coloring
+  language: Python
+  date_added: 2026-08-16
+  modality: structural
+
+- name: BioImage Suite Web
+  description: Web-based suite for processing, visualization, and analysis of neuroimaging data.
+  url: https://github.com/bioimagesuiteweb/bisweb
+  github: bioimagesuiteweb/bisweb
+  language: JavaScript
+  date_added: 2026-08-16
+  modality: multi

@@ -127,3 +127,27 @@
   language: C++
   date_added: 2026-07-21
   modality: diffusion
+
+- name: SlicerDMRI
+  description: Diffusion MRI tractography, quantification, and visualization within the 3D Slicer platform.
+  url: https://github.com/SlicerDMRI/SlicerDMRI
+  github: SlicerDMRI/SlicerDMRI
+  language: C++
+  date_added: 2026-08-16
+  modality: diffusion
+
+- name: whitematteranalysis
+  description: White matter tractography clustering and anatomical tract identification from diffusion MRI.
+  url: https://github.com/SlicerDMRI/whitematteranalysis
+  github: SlicerDMRI/whitematteranalysis
+  language: Python
+  date_added: 2026-08-16
+  modality: diffusion
+
+- name: Synb0-DISCO
+  description: Distortion correction of diffusion MRI without a reverse phase-encoded acquisition, using a synthesized undistorted b0.
+  url: https://github.com/MASILab/Synb0-DISCO
+  github: MASILab/Synb0-DISCO
+  language: Python
+  date_added: 2026-08-16
+  modality: diffusion

@@ -94,3 +94,19 @@
   modality: structural
   added_by: LaraRessin
   added_by_github: LaraRessin
+
+- name: Connectome Mapper 3
+  description: BIDS App implementing anatomical, diffusion, and functional connectome mapping pipelines.
+  url: https://github.com/connectomicslab/connectomemapper3
+  github: connectomicslab/connectomemapper3
+  language: Python
+  date_added: 2026-08-16
+  modality: multi
+
+- name: teneto
+  description: Python package for temporal network analysis of time-varying brain connectivity.
+  url: https://github.com/wiheto/teneto
+  github: wiheto/teneto
+  language: Python
+  date_added: 2026-08-16
+  modality: fMRI
