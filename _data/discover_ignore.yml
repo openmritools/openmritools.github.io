@@ -37,3 +37,9 @@
 - dPys/PyNets                    # aging (2024), no license
 - makism/dyconnmap               # inactive since 2023
 - iitzco/deepbrain               # aging, superseded skull-stripping
+- deontaepharr/Diagnosing-ADHD-With-ConvLSTM  # one-off paper code
+- milad1378yz/MOTFM              # image-synthesis paper code
+- NYUMedML/DARTS                 # segmentation paper code
+- weihaox/UMBRAE                 # brain-decoding paper code (ECCV)
+- ai-med/quickNAT_pytorch        # aging paper code (segmentation)
+- pelednoam/mmvt                 # multimodal (fMRI+MEG) — belongs on openimagingtools
