@@ -18,14 +18,6 @@
   date_added: 2026-06-19
   modality: multi
 
-- name: BIDS Validator
-  description: Checks datasets for compliance with the BIDS standard, flagging missing files and metadata errors.
-  url: https://github.com/bids-standard/bids-validator
-  github: bids-standard/bids-validator
-  language: JavaScript
-  date_added: 2026-06-19
-  modality: multi
-
 - name: ENIGMA FreeSurfer Protocol
   description: Standardized scripts for cortical thickness, surface area, and subcortical volume extraction and QC from FreeSurfer outputs across ENIGMA working groups.
   url: https://github.com/ENIGMA-git/ENIGMA-FreeSurfer-protocol

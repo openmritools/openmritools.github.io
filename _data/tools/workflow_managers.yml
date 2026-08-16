@@ -36,14 +36,6 @@
   date_added: 2026-06-16
   modality: multi
 
-- name: DataLad
-  description: Distributed data management system for version-controlled datasets and reproducible analyses.
-  url: https://github.com/datalad/datalad
-  github: datalad/datalad
-  language: Python
-  date_added: 2026-06-16
-  modality: multi
-
 - name: Clinica
   description: Software platform for clinical neuroimaging studies, with standardized pipelines for structural and diffusion MRI data.
   url: https://aramislab.paris.inria.fr/clinica/docs/public/latest
