@@ -6,14 +6,6 @@
 #   github:      owner/repo  (required for health checks)
 #   language:    primary implementation language
 
-- name: MRtrix3
-  description: Suite for diffusion MRI processing, tractography, and connectome construction using constrained spherical deconvolution.
-  url: https://github.com/MRtrix3/mrtrix3
-  github: MRtrix3/mrtrix3
-  language: C++
-  date_added: 2026-06-17
-  modality: diffusion
-
 - name: DIPY
   description: Python library for diffusion MRI analysis including reconstruction, tractography, registration, and simulation.
   url: https://github.com/dipy/dipy

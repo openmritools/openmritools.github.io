@@ -24,6 +24,7 @@ title: Open MRI Tools
       <button class="pill" data-filter="new">Recently added</button>
     </div>
     <div class="pill-group">
+      <button class="pill" data-filter="suites">Suites</button>
       <button class="pill" data-filter="prepare">Prepare</button>
       <button class="pill" data-filter="analyze">Analyze</button>
       <button class="pill" data-filter="visualize">Visualize</button>
@@ -189,6 +190,7 @@ title: Open MRI Tools
 <script>
   const groups = {
     all:            null,
+    suites:         ['suites'],
     prepare:        ['data_conversion', 'qc', 'preprocessing', 'registration_normalization'],
     analyze:        ['statistical_analysis', 'connectivity'],
     visualize:      ['visualization', 'libraries'],

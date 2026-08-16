@@ -6,12 +6,6 @@
 #   github:      owner/repo  (required for health checks)
 #   language:    primary implementation language
 
-- name: SPM
-  description: Statistical parametric mapping framework for fMRI and voxel-based morphometry analysis.
-  url: https://www.fil.ion.ucl.ac.uk/spm
-  language: MATLAB
-  date_added: 2026-06-16
-
 - name: Nilearn
   description: Machine learning and statistical tools for neuroimaging data, including GLMs and multivariate decoding.
   url: https://github.com/nilearn/nilearn

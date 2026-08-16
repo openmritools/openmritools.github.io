@@ -1,3 +1,6 @@
+- id: suites
+  name: Suites
+
 - id: data_conversion
   name: Data Conversion
 
