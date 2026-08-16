@@ -1,5 +1,5 @@
-- id: suites
-  name: Suites
+- id: foundations
+  name: Foundations
 
 - id: data_conversion
   name: Data Conversion

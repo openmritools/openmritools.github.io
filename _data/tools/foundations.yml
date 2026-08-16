@@ -1,7 +1,7 @@
-# Suites
-# Comprehensive, do-everything packages that span multiple workflow stages
-# (preprocessing, analysis, registration, visualization). Given their own home
-# rather than being filed under a single stage.
+# Foundations
+# The major, comprehensive packages the field is built on — they span multiple
+# workflow stages (preprocessing, analysis, registration, visualization), so
+# they get their own home rather than being filed under a single stage.
 # Fields:
 #   name:        display name
 #   description: one sentence — what it does, not why it matters
