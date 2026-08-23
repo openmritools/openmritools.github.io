@@ -90,3 +90,11 @@
   language: Python
   date_added: 2026-06-19
   modality: fMRI
+
+- name: Brain Researcher
+  description: Agentic AI research harness that runs neuroimaging analyses under rules for admissible methods, required checks, and claim scope.
+  url: https://brain-researcher.com
+  github: brain-researcher/brain-researcher-public
+  language: Python
+  date_added: 2026-08-23
+  modality: multi
