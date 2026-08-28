@@ -54,6 +54,14 @@
   date_added: 2026-06-16
   modality: structural
 
+- name: ggbrat
+  description: R package for plotting brain atlases as ggplot2 layers.
+  url: https://github.com/jorittmo/ggbrat
+  github: jorittmo/ggbrat
+  language: R
+  date_added: 2026-08-28
+  modality: structural
+
 - name: MRIcroGL
   description: GPU-accelerated volume rendering and visualization of NIfTI brain images with MIP and raycasting modes.
   url: https://github.com/rordenlab/MRIcroGL
