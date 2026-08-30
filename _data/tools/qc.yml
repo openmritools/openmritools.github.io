@@ -37,3 +37,13 @@
   language: Python
   date_added: 2026-08-16
   modality: multi
+
+- name: GradLint
+  description: Checks diffusion gradient schemes for b-vector flips and axis permutations, and repairs them.
+  url: https://github.com/marcotag93/GradLint
+  github: marcotag93/GradLint
+  language: Rust
+  date_added: 2026-08-30
+  modality: diffusion
+  added_by: marcotag93
+  added_by_github: marcotag93
