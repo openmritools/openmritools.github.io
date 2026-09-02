@@ -46,3 +46,10 @@
   github: jpyles/fMRI-Resources
   date_added: 2026-07-24
   modality: fMRI
+
+- name: Elements of fMRI Tutorials
+  description: Interactive chapter-by-chapter tutorials companion to the Wager & Lindquist fMRI textbook, with runnable MATLAB and Python examples and self-assessments.
+  url: https://torwager.github.io/elements-of-fmri-tutorials/
+  github: torwager/elements-of-fmri-tutorials
+  date_added: 2026-09-02
+  modality: fMRI
