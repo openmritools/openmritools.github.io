@@ -53,3 +53,10 @@
   github: torwager/elements-of-fmri-tutorials
   date_added: 2026-09-02
   modality: fMRI
+
+- name: qMRI mOOC
+  description: Open online course on quantitative MRI from NeuroPoly, covering T1, T2, B1, and B0 mapping and magnetization transfer through interactive notebooks built on qMRLab.
+  url: https://www.qmrlab.org/mooc
+  github: qMRLab/mooc
+  date_added: 2026-10-05
+  modality: multi
