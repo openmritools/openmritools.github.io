@@ -110,3 +110,11 @@
   language: Python
   date_added: 2026-08-16
   modality: fMRI
+
+- name: MRtrix3_connectome
+  description: BIDS App generating subject connectomes from raw BIDS data and performing inter-subject connection density normalisation.
+  url: https://github.com/bids-apps/MRtrix3_connectome
+  github: bids-apps/MRtrix3_connectome
+  language: Python
+  date_added: 2026-10-05
+  modality: diffusion

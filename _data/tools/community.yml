@@ -60,3 +60,10 @@
   github: qMRLab/mooc
   date_added: 2026-10-05
   modality: multi
+
+- name: Voxelwise Tutorials
+  description: Tutorials and accompanying Python package for fitting voxelwise encoding models to fMRI data, with worked examples on a public naturalistic dataset.
+  url: https://gallantlab.org/voxelwise_tutorials/
+  github: gallantlab/voxelwise_tutorials
+  date_added: 2026-10-05
+  modality: fMRI
