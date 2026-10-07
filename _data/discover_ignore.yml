@@ -43,3 +43,11 @@
 - weihaox/UMBRAE                 # brain-decoding paper code (ECCV)
 - ai-med/quickNAT_pytorch        # aging paper code (segmentation)
 - pelednoam/mmvt                 # multimodal (fMRI+MEG) — belongs on openimagingtools
+- ruoyuw22-byte/NeuroMorph-Assessment  # star count declining from peak (475→367) on 5 forks / 3 watchers
+- richardChenzhihui/Med-Banana-80K  # EMNLP paper dataset for image editing, not an MRI tool
+- zhengyang-wang/Unet_3D         # generic 3D segmentation demo, not MRI-specific
+- arttumiettinen/pi2             # terabyte tomography/microscopy, not MRI
+- jondeaton/BraTS18-Project      # one-off student project (2018)
+- multinetlab-amsterdam/network_TDA_tutorial  # tutorial, unmaintained since 2024
+- xuan13hao/scPyviewer           # single-cell RNA viewer, not imaging
+- Mentalab-hub/explorepy         # EEG hardware API — belongs on openimagingtools
