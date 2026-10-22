@@ -67,3 +67,10 @@
   github: gallantlab/voxelwise_tutorials
   date_added: 2026-10-05
   modality: fMRI
+
+- name: Scanner Harmonization Tutorial
+  description: OHBM educational course on correcting site effects in multi-site neuroimaging data, with Jupyter notebooks covering ComBat, ComBat-GAM, CovBat, and longitudinal designs.
+  url: https://github.com/N-Nieto/OHBM2026_Educational_course_harmonization
+  github: N-Nieto/OHBM2026_Educational_course_harmonization
+  date_added: 2026-10-22
+  modality: multi
