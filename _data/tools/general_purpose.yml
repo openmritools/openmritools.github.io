@@ -70,3 +70,10 @@
   github: sdv-dev/SDV
   language: Python
   date_added: 2026-07-13
+
+- name: Binder
+  description: Turns a Git repository of notebooks into a live, executable environment in the browser, with no local installation.
+  url: https://mybinder.org
+  github: jupyterhub/binderhub
+  language: Python
+  date_added: 2026-10-23
