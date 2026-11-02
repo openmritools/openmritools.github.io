@@ -109,3 +109,13 @@
   language: Julia
   date_added: 2026-08-16
   modality: multi
+
+- name: DECAES.jl
+  description: Julia package for voxelwise T2-distribution estimation from multi spin-echo MRI, using extended phase graph modelling to derive myelin water fraction.
+  url: https://jondeuce.github.io/DECAES.jl/stable/
+  github: jondeuce/DECAES.jl
+  language: Julia
+  date_added: 2026-11-02
+  modality: multi
+  added_by: jondeuce
+  added_by_github: jondeuce
