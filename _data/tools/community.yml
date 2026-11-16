@@ -74,3 +74,10 @@
   github: N-Nieto/OHBM2026_Educational_course_harmonization
   date_added: 2026-10-22
   modality: multi
+
+- name: BrainFMBench
+  description: Living leaderboard comparing frozen structural MRI foundation models against FreeSurfer baselines across open developmental datasets, with automated scoring of submitted models.
+  url: https://epics-lab.github.io/BrainFMBench/
+  github: epics-lab/BrainFMBench
+  date_added: 2026-11-16
+  modality: structural

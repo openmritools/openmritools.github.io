@@ -143,3 +143,11 @@
   language: Python
   date_added: 2026-08-16
   modality: diffusion
+
+- name: MPAT
+  description: Computes white-matter bundles as exact expectations over infinitely many streamlines by modelling probabilistic tractography as an absorbing Markov chain, removing the need for random seeding.
+  url: https://github.com/rokemlab/MPAT
+  github: rokemlab/MPAT
+  language: Python
+  date_added: 2026-11-16
+  modality: diffusion
