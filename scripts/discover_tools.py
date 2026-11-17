@@ -206,6 +206,68 @@ def search_biorxiv(known: set[str]) -> list[dict]:
 
 # ── Issue creation ────────────────────────────────────────────────────────────
 
+# ── Source 3: Unanswered comments ─────────────────────────────────────────────
+
+# Comments from these association levels are "ours" — a thread ending on one
+# counts as answered. Everything else is an outside voice still waiting.
+MAINTAINER_ASSOCIATIONS = {"OWNER", "MEMBER", "COLLABORATOR"}
+
+
+def find_unanswered_comments() -> list[dict]:
+    """Issues whose most recent comment came from outside the project.
+
+    Catches tool authors asking for corrections after their suggestion was
+    closed — easy to miss, since closing the issue stops it showing up in
+    the default issue list.
+
+    Reacting to a comment dismisses it, for the ones that need reading but
+    not answering ("Thanks!"), so they stop coming back every week.
+    """
+    unanswered = []
+    page = 1
+
+    while True:
+        issues = gh_get(
+            f"https://api.github.com/repos/{GITHUB_REPO}/issues",
+            params={"state": "all", "per_page": 100, "page": page},
+        )
+        if not issues:
+            break
+
+        for issue in issues:
+            if "pull_request" in issue or issue.get("comments", 0) == 0:
+                continue
+
+            comments = gh_get(issue["comments_url"], params={"per_page": 100}) or []
+            if not comments:
+                continue
+
+            last = comments[-1]
+            if last["user"].get("type") == "Bot":
+                continue
+            if last.get("author_association") in MAINTAINER_ASSOCIATIONS:
+                continue
+            if last.get("reactions", {}).get("total_count", 0) > 0:
+                continue  # reacted to — read and dismissed
+
+            unanswered.append({
+                "number":  issue["number"],
+                "title":   issue["title"],
+                "url":     issue["html_url"],
+                "author":  last["user"]["login"],
+                "date":    last["created_at"][:10],
+                "excerpt": " ".join(last["body"].split()).replace("|", "\\|")[:120],
+            })
+
+        if len(issues) < 100:
+            break
+        page += 1
+
+    return unanswered
+
+
+# ── Issue ─────────────────────────────────────────────────────────────────────
+
 def _repo_table(hits: list[dict]) -> list[str]:
     lines = [
         "| Repo | Stars | Matched topic | Description |",
@@ -217,14 +279,16 @@ def _repo_table(hits: list[dict]) -> list[str]:
     return lines
 
 
-def create_issue(new_hits: list[dict], est_hits: list[dict], biorxiv_hits: list[dict]) -> str:
+def create_issue(new_hits: list[dict], est_hits: list[dict], biorxiv_hits: list[dict],
+                 unanswered: list[dict]) -> str:
     week  = NOW.strftime("%Y-%m-%d")
     total = len(new_hits) + len(est_hits) + len(biorxiv_hits)
 
     lines = [f"## Tool candidates — week of {week}", ""]
 
     if total == 0:
-        lines.append("No new candidates found this week.")
+        lines.append("No new tool candidates found this week.")
+        lines.append("")
     else:
         lines.append(f"{total} candidate(s) for review. Add to `_data/tools/` if relevant, then close this issue.")
         lines.append("")
@@ -250,6 +314,24 @@ def create_issue(new_hits: list[dict], est_hits: list[dict], biorxiv_hits: list[
             title = r["paper_title"][:70] + "…" if len(r["paper_title"]) > 70 else r["paper_title"]
             paper = f"[{title}]({r['paper_url']})" if r["paper_url"] else title
             lines.append(f"| {paper} | [github.com/{r['slug']}](https://github.com/{r['slug']}) |")
+        lines.append("")
+
+    if unanswered:
+        lines += [
+            f"### Unanswered comments — {len(unanswered)} thread(s) awaiting a reply",
+            "",
+            "The last word on these came from outside the project. Closed issues are included:",
+            "a tool author often comments after their suggestion was added.",
+            "",
+            "Reply, or react to the comment to dismiss it.",
+            "",
+            "| Issue | Who | When | Comment |",
+            "|---|---|---|---|",
+        ]
+        for c in unanswered:
+            lines.append(
+                f"| [#{c['number']}]({c['url']}) {c['title']} | @{c['author']} | {c['date']} | {c['excerpt']} |"
+            )
         lines.append("")
 
     lines += [
@@ -286,8 +368,12 @@ def main():
     biorxiv_hits = search_biorxiv(known)
     print(f"  → {len(biorxiv_hits)} papers with GitHub links\n")
 
+    print("Checking for unanswered comments...")
+    unanswered = find_unanswered_comments()
+    print(f"  → {len(unanswered)} thread(s) awaiting a reply\n")
+
     print("Creating issue...")
-    url = create_issue(new_hits, est_hits, biorxiv_hits)
+    url = create_issue(new_hits, est_hits, biorxiv_hits, unanswered)
     print(f"  → {url}")
 
 
