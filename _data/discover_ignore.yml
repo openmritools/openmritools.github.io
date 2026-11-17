@@ -51,3 +51,8 @@
 - multinetlab-amsterdam/network_TDA_tutorial  # tutorial, unmaintained since 2024
 - xuan13hao/scPyviewer           # single-cell RNA viewer, not imaging
 - Mentalab-hub/explorepy         # EEG hardware API — belongs on openimagingtools
+
+# ── Out of scope: not human MRI ──
+- ColeLab/ColeAnticevicNetPartition  # parcellation data release, not software
+- brainglobe/brainglobe-atlasapi  # preclinical/microscopy atlases
+- brainglobe/brainrender         # preclinical/microscopy visualisation
