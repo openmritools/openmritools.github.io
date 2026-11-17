@@ -168,7 +168,7 @@
   modality: multi
 
 - name: VertexWiseR
-  description: R package for extracting, analyzing, and visualizing cortical and subcortical vertex-wise data from FreeSurfer, CAT12, and fMRIPrep outputs.
+  description: R package for extracting, analyzing, and visualizing cortical and subcortical vertex-wise data from outputs of preprocessing tools such as FreeSurfer, CAT12, and fMRIPrep.
   url: https://github.com/CogBrainHealthLab/VertexWiseR
   github: CogBrainHealthLab/VertexWiseR
   added_by: chabld
